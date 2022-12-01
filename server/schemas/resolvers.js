@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Pet, Message } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -9,6 +9,13 @@ const resolvers = {
         const user = await User.findOne({ _id: context.user._id });
         return user;
       }
+    },
+    pets: async () => {
+        return Pet.find();
+    },
+  
+    pet: async (parent, { petId }) => {
+        return Pet.findOne({ _id: petId });
     },
   },
   Mutation: {
@@ -33,6 +40,15 @@ const resolvers = {
       const user = await User.create({ fullname, email, password });
       const token = signToken(user);
       return { token, user };
+    },
+    updateUser: async (parent, { id, description }) => {
+        // Find and update the matching User using the destructured args
+        return await User.findOneAndUpdate(
+          { _id: id }, 
+          { description },
+          // Return the newly updated object instead of the original
+          { new: true }
+        );
     },
     savePet: async (parent, { pet }, context) => {
       if (context.user) {

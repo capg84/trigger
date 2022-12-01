@@ -84,7 +84,7 @@ const typeDefs = gql`
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet
     removeComment(petId: ID!, commentId: ID!): Pet
-    updateUser(_id: ID!, description: String!): User
+    aboutMe(_id: ID!, description: String!): User
     sendMessage(userId: ID!, messageText: String!): User
   }
 `;

@@ -29,25 +29,25 @@ const resolvers = {
 
       return { token, user };
     },
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { fullname, email, password }) => {
+      const user = await User.create({ fullname, email, password });
       const token = signToken(user);
       return { token, user };
     },
-    saveBook: async (parent, { book }, context) => {
+    savePet: async (parent, { pet }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: book } },
+          { $addToSet: { likedPets: pet } },
           { new: true }
         );
         return updatedUser;
       }
     },
-    removeBook: async (parent, { bookId }, context) => {
+    removeLikedPet: async (parent, { petId }, context) => {
       const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
-        { $pull: { savedBooks: { bookId: bookId } } },
+        { $pull: { likedPets: { petId: petId } } },
         { new: true }
       );
       return updatedUser;

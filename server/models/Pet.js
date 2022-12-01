@@ -4,10 +4,6 @@ const userSchema = require("./User");
 
 const petSchema = new Schema(
   {
-    species: {
-      type: String,
-      required: true,
-    },
     name: {
       type: String,
       required: true,
@@ -17,6 +13,10 @@ const petSchema = new Schema(
       required: true,
     },
     gender: {
+      type: String,
+      required: true,
+    },
+    species: {
       type: String,
       required: true,
     },
@@ -41,7 +41,6 @@ const petSchema = new Schema(
     },
     colour: {
       type: String,
-      required: true,
     },
     image: {
       type: String, //find a way to upload the image file
@@ -68,6 +67,8 @@ const commentSchema = new Schema({
   commentBody: {
     type: String,
     required: true,
+    minlength: 1,
+    maxlength: 280,
   },
   dateCreated: { type: Date, default: Date.now },
 });

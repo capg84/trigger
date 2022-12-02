@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-
+const moment =  require('moment');
 const userSchema = require("./User");
 
 const petSchema = new Schema(
@@ -46,9 +46,32 @@ const petSchema = new Schema(
       type: String, //find a way to upload the image file
       required: true,
     },
-    comments: [commentSchema],
     dateCreated: { type: Date, default: Date.now },
-    userLikes: [userSchema],
+    userLikes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+     ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+      {
+        commentBody: {
+          type: String,
+          required: true,
+          minlength: 1,
+          maxlength: 280,
+        },
+        dateCreated: { 
+          type: Date, 
+          default: Date.now,
+          get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+        },
+      }
+    ],
   },
 
   // set this to use virtual below
@@ -59,19 +82,7 @@ const petSchema = new Schema(
   }
 );
 
-const commentSchema = new Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  commentBody: {
-    type: String,
-    required: true,
-    minlength: 1,
-    maxlength: 280,
-  },
-  dateCreated: { type: Date, default: Date.now },
-});
+
 
 petSchema.virtual("commentCount").get(function () {
   return this.comments.length;

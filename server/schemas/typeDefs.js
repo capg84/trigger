@@ -21,7 +21,7 @@ const typeDefs = gql`
     description: String!
     city: String!
     country: String!
-    breed: string
+    breed: String
     medicalHistory: String!
     colour: String
     image: String
@@ -43,27 +43,15 @@ const typeDefs = gql`
     description: String!
     city: String!
     country: String!
-    breed: string
+    breed: String
     medicalHistory: String!
     colour: String
     image: String
     dateCreated: String
-    comments: [Comment]
   }
   type Message {
-    from: {
-        userId: User
-        fullName: String
-        read: Bolean
-        dateReceived: String
-    }
-    to: {
-        userId: User
-        fullName: String
-        read: Bolean
-        messageText: String!
-        dateCreated: String
-    }
+    from: [Message]
+    to: [Message]
   }
   type Auth {
     token: ID!
@@ -77,9 +65,9 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!, city: String!, country: String!): Auth
-    savePet(pet: petInput!): User
-    addPet(input: petInput!): User
-    updatePet(petId: ID!, input: petInput!): Pet
+    savePet(pet: PetInput!): User
+    addPet(input: PetInput!): User
+    updatePet(petId: ID!, input: PetInput!): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet

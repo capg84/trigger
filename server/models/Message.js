@@ -9,7 +9,6 @@ const messageSchema = new Schema({
     },
     fullName: String,
     read: { type: Boolean, default: false },
-    dateReceived: { type: Date, default: Date.now },
   },
   to: {
     userId: {

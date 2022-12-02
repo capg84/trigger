@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 const moment =  require('moment');
-const userSchema = require("./User");
 
 const petSchema = new Schema(
   {
@@ -57,25 +56,23 @@ const petSchema = new Schema(
         ref: 'User',
       },
      ],
-    comments: [
-      {
+    comments: [{
+      userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: "User",
       },
-      {
-        commentBody: {
-          type: String,
-          required: true,
-          minlength: 1,
-          maxlength: 280,
-        },
-        dateCreated: { 
-          type: Date, 
-          default: Date.now,
-          get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
-        },
-      }
-    ],
+      commentBody: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      dateCreated: { 
+        type: Date, 
+        default: Date.now,
+        get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+      },
+    }],
   },
 
   // set this to use virtual below
@@ -85,8 +82,6 @@ const petSchema = new Schema(
     },
   }
 );
-
-
 
 petSchema.virtual("commentCount").get(function () {
   return this.comments.length;

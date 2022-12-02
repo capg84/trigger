@@ -32,9 +32,24 @@ const userSchema = new Schema(
     description: {
       type: String,
     },
-    userPets: [petSchema],
-    likedPets: [petSchema],
-    messages: [messagesSchema],
+    userPets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet',
+      },
+    ],
+    likedPets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet',
+      },
+    ],
+    messages: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Message',
+      },
+    ],
   },
   // set this to use virtual below
   {

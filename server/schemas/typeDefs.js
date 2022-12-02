@@ -13,7 +13,7 @@ const typeDefs = gql`
     messages: [Message]
   }
   type Pet {
-    petId: ID!
+    _id: ID
     name: String!
     age: String!
     gender: String!
@@ -35,7 +35,7 @@ const typeDefs = gql`
     dateCreated: String
   }
   input PetInput {
-    petId: ID!
+    _id: ID
     name: String!
     age: String!
     gender: String!
@@ -78,7 +78,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!, city: String!, country: String!): Auth
     savePet(pet: petInput!): User
-    addPet(input: petInput!): Pet
+    addPet(input: petInput!): User
     updatePet(petId: ID!, input: petInput!): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User

@@ -41,7 +41,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    updateUser: async (parent, { id, description }) => {
+    aboutMe: async (parent, { id, description }) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
           { _id: id }, 
@@ -67,6 +67,49 @@ const resolvers = {
         { new: true }
       );
       return updatedUser;
+    },
+    addPet: async (parent, { input }) => {
+        if (context.user) {
+            const updatedUser = await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $addToSet: { userPets: input } },
+              { new: true }
+            );
+            return updatedUser;
+        }
+    },
+    updatePet: async (parent, { petId, input }) => {
+        // Find and update the matching Pet using the destructured args
+        return await Pet.findOneAndUpdate(
+          { _id: petId }, 
+          { ...input },
+          // Return the newly updated object instead of the original
+          { new: true }
+        );
+    },
+    removePet: async (parent, { petId }) => {
+        return Pet.findOneAndDelete({ _id: petId });
+    },
+    addComment: async (parent, { petId, commentId }) => {
+        return Pet.findOneAndUpdate(
+          { _id: petId },
+          { $push: { comments: { _id: commentId } } },
+          { new: true }
+        );
+    },
+    removeComment: async (parent, { petId, commentId }) => {
+        return Pet.findOneAndUpdate(
+          { _id: petId },
+          { $pull: { comments: { _id: commentId } } },
+          { new: true }
+        );
+    },
+    sendMessage: async (parent, { userId, messageText }) => {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          { $push: { messages: { messageText } } },
+          { new: true }
+        );
     },
   },
 };

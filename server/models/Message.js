@@ -14,6 +14,10 @@ const messageSchema = new Schema({
     default: Date.now,
     get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   inbox: inboxSchema,
 });
 

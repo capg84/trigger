@@ -19,12 +19,10 @@ const userSchema = new Schema(
       required: true,
     },
     city: {
-      type: String,
-      required: true,
+      type: String
     },
     country: {
-      type: String,
-      required: true,
+      type: String
     },
     description: {
       type: String,
@@ -73,6 +71,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 userSchema.virtual("likedCount").get(function () {
   return this.likedPets.length;
+});
+
+userSchema.virtual("messageCount").get(function () {
+  return this.messages.length;
 });
 
 module.exports = model("User", userSchema);

@@ -4,10 +4,11 @@ const typeDefs = gql`
     _id: ID!
     fullname: String!
     email: String!
-    city: String!
-    country: String!
+    city: String
+    country: String
     description: String
     likedCount: Int
+    messageCount: Int
     userPets: [Pet]
     likedPets: [Pet]
     messages: [Message]
@@ -52,7 +53,7 @@ const typeDefs = gql`
   type Message {
     _id: ID!
     messageText: String!
-    read: Bolean
+    read: Boolean
     dateCreated: String
     userId: User
     inbox: Inbox

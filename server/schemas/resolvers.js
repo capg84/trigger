@@ -41,11 +41,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    aboutMe: async (parent, { id, description }) => {
+    aboutMe: async (parent, { id, description, city, country }) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
           { _id: id }, 
           { description },
+          { city },
+          { country },
           // Return the newly updated object instead of the original
           { new: true }
         );

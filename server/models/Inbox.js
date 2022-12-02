@@ -6,7 +6,7 @@ const inboxSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "User",
     }],
-    lastSentUserId: {
+    lastSentUser: {
         type: Schema.Types.ObjectId,
         ref: "User",
     },

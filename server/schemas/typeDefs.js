@@ -50,8 +50,18 @@ const typeDefs = gql`
     dateCreated: String
   }
   type Message {
-    from: [Message]
-    to: [Message]
+    _id: ID!
+    messageText: String!
+    read: Bolean
+    dateCreated: String
+    user: User
+    inbox: Inbox
+  }
+  type Inbox {
+    _id: ID!
+    lastMessage: String!
+    inboxParticipants: [User]
+    lastSentUser: User
   }
   type Auth {
     token: ID!

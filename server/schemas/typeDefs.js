@@ -76,7 +76,7 @@ const typeDefs = gql`
   }
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(fullname: String!, email: String!, password: String!, city: String!, country: String!): Auth
+    addUser(fullname: String!, email: String!, password: String!): Auth
     savePet(pet: PetInput!): User
     addPet(input: PetInput!): User
     updatePet(petId: ID!, input: PetInput!): Pet
@@ -84,7 +84,7 @@ const typeDefs = gql`
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet
     removeComment(petId: ID!, commentId: ID!): Pet
-    aboutMe(id: ID!, description: String!): User
+    aboutMe(id: ID!, description: String!, city: String!, country: String!): User
     sendMessage(userId: ID!, messageText: String!): User
   }
 `;

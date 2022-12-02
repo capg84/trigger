@@ -10,6 +10,16 @@ const resolvers = {
         return user;
       }
     },
+    users: async () => {
+        return await User.find({})
+        .populate('userPets')
+        .populate('likedPets')
+        .populate('messages')
+        .populate({
+          path: 'messages',
+          populate: 'inbox'
+        });
+    },
     pets: async () => {
         return Pet.find();
     },
@@ -70,7 +80,7 @@ const resolvers = {
       );
       return updatedUser;
     },
-    addPet: async (parent, { input }) => {
+    addPet: async (parent, { input }, context) => {
         if (context.user) {
             const updatedUser = await User.findOneAndUpdate(
               { _id: context.user._id },
@@ -106,12 +116,22 @@ const resolvers = {
           { new: true }
         );
     },
-    sendMessage: async (parent, { userId, messageText }) => {
-        return User.findOneAndUpdate(
-          { _id: userId },
-          { $push: { messages: { messageText } } },
-          { new: true }
-        );
+    sendMessage: async (parent, { to, messageText }, context) => {
+        if (context.user) {
+            const recipient = await User.findOne({ _id: to });
+            if(!recipient) {
+                console.error('User not found');
+            }
+            if(messageText.trim() === '') {
+                console.error('Message is empty');
+            }
+            const message = await Message.create({
+                from: context.user._id,
+                to,
+                messageText
+            })
+            return { message }
+        }
     },
   },
 };

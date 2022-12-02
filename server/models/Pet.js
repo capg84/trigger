@@ -87,4 +87,8 @@ petSchema.virtual("commentCount").get(function () {
   return this.comments.length;
 });
 
+petSchema.virtual("userlikeCount").get(function () {
+  return this.userLikes.length;
+});
+
 module.exports = model("Pet", petSchema);

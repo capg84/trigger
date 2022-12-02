@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const inboxSchema = require ("./Inbox");
+
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
 const messageSchema = new Schema({
   messageText: {type: String, 
@@ -14,11 +14,14 @@ const messageSchema = new Schema({
     default: Date.now,
     get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
   },
-  userId: {
+  from: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  inbox: inboxSchema,
+  to: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = model("Message", messageSchema);

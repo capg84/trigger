@@ -27,6 +27,8 @@ const typeDefs = gql`
     colour: String
     image: String
     dateCreated: String
+    userlikeCount: Int
+    commentCount: Int
     comments: [Comment]
   }
   type Comment {
@@ -55,8 +57,8 @@ const typeDefs = gql`
     messageText: String!
     read: Boolean
     dateCreated: String
-    userId: User
-    inbox: Inbox
+    from: User!
+    to: User!
   }
   type Inbox {
     _id: ID!
@@ -70,6 +72,7 @@ const typeDefs = gql`
   }
   type Query {
     me: User
+    users: [User]
     pets: [Pet]!
     pet(petId: ID!): Pet
     messages: [Message]!
@@ -85,7 +88,7 @@ const typeDefs = gql`
     addComment(petId: ID!, commentBody: String!): Pet
     removeComment(petId: ID!, commentId: ID!): Pet
     aboutMe(id: ID!, description: String!, city: String!, country: String!): User
-    sendMessage(userId: ID!, messageText: String!): User
+    sendMessage(to: ID!, messageText: String!): Message
   }
 `;
 

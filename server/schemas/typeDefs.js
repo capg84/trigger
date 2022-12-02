@@ -54,7 +54,7 @@ const typeDefs = gql`
     messageText: String!
     read: Bolean
     dateCreated: String
-    user: User
+    userId: User
     inbox: Inbox
   }
   type Inbox {
@@ -71,6 +71,7 @@ const typeDefs = gql`
     me: User
     pets: [Pet]!
     pet(petId: ID!): Pet
+    messages: [Message]!
   }
   type Mutation {
     login(email: String!, password: String!): Auth

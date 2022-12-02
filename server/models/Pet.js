@@ -46,7 +46,11 @@ const petSchema = new Schema(
       type: String, //find a way to upload the image file
       required: true,
     },
-    dateCreated: { type: Date, default: Date.now },
+    dateCreated: { 
+      type: Date, 
+      default: Date.now,
+      get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+    },
     userLikes: [
       {
         type: Schema.Types.ObjectId,

@@ -19,7 +19,11 @@ const messageSchema = new Schema({
     read: { type: Boolean, default: false },
   },
   messageText: {type: String, required: true},
-  dateCreated: { type: Date, default: Date.now },
+  dateCreated: { 
+    type: Date, 
+    default: Date.now,
+    get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+  },
 });
 
 module.exports = model("Message", messageSchema);

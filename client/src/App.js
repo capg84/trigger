@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Nav from "./Pages/navigation"
-import Header from "./Pages/header"
-import Messages from "./Pages/messages"
-import Pets from "./Pages/pet"
-import Login from "./Pages/login"
-import Signup from "./Pages/signup"
+import Nav from "./Components/navigation"
+import Header from "./Components/header"
+import Messages from "./Components/messages"
+import Pets from "./Components/pet"
+import Login from "./Components/login"
+import Signup from "./Components/signup"
 import User from "./Components/create-user"
-import Comments from "./Pages/comments"
+import Comments from "./Components/comments"
 
 
 

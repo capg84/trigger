@@ -1,12 +1,16 @@
-const { User, Pet, Message } = require("../../models");
+const { User, Pet, Message } = require("../models");
 const { UserInputError, AuthenticationError } = require("apollo-server-express");
-const { signToken } = require("../../utils/auth");
+const { signToken } = require("../utils/auth");
+const { update } = require("../models/Pet");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findOne({ _id: context.user._id });
+        const user = await User.findOne({ _id: context.user._id })
+        .populate('userPets')
+        .populate('likedPets')
+        .populate('messages')
         return user;
       }
     },
@@ -17,36 +21,28 @@ const resolvers = {
         .populate('messages');
     },
     pets: async () => {
-        return Pet.find();
+      return Pet.find().populate('userLikes').sort({dateCreated: -1});
     },
   
     pet: async (parent, { petId }) => {
-        return Pet.findOne({ _id: petId });
+      return Pet.findOne({ _id: petId });
     },
-    messages: async (parent, { from }, { user }) => {
+    getmessages: async (parent, { from }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('invalid token')
+      }
+  
+      const otherUser = await User.findOne({ _id: from })
+      if (!otherUser) {
+        throw new UserInputError('User not found')
+      }
 
-        if (!user) {
-            throw new AuthenticationError('Unauthenticated')
-        }
+      const messages = await Message.find({})
+      .populate('from')
+      .populate('to')
+      .sort({dateCreated: -1})
   
-        const otherUser = await User.findOne({
-        where: { fullname: from },
-        })
-        if (!otherUser) {
-            throw new UserInputError('User not found')
-        }
-  
-        const fullnames = [user.fullname, otherUser.fullname]
-  
-        const messages = await Message.findAll({
-        where: {
-            from: { [Op.in]: fullnames },
-            to: { [Op.in]: fullnames },
-        },
-        order: [['dateCreated', 'DESC']],
-        })
-  
-        return messages
+      return messages;
     }, 
   },
   Mutation: {
@@ -139,7 +135,11 @@ const resolvers = {
     },
     sendMessage: async (parent, { to, messageText }, context) => {
         if (context.user) {
-            const recipient = await User.findOne({ _id: to });
+            const recipient = await User.findOneAndUpdate(
+              { _id: to },
+              { $addToSet: { messages: message } },
+              {new: true}
+            );
             if(!recipient) {
                 throw new UserInputError ('User not found');
             } else if (recipient._id === context.user._id) {
@@ -153,8 +153,14 @@ const resolvers = {
                 to,
                 from: context.user._id
             })
-            return  message 
+            pushMessage(message);
+            return message;
         }
+        // return await User.findOneAndUpdate(
+        //   { _id: to },
+        //   { $addToSet: { messages: message } },
+        //   { new: true }
+        // );
     },
   },
 };

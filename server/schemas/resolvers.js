@@ -153,6 +153,8 @@ const resolvers = {
                 to,
                 from: context.user._id
             })
+            recipient.messages.push(message._id);
+            recipient.save();
             return message;
         }
     },

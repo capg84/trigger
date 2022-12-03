@@ -1,13 +1,8 @@
 const { Schema, model } = require("mongoose");
-
-const userSchema = require("./User");
+const moment =  require('moment');
 
 const petSchema = new Schema(
   {
-    species: {
-      type: String,
-      required: true,
-    },
     name: {
       type: String,
       required: true,
@@ -17,6 +12,10 @@ const petSchema = new Schema(
       required: true,
     },
     gender: {
+      type: String,
+      required: true,
+    },
+    species: {
       type: String,
       required: true,
     },
@@ -41,39 +40,56 @@ const petSchema = new Schema(
     },
     colour: {
       type: String,
-      required: true,
     },
     image: {
       type: String, //find a way to upload the image file
       required: true,
     },
-    comments: [commentSchema],
-    dateCreated: { type: Date, default: Date.now },
-    userLikes: [userSchema],
+    dateCreated: { 
+      type: Date, 
+      default: Date.now,
+      get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+    },
+    userLikes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+     ],
+    comments: [{
+      userId: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+      commentBody: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      dateCreated: { 
+        type: Date, 
+        default: Date.now,
+        get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
+      },
+    }],
   },
 
   // set this to use virtual below
   {
     toJSON: {
+      getters: true,
       virtuals: true,
     },
   }
 );
 
-const commentSchema = new Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  commentBody: {
-    type: String,
-    required: true,
-  },
-  dateCreated: { type: Date, default: Date.now },
-});
-
 petSchema.virtual("commentCount").get(function () {
   return this.comments.length;
+});
+
+petSchema.virtual("userlikeCount").get(function () {
+  return this.userLikes.length;
 });
 
 module.exports = model("Pet", petSchema);

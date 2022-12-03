@@ -1,9 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const petSchema = require("./Pet");
-const messagesSchema = require("./Message");
-
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
 const userSchema = new Schema(
   {
@@ -22,19 +19,32 @@ const userSchema = new Schema(
       required: true,
     },
     city: {
-      type: String,
-      required: true,
+      type: String
     },
     country: {
-      type: String,
-      required: true,
+      type: String
     },
     description: {
       type: String,
     },
-    userPets: [petSchema],
-    likedPets: [petSchema],
-    messages: [messagesSchema],
+    userPets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet',
+      },
+    ],
+    likedPets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet',
+      },
+    ],
+    messages: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Message',
+      },
+    ],
   },
   // set this to use virtual below
   {
@@ -61,6 +71,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 userSchema.virtual("likedCount").get(function () {
   return this.likedPets.length;
+});
+
+userSchema.virtual("messageCount").get(function () {
+  return this.messages.length;
 });
 
 module.exports = model("User", userSchema);

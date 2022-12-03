@@ -60,12 +60,6 @@ const typeDefs = gql`
     from: User!
     to: User!
   }
-  type Inbox {
-    _id: ID!
-    lastMessage: String!
-    inboxParticipants: [User]
-    lastSentUser: User
-  }
   type Auth {
     token: ID!
     user: User

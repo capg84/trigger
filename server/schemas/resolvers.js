@@ -1,5 +1,5 @@
 const { User, Pet, Message } = require("../models");
-const { AuthenticationError } = require("apollo-server-express");
+const { UserInputError, AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -14,11 +14,7 @@ const resolvers = {
         return await User.find({})
         .populate('userPets')
         .populate('likedPets')
-        .populate('messages')
-        .populate({
-          path: 'messages',
-          populate: 'inbox'
-        });
+        .populate('messages');
     },
     pets: async () => {
         return Pet.find();
@@ -27,6 +23,31 @@ const resolvers = {
     pet: async (parent, { petId }) => {
         return Pet.findOne({ _id: petId });
     },
+    messages: async (parent, { from }, { user }) => {
+
+        if (!user) {
+            throw new AuthenticationError('Unauthenticated')
+        }
+  
+        const otherUser = await User.findOne({
+        where: { fullname: from },
+        })
+        if (!otherUser) {
+            throw new UserInputError('User not found')
+        }
+  
+        const fullnames = [user.fullname, otherUser.fullname]
+  
+        const messages = await Message.findAll({
+        where: {
+            from: { [Op.in]: fullnames },
+            to: { [Op.in]: fullnames },
+        },
+        order: [['dateCreated', 'DESC']],
+        })
+  
+        return messages
+    }, 
   },
   Mutation: {
     login: async (parent, { email, password }) => {
@@ -120,17 +141,19 @@ const resolvers = {
         if (context.user) {
             const recipient = await User.findOne({ _id: to });
             if(!recipient) {
-                console.error('User not found');
+                throw new UserInputError ('User not found');
+            } else if (recipient._id === context.user._id) {
+                throw new UserInputError ('you cannot message yourself')
             }
             if(messageText.trim() === '') {
-                console.error('Message is empty');
+                throw new UserInputError ('Message is empty');
             }
             const message = await Message.create({
-                from: context.user._id,
+                messageText,
                 to,
-                messageText
+                from: context.user._id
             })
-            return { message }
+            return  message 
         }
     },
   },

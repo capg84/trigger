@@ -78,6 +78,7 @@ const petSchema = new Schema(
   // set this to use virtual below
   {
     toJSON: {
+      getters: true,
       virtuals: true,
     },
   }

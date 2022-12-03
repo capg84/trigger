@@ -9,7 +9,7 @@ import Messages from "./Pages/messages"
 import Pets from "./Pages/pet"
 import Login from "./Pages/login"
 import Signup from "./Pages/signup"
-import User from "./Pages/user"
+import User from "./Components/create-user"
 import Comments from "./Pages/comments"
 
 

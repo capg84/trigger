@@ -1,7 +1,7 @@
 const { User, Pet, Message } = require("../models");
 const { UserInputError, AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const { update } = require("../models/Pet");
+const { populate } = require("../models/Pet");
 
 const resolvers = {
   Query: {
@@ -11,6 +11,10 @@ const resolvers = {
         .populate('userPets')
         .populate('likedPets')
         .populate('messages')
+        .populate({
+          path: 'messages',
+          populate: 'from'
+        })
         return user;
       }
     },
@@ -135,11 +139,7 @@ const resolvers = {
     },
     sendMessage: async (parent, { to, messageText }, context) => {
         if (context.user) {
-            const recipient = await User.findOneAndUpdate(
-              { _id: to },
-              { $addToSet: { messages: message } },
-              {new: true}
-            );
+            const recipient = await User.findOne({ _id: to });
             if(!recipient) {
                 throw new UserInputError ('User not found');
             } else if (recipient._id === context.user._id) {
@@ -153,14 +153,8 @@ const resolvers = {
                 to,
                 from: context.user._id
             })
-            pushMessage(message);
             return message;
         }
-        // return await User.findOneAndUpdate(
-        //   { _id: to },
-        //   { $addToSet: { messages: message } },
-        //   { new: true }
-        // );
     },
   },
 };

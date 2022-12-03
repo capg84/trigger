@@ -36,3 +36,15 @@
       transform: rotate(360deg);
     }
   }
+
+  
+  footer {
+    background-color: rgba(113, 140, 123, 0);
+  } 
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    background-color:rgba(113, 140, 123, 0);
+  }

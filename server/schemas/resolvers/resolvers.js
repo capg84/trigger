@@ -72,10 +72,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    aboutMe: async (parent, { id, description, city, country }) => {
+    aboutMe: async (parent, { description, city, country }, context) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
-          { _id: id }, 
+          { _id: context.user._id }, 
           { description },
           { city },
           { country },

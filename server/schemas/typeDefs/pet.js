@@ -1,5 +1,5 @@
 const { gql } = require("apollo-server-express");
-export default gql`
+module.exports = gql`
   type Pet {
     _id: ID
     name: String!

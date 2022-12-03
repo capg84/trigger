@@ -1,5 +1,5 @@
 const { gql } = require("apollo-server-express");
-export default gql`
+module.exports = gql`
   type Message {
     _id: ID!
     messageText: String!

@@ -1,24 +1,35 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import Header from "./Components/header"
-import Footer from './Components/footer';
-import PageContainer from './Components/pageContainer';
-import './Assets/Styles/instruction.css';
-
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import Header from "./Components/header";
+import Footer from "./Components/footer";
+import Home from "./Pages/home";
+import About from "./Pages/about";
+import Advice from "./Pages/Advice";
+import Search from "./Pages/rehomePet";
+import Contact from "./Pages/contact";
+import Dashboard from "./Pages/myTrigger";
+import Login from "./Components/login";
+import Signup from "./Components/signup";
+import "./Assets/Styles/instruction.css";
+import Navigation from "./Components/navigation";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -31,11 +42,25 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Router>
         <div>
-        <Header />
-        <PageContainer />
-        <Footer />
+          <Header />
+          <Navigation />
+          <div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/advice" element={<Advice />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
+      </Router>
     </ApolloProvider>
   );
 }

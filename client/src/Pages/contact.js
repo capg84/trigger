@@ -11,9 +11,6 @@ export default function Contact() {
         </a>
         <p>/ CONTACT</p>
       </div>
-    return (
-        <main>
-
             <div>
                 <h3 style={{ color: "#AD7940", padding: "2vh" }}>HOME / CONTACT</h3>
             </div>

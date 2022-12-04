@@ -6,8 +6,6 @@ import Form from 'react-bootstrap/Form';
 
 
 function CreatePet() {
-
-
  
   return (
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "100px",
@@ -38,7 +36,7 @@ function CreatePet() {
         <Button style={{   backgroundColor: "#9CCBC3", color: "#f2faf5", fontSize: "20px", marginLeft:"1vh", marginBottom:"1vh"}}
         variant="primary" type="btn">UPLOAD IMAGE</Button>
       </Form.Group> 
-
+d
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "20px" }}>DESCRIPTION:</Form.Label>
         <textarea style={{color: "#AD7940", fontSize: "20px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 

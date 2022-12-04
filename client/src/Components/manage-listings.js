@@ -14,7 +14,7 @@ const ManageListing = () => {
       </article>
       <div className="listing-buttons">
           <button className="edit-btn" id="edit">EDIT</button>
-          <button className="edit-btn" id="delete">DELETE</button>
+          <button className="del-btn" id="delete">DELETE</button>
       </div>
     </div>
   );

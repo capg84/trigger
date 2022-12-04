@@ -12,7 +12,7 @@ export default function Header() {
                     {/* <img src="../Assets/Images/trigger.png" alt="trigger" width="10vh" height="10vh"></img> */}
                 </div>
 
-                <div style={{ width: "90vh"}}></div>
+                <div style={{ width: "80vh"}}></div>
 
                 <div style={{ margin: "auto" , paddingTop:"10px", }}>
                     <input style={{ height: "5vh", width: "35vh" }} placeholder="Search for a pet" className="mb-3 rounded" />

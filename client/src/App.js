@@ -7,13 +7,14 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from "./Components/header"
 import Footer from './Components/footer';
-import Navbar from './Components/navigation';
 
 import Navigation from './Components/navigation';
-import Contact from './Pages/contact'
+import PageContainer from './Components/pageContainer';
+
 
 import InstructionProvider from './Utils/instruction';
 import Instruction from './Components/instruction';
+
 
 
 import './Assets/Styles/instruction.css';
@@ -40,25 +41,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
         <div>
         <Header />
-        <Navigation />
-        <Contact />
+        <PageContainer />
         <InstructionProvider>
           <Instruction />
         </InstructionProvider>
-        <div>
-        <Routes>
-          {/* <Route path="/" element ={<Home />}/> */}
-        </Routes>
-        </div>
         <Footer />
         </div>
-      </Router>
     </ApolloProvider>
   );
 }
 
 export default App;
-

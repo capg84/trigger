@@ -15,7 +15,7 @@ export default function Header() {
                 <div style={{ width: "80vh"}}></div>
 
                 <div style={{ margin: "auto" , paddingTop:"10px", }}>
-                    <input style={{ height: "5vh", width: "35vh" }} placeholder="Search for a pet" className="mb-3 rounded" />
+                    <input style={{ height: "5vh", width: "35vh" }} placeholder="SEARCH FOR A PET" className="mb-3 rounded" />
                     <button className=" rounded ms-1 btn" style={{ height: "5vh", color: "#f2faf5", backgroundColor: "#718C7B" }}>FIND A PET</button>
                     <button style={{ color: "#f2faf5", backgroundColor: "#AD7940", height: "5vh" }} className="mx-5 rounded btn">DONATE NOW</button>
                 </div>

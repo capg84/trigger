@@ -80,11 +80,11 @@
 
 .single-user {
     padding: 20px;
-    width: 100%;
+    width: 200px;
 }
 
 .single-user:hover {
-    background-color: green;
+    background-color: #9CCBC3;
 }
 
 .username-chat, .date-created {
@@ -100,8 +100,23 @@
 .message-container {
     padding: 20px;
     background-color: #f7f5ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #message {
-    width: 100%;
+    width: 85%;
+}
+
+#send-btn  {
+    margin-left: 15px;
+    padding: 2px 15px;
+}
+
+/* UPDATE ACCOUNT DETAILS FORM STYLING */
+
+.formContainer {
+    margin: 0 40px;
+    padding: 40px 0;
 }

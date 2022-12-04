@@ -7,29 +7,31 @@ const Messages = () => {
         <div className="single-user">
           <p>Username</p>
         </div>
-        <div>
+        <div className="single-user">
           <p>Username</p>
         </div>
-        <div>
+        <div className="single-user">
           <p>Username</p>
         </div>
-        <div>
+        <div className="single-user">
           <p>Username</p>
         </div>
       </div>
       <div className="message-container">
-        <div className="username-chat">
-          <p>Pet owner username</p>
-        </div>
-        <div className="user-message">
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam accusantium
-            doloremque laudantium, totam rem aperiam.
-          </p>
-        </div>
-        <div className="date-created">
-          <p>Date created here</p>
+        <div className="messages">
+          <div className="username-chat">
+            <p>Pet owner username</p>
+          </div>
+          <div className="user-message">
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam accusantium
+              doloremque laudantium, totam rem aperiam.
+            </p>
+          </div>
+          <div className="date-created">
+            <p>Date created here</p>
+          </div>
         </div>
         <div className="send-message">
           <input type="text" id="message" name="message" />

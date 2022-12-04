@@ -7,10 +7,14 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from "./Components/header"
 import Footer from './Components/footer';
+
 import Navigation from './Components/navigation';
 
+import InstructionProvider from './Utils/instruction';
+import Instruction from './Components/instruction';
 
 
+import './Assets/Styles/instruction.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,7 +40,13 @@ function App() {
     <ApolloProvider client={client}>
       <div>
         <Header />
+
         <Navigation />
+
+
+        <InstructionProvider>
+          <Instruction />
+        </InstructionProvider>
 
         <Footer />
 

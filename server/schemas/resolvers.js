@@ -39,10 +39,6 @@ const resolvers = {
       return Pet.findOne({ _id: petId })
       .populate('owner')
       .populate('comments')
-      .populate({
-        path: 'comments',
-        populate: 'commenter'
-      });
     },
     getmessages: async (parent, { from }, context) => {
       if (!context.user) {
@@ -133,7 +129,7 @@ const resolvers = {
     },
     addPet: async (parent, { ...petInput }, context) => {
         if (context.user) {
-          const user = await User.findOne({_id: context.user._id})
+          const user = await User.findOne({_id: context.user._id});
           const petInfo = await Pet.create({
             ...petInput,
             owner: user

@@ -5,6 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 import Header from "./Components/header"
 import Footer from './Components/footer';
 import PageContainer from './Components/pageContainer';
+import Dashboard from './Pages/myTrigger';
 import './Assets/Styles/instruction.css';
 
 const httpLink = createHttpLink({
@@ -32,6 +33,7 @@ function App() {
         <div>
         <Header />
         <PageContainer />
+        <Dashboard />
         <Footer />
         </div>
     </ApolloProvider>

@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 function CreatePet() {
  
   return (
+    <div className="formContainer">
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "100px",
     marginBottom: "150px", padding: "2vh" }}>
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
@@ -63,6 +64,7 @@ d
         CREATE PET
       </Button>
     </Form>
+    </div>
   );
 }
 
@@ -82,4 +84,4 @@ export default CreatePet;
 // <Form.Text className="text-muted">
 //   required
 // </Form.Text>
-// </Form.Group> 
+// </Form.Group>

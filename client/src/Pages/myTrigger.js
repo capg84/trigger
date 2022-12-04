@@ -6,6 +6,7 @@ import Favourites from "../Components/favourites";
 import Messages from "../Components/messages";
 import Account from "../Components/user-account";
 import DashboardNav from "../Components/dashboard-nav";
+import '../Assets/Styles/dashboard.css';
 
 const Dashboard = () => {
   const [currentComponent, setCurrentComponent] = useState("Create");
@@ -35,11 +36,15 @@ const Dashboard = () => {
         </a>
         <p>/ MY TRIGGER</p>
       </div>
+      <div className="dashboard-container">
       <DashboardNav
         currentComponent={currentComponent}
         handleComponentChange={handleComponentChange}
       />
+      <div className="dashboard-component">
       {renderComponent()}
+      </div>
+      </div>
     </div>
   );
 };

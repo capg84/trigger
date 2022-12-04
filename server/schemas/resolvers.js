@@ -154,8 +154,10 @@ const resolvers = {
           );
         }
     },
-    removePet: async (parent, { petId }) => {
+    removePet: async (parent, { petId }, context) => {
+      if (context.user) {
         return Pet.findOneAndDelete({ _id: petId });
+      }
     },
     addComment: async (parent, { petId, commentId }) => {
         return Pet.findOneAndUpdate(

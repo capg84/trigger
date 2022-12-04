@@ -7,8 +7,9 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from "./Components/header"
 import Footer from './Components/footer';
+import Contact from "./Pages/contact"
+// import Navigation from "./Components/navigation"
 
-import Navigation from './Components/navigation';
 import PageContainer from './Components/pageContainer';
 
 

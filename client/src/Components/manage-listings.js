@@ -1,5 +1,5 @@
-import '../Assets/Styles/dashboard.css';
-import { useParams, Link } from 'react-router-dom';
+import "../Assets/Styles/dashboard.css";
+import { useParams, Link } from "react-router-dom";
 
 const ManageListing = () => {
   return (
@@ -17,14 +17,16 @@ const ManageListing = () => {
           </div>
         </article>
         <div className="listing-buttons">
-        <Link to="/edit/:id">
-          <button className="edit-btn" id="edit">
-            EDIT
-          </button>
+          <Link to="/edit/:id">
+            <button className="edit-btn" id="edit">
+              EDIT
+            </button>
           </Link>
+          <Link to="/delete/:id">
           <button className="del-btn" id="delete">
             DELETE
           </button>
+          </Link>
         </div>
       </div>
 
@@ -42,7 +44,7 @@ const ManageListing = () => {
         </article>
         <div className="listing-buttons">
           <button className="edit-btn" id="edit">
-             EDIT 
+            EDIT
           </button>
           <button className="del-btn" id="delete">
             DELETE

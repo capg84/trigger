@@ -82,7 +82,7 @@ const typeDefs = gql`
     addUser(fullname: String!, email: String!, password: String!): Auth
     savePet(pet: PetInput!): User
     addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User
-    updatePet(petId: ID!, input: PetInput!): Pet
+    updatePet(petId: ID!, name: String!, age: String!, gender: String!, species: String!, description: String!, city: String, country: String, breed: String, medicalHistory: String, colour: String, image: String): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet

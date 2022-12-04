@@ -7,10 +7,10 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from "./Components/header"
 import Footer from './Components/footer';
-import Navbar from './Components/navigation';
 
 import Navigation from './Components/navigation';
-import Home from './Pages/home'
+import PageContainer from './Components/pageContainer';
+
 
 import './Assets/Styles/instruction.css';
 
@@ -36,21 +36,13 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
         <div>
         <Header />
-        <Navigation />
-        <div>
-        <Routes>
-          <Route path="/" element ={<Home />}/>
-        </Routes>
-        </div>
+        <PageContainer />
         <Footer />
         </div>
-      </Router>
     </ApolloProvider>
   );
 }
 
 export default App;
-

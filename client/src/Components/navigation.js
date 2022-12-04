@@ -8,16 +8,16 @@ function Navigation({ currentPage, handlePageChange }) {
       <div  className="" id="navbarExample01">
         <ul style={{ fontSize: "3vh",  }} className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item active ms-5 ">
-            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>ABOUT</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/about">ABOUT</a>
           </li>
           <li className="nav-item ms-5">
-            <a style={{ color: "#f2faf5" }} className="nav-link" href="#Search" onClick={() => handlePageChange('Search')}>REHOME A PET</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" href="/search">REHOME A PET</a>
           </li>
           <li className="nav-item ms-5 ">
-            <a style={{ color: "#f2faf5" }} className="nav-link" href="#Advice" onClick={() => handlePageChange('Advice')}>PET CARE ADVICE</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" href="/advice">PET CARE ADVICE</a>
           </li>
           <li className="nav-item ms-5">
-            <a style={{ color: "#f2faf5" }} className="nav-link" href="#Contact" onClick={() => handlePageChange('Contact')}>CONTACT</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" href="/contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -25,14 +25,14 @@ function Navigation({ currentPage, handlePageChange }) {
       <div  style={{ marginRight: "10vh" }}>
       <ul style={{ fontSize: "3vh" }} className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item active ms-2">
-            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="#Login" onClick={() => handlePageChange('Login')}>LOGIN</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/login">LOGIN</a>
           </li>
           <li className="nav-item active ms-2 me-2">
-            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="#Signup" onClick={() => handlePageChange('Signup')}>SIGNUP</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/signup">SIGNUP</a>
           </li>
           <h4 style={{ fontSize: "5vh" }} className="nav-item mt-1">|</h4>
           <li className="nav-item ms-2">
-            <a style={{ color: "#f2faf5" }} className="nav-link " href="#Dashboard" onClick={() => handlePageChange('Dashboard')}>MY TRIGGER</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link " href="/dashboard">MY TRIGGER</a>
           </li>
         </ul>
       </div>

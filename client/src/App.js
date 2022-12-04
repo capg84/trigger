@@ -7,7 +7,8 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from "./Components/header"
 import Footer from './Components/footer';
-
+import InstructionProvider from './Utils/instruction';
+import Instruction from './Components/instruction';
 
 
 
@@ -35,7 +36,9 @@ function App() {
     <ApolloProvider client={client}>
       <div>
         <Header />
-
+        <InstructionProvider>
+          <Instruction />
+        </InstructionProvider>
         <Footer />
 
       </div>

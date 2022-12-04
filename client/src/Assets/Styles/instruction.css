@@ -1,0 +1,43 @@
+h1 {
+    background: white;
+    color: rgb(173, 121,64);
+    font-family: farsan;
+    text-align: center;
+    padding: 5px;
+}
+
+.button {
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20px
+}
+#button {
+    border-radius: 10px;
+    border: 0;
+    font-family: farsan;
+    color: rgb(173, 121,64);
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(195, 150, 95);
+    padding: 20px;
+}
+
+.instructionHeader {
+    background: white;
+    color: rgb(173, 121,64);
+    font-family: farsan;
+    text-align: center;
+    padding: 5;
+  }
+
+.instructionButtonCont {
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20;
+  }

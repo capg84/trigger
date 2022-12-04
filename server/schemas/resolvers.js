@@ -29,11 +29,14 @@ const resolvers = {
         });
     },
     pets: async () => {
-      return Pet.find().populate('userLikes').sort({dateCreated: -1});
+      return Pet.find({})
+      .populate('userLikes')
+      .populate('owner')
+      .sort({dateCreated: -1});
     },
   
     pet: async (parent, { petId }) => {
-      return Pet.findOne({ _id: petId });
+      return Pet.findOne({ _id: petId }).populate('owner');
     },
     getmessages: async (parent, { from }, context) => {
       if (!context.user) {
@@ -133,7 +136,8 @@ const resolvers = {
             city,
             country,
             medicalHistory,
-            image
+            image,
+            owner: user
           })
           user.userPets.push(petInfo._id);
           user.save();

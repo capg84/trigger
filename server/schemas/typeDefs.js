@@ -28,6 +28,7 @@ const typeDefs = gql`
     colour: String
     image: String!
     dateCreated: String
+    owner: User
     userLikes: [User]
     userlikeCount: Int
     commentCount: Int

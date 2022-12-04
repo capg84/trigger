@@ -50,6 +50,10 @@ const petSchema = new Schema(
       default: Date.now,
       get: (date) => moment(date).format('DD MMM YYYY [at] hh:mm a'), 
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
     userLikes: [
       {
         type: Schema.Types.ObjectId,

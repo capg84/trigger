@@ -10,6 +10,7 @@ import Footer from './Components/footer';
 import Navbar from './Components/navigation';
 
 import Navigation from './Components/navigation';
+import Contact from './Pages/contact'
 
 import InstructionProvider from './Utils/instruction';
 import Instruction from './Components/instruction';
@@ -43,12 +44,13 @@ function App() {
         <div>
         <Header />
         <Navigation />
+        <Contact />
         <InstructionProvider>
           <Instruction />
         </InstructionProvider>
         <div>
         <Routes>
-          <Route path="/" element ={<Home />}/>
+          {/* <Route path="/" element ={<Home />}/> */}
         </Routes>
         </div>
         <Footer />

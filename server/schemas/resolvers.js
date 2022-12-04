@@ -159,12 +159,12 @@ const resolvers = {
         return Pet.findOneAndDelete({ _id: petId });
       }
     },
-    addComment: async (parent, { petId, commentId }, context) => {
+    addComment: async (parent, { petId, commentBody }, context) => {
       if (context.user) {
         return Pet.findOneAndUpdate(
           { _id: petId },
-          { $push: { comments: { _id: commentId } } },
-          { new: true }
+          { $addToSet: { comments: { commentBody } } },
+          { new: true, runValidators: true }
         );
       }
     },

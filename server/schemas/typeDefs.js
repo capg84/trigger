@@ -36,7 +36,7 @@ const typeDefs = gql`
   }
   type Comment {
     _id: ID
-    userId: User
+    commenter: User
     commentBody: String!
     dateCreated: String
   }

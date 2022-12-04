@@ -2,12 +2,15 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-
 export default function Contact() {
-
-    return (
-        <main>
-
+  return (
+    <main>
+      <div className="currentPageIdentifier">
+        <a className="item-link" href="/">
+          HOME
+        </a>
+        <p>/ CONTACT</p>
+      </div>
             <div>
                 <h3 style={{ color: "#AD7940", padding: "2vh" }}>HOME / CONTACT</h3>
             </div>
@@ -42,7 +45,5 @@ export default function Contact() {
                 </Form>
             </section>
         </main>
-
-
-    )
+  );
 }

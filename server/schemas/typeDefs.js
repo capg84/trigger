@@ -41,18 +41,18 @@ const typeDefs = gql`
     dateCreated: String
   }
   input PetInput {
-    _id: ID
-    name: String!
-    age: String!
-    gender: String!
-    species: String!
-    description: String!
-    city: String!
-    country: String!
+    _id: ID!
+    name: String
+    age: String
+    gender: String
+    species: String
+    description: String
+    city: String
+    country: String
     breed: String
-    medicalHistory: String!
+    medicalHistory: String
     colour: String
-    image: String!
+    image: String
   }
   type Message {
     _id: ID!
@@ -80,7 +80,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth
-    savePet(pet: PetInput!): User
+    savePet(petId: ID!): User
     addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User
     updatePet(petId: ID!, name: String, age: String, gender: String, species: String, description: String, city: String, country: String, breed: String, medicalHistory: String, colour: String, image: String): Pet
     removePet(petId: ID!): Pet

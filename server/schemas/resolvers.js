@@ -110,11 +110,12 @@ const resolvers = {
           { new: true }
         );
     },
-    savePet: async (parent, { pet }, context) => {
+    savePet: async (parent, { petId }, context) => {
       if (context.user) {
+        const pet = await Pet.findOne({_id: petId})
         const user = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { likedPets: pet } },
+          { $addToSet: { likedPets: petId } },
           { new: true }
         );
         pet.userLikes.push(user._id);

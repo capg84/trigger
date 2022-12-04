@@ -36,7 +36,13 @@ const resolvers = {
     },
   
     pet: async (parent, { petId }) => {
-      return Pet.findOne({ _id: petId }).populate('owner');
+      return Pet.findOne({ _id: petId })
+      .populate('owner')
+      .populate('comments')
+      .populate({
+        path: 'comments',
+        populate: 'commenter'
+      });
     },
     getmessages: async (parent, { from }, context) => {
       if (!context.user) {
@@ -124,19 +130,11 @@ const resolvers = {
       );
       return updatedUser;
     },
-    addPet: async (parent, { name, age, gender, species, description, city, country, medicalHistory, image }, context) => {
+    addPet: async (parent, { ...petInput }, context) => {
         if (context.user) {
           const user = await User.findOne({_id: context.user._id})
           const petInfo = await Pet.create({
-            name,
-            age,
-            gender,
-            species,
-            description,
-            city,
-            country,
-            medicalHistory,
-            image,
+            ...petInput,
             owner: user
           })
           user.userPets.push(petInfo._id);
@@ -144,14 +142,16 @@ const resolvers = {
           return petInfo;
         }
     },
-    updatePet: async (parent, { petId, input }) => {
+    updatePet: async (parent, { petId, ...input }, context) => {
         // Find and update the matching Pet using the destructured args
-        return await Pet.findOneAndUpdate(
-          { _id: petId }, 
-          { ...input },
-          // Return the newly updated object instead of the original
-          { new: true }
-        );
+        if(context.user) {
+          return await Pet.findOneAndUpdate(
+            { _id: petId }, 
+            { ...input },
+            // Return the newly updated object instead of the original
+            { new: true }
+          );
+        }
     },
     removePet: async (parent, { petId }) => {
         return Pet.findOneAndDelete({ _id: petId });

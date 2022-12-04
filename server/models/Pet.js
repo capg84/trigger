@@ -61,7 +61,7 @@ const petSchema = new Schema(
       },
      ],
     comments: [{
-      userId: {
+      commenter: {
         type: Schema.Types.ObjectId,
         ref: "User",
       },

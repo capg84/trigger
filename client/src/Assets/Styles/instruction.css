@@ -1,21 +1,44 @@
-h1 {
+/* h1 {
     background: white;
     color: rgb(173, 121,64);
-    font-family: farsan;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;;
     text-align: center;
     padding: 5px;
-}
+} */
 
-.button {
+.button{
     display: flex;
     background: rgb(195, 150, 95);
     justify-content: center;
     padding: 20px
 }
-#button {
+
+.button{
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20px
+}
+
+#button-rehome {
     border-radius: 10px;
-    border: 0;
-    font-family: farsan;
+    border: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    background: rgb(173, 121, 64);
+    color: white;
+}
+
+#button-adopt {
+    border-radius: 10px;
+    border: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    background: white;
     color: rgb(173, 121,64);
 }
 
@@ -27,17 +50,30 @@ h1 {
     padding: 20px;
 }
 
+div .card {
+    background: rgb(173, 121, 64);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    border-radius: 10px;
+    border: 0px;
+    width: 200px;
+}
+
 .instructionHeader {
     background: white;
     color: rgb(173, 121,64);
-    font-family: farsan;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;;
     text-align: center;
-    padding: 5;
+    padding: 5px;
   }
 
-.instructionButtonCont {
+/* .instructionButtonCont {
     display: flex;
     background: rgb(195, 150, 95);
     justify-content: center;
-    padding: 20;
-  }
+    padding: 20px;
+  } */

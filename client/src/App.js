@@ -10,7 +10,7 @@ import Footer from './Components/footer';
 import InstructionProvider from './Utils/instruction';
 import Instruction from './Components/instruction';
 
-
+import './Assets/Styles/instruction.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',

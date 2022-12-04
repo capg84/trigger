@@ -7,27 +7,14 @@ export default function Instruction() {
   // Pluck values from our ThemeContext by invoking our useTheme hook
   const { rehomeInstruction, toggleInstruction  } = useInstruction();
 
-  // Object containing CSS gradient for darkTheme and non-darkTheme
-
-
-  // const instructionStyles = {
-  //   background: rehomeInstruction
-  //     ? '-webkit-linear-gradient(top left, #150C17, #535353)'
-  //     : '-webkit-linear-gradient(bottom, #FFFFFF, #EDBAAB)',
-  //   padding: '10rem',
-  //   margin: '10rem',
-  //   borderRadius: '30px',
-  //   color: darkTheme ? '#FAFAFA' : '#363537',
-  // }
-
   return (
     <div>
     { rehomeInstruction ? (
       <div>
       <h1 className="instructionHeader">HOW DOES TRIGGER WORK?</h1>
 
-      <div className="instructionButtonCont">
-          <button id="button" onClick={toggleInstruction} className="btn" type="button">
+      <div className="button">
+          <button id="button-rehome" onClick={toggleInstruction} className="btn" type="button">
           Rehoming
           </button>
       </div>
@@ -38,7 +25,7 @@ export default function Instruction() {
                   <div className="card h-100">
                       <img src="..." className="card-img-top" alt="..." />
                       <div className="card-body">
-                          <h5 className="card-title">1. SEARCH OUR ADVERTS test test test test toggleInstruction</h5>
+                          <h5 className="card-title">1. SEARCH OUR ADVERTS</h5>
                           <p className="card-text"></p>
                       </div>
                   </div>
@@ -66,11 +53,11 @@ export default function Instruction() {
     </div>
       ) : (
         <div>
-        <h1>HOW DOES TRIGGER WORK?</h1>
+        <h1 className="instructionHeader">HOW DOES TRIGGER WORK?</h1>
 
         <div className="button">
-            <button id="button" onClick={toggleInstruction} className="btn" type="button">
-            Rehoming
+            <button id="button-adopt" onClick={toggleInstruction} className="btn" type="button">
+            Adopting
             </button>
         </div>
 
@@ -112,3 +99,6 @@ export default function Instruction() {
     </div>
   );
 };
+
+
+// 16 <div className="instructionButtonCont">

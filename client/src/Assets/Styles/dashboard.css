@@ -47,19 +47,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
     margin: 30px 15px;
+    padding-top: 15px;
+}
+
+.owner-name {
+    color: white;
 }
 
 .listing-item {
     display: flex;
     flex-direction: row;
     color: white;
-    margin-top: 15px;
 }
 
-.edit-btn, .del-btn {
-    padding: 2px 15px;
+.edit-btn, .del-btn, .remove-fav-btn, .more-info-btn {
+    padding: 2px 20px;
     border-radius: 8px;
     margin: 10px;
 }

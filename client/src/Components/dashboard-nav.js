@@ -1,5 +1,5 @@
 const DashboardNav = ({ currentComponent, handleComponentChange }) => {
-    return (  
+    return (
         <nav className="dashboard-nav">
             <div className="links">
                 <a className="item-link" href="#Create" onClick={() => handleComponentChange('Create')}>CREATE A LISTING</a>

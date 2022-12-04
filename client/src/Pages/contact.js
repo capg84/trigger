@@ -19,25 +19,25 @@ export default function Contact() {
                 }}>
 
                     <Form.Group >
-                        <Form.Label className="mt-3" style={{ fontSize: "30px", marginLeft: "10%", color: "#f2faf5" }} >NAME:</Form.Label>
+                        <Form.Label className="mt-3" style={{ fontSize: "20px", marginLeft: "10%", color: "#f2faf5" }} >NAME:</Form.Label>
                         <Form.Control placeholder='ENTER NAME' type="name" className="input"
-                            style={{ width: "80%", marginLeft: "10%", padding: "1vh", color: "#AD7940", fontSize: "25px" }} />
+                            style={{ width: "80%", marginLeft: "10%", padding: "1vh", color: "#AD7940", fontSize: "20px" }} />
 
                     </Form.Group>
 
                     <Form.Group >
-                        <Form.Label className="mt-3" style={{ fontSize: "30px", marginLeft: "10%", color: "#f2faf5" }}  >EMAIL ADDRESS:</Form.Label>
+                        <Form.Label className="mt-3" style={{ fontSize: "20px", marginLeft: "10%", color: "#f2faf5" }}  >EMAIL ADDRESS:</Form.Label>
                         <Form.Control placeholder='ENTER EMAIL' type="email" className="input"
-                            style={{ width: "80%", marginLeft: "10%", padding: "1vh", color: "#AD7940", fontSize: "25px" }} />
+                            style={{ width: "80%", marginLeft: "10%", padding: "1vh", color: "#AD7940", fontSize: "20px" }} />
                     </Form.Group>
 
                     <Form.Group >
-                        <Form.Label style={{ fontSize: "30px", marginLeft: "10%", color: "#f2faf5" }} className="mt-3" >MESSAGE:</Form.Label>
+                        <Form.Label style={{ fontSize: "20px", marginLeft: "10%", color: "#f2faf5" }} className="mt-3" >MESSAGE:</Form.Label>
                         <textarea className="form-control input" placeholder='ENTER MESSAGE' type="message" 
-                            style={{ width: "80%", marginLeft: "10%", height: "20vh", padding: "1vh", color: "#AD7940", fontSize: "25px" }} />
+                            style={{ width: "80%", marginLeft: "10%", height: "20vh", padding: "1vh", color: "#AD7940", fontSize: "20px" }} />
                     </Form.Group>
                     <div style={{ textAlign: "center", margin: "2vh" }}>
-                        <Button style={{ backgroundColor: "#9CCBC3", color: "#f2faf5", width: "15vh", margin: "1vh", }} type="submit" className="btn">SEND</Button>
+                        <Button style={{ backgroundColor: "#9CCBC3", color: "#f2faf5", width: "15vh", margin: "1vh", fontSize: "20px" }} type="submit" className="btn">SEND</Button>
                     </div>
                 </Form>
             </section>

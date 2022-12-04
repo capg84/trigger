@@ -85,8 +85,21 @@ export const GET_COMMENTS = gql`
 
 `;
 
-export const GET_MESSAGES = gql`
-
+export const GET_MESSAGES = gql`{
+    query getmessages ($from: ID!){
+        getmessages (from: $_id) {
+            messageText
+            read
+            dateCreated
+            from {
+                _id
+            }
+            to {
+                _id
+            }
+        }
+    }
+}
 `;
 
 export const USER_PROFILES = gql`{
@@ -192,4 +205,44 @@ export const MY_PROFILE = gql`{
             }
         }
     }
+`;
+
+export const USER_LIKES = gql`{
+    query userLikes ($userLikes: ID!){
+        pets (userLikes: $userLikes) {
+            _id
+        }
+    }
+}
+`;
+
+export const PET = gql`{
+    query pet ($_id: ID!){
+        pets (_id: $_id) {
+            _id
+            name
+            age
+            gender
+            species
+            description
+            city
+            country
+            breed
+            medical history
+            colour
+            image
+            dateCreated
+            userLikes{
+                _id
+            }
+            comments {
+                userId {
+                    _id
+                }
+                commentBody
+                dateCreated
+            }
+        }
+    }
+}
 `;

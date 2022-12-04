@@ -159,19 +159,23 @@ const resolvers = {
         return Pet.findOneAndDelete({ _id: petId });
       }
     },
-    addComment: async (parent, { petId, commentId }) => {
+    addComment: async (parent, { petId, commentId }, context) => {
+      if (context.user) {
         return Pet.findOneAndUpdate(
           { _id: petId },
           { $push: { comments: { _id: commentId } } },
           { new: true }
         );
+      }
     },
-    removeComment: async (parent, { petId, commentId }) => {
+    removeComment: async (parent, { petId, commentId }, context) => {
+      if (context.user) {
         return Pet.findOneAndUpdate(
           { _id: petId },
           { $pull: { comments: { _id: commentId } } },
           { new: true }
         );
+      }
     },
     sendMessage: async (parent, { to, messageText }, context) => {
         if (context.user) {

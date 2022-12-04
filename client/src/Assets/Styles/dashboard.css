@@ -1,3 +1,23 @@
+.dashboard-container {
+    margin: 30px 45px;
+}
+
+.dashboard-nav {
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #f7f5ed;
+    border: 1px solid #73461f;
+}
+
 .item-link-nav {
-    margin: 10px;
+    text-decoration: none;
+    color: #73461f;
+    border: 1px solid #73461f;
+    padding: 10px 30px;
 }

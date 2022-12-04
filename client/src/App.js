@@ -10,10 +10,7 @@ import Footer from './Components/footer';
 import Navbar from './Components/navigation';
 
 import Navigation from './Components/navigation';
-
-import InstructionProvider from './Utils/instruction';
-import Instruction from './Components/instruction';
-
+import Home from './Pages/home'
 
 import './Assets/Styles/instruction.css';
 
@@ -43,9 +40,6 @@ function App() {
         <div>
         <Header />
         <Navigation />
-        <InstructionProvider>
-          <Instruction />
-        </InstructionProvider>
         <div>
         <Routes>
           <Route path="/" element ={<Home />}/>

@@ -17,7 +17,7 @@ function Login() {
 
       <Button style={{  width: "15vh", marginLeft: "45%", backgroundColor: "#9CCBC3", color: "#f2faf5", marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}} 
       variant="primary" type="submit">
-        Login
+        LOGIN
       </Button>
     </Form>
   );

@@ -7,6 +7,7 @@ import Footer from './Components/footer';
 import PageContainer from './Components/pageContainer';
 import './Assets/Styles/instruction.css';
 
+import CreateUser from "./Components/create-user"
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,6 +34,7 @@ function App() {
         <div>
         <Header />
         <PageContainer />
+        <CreateUser />
         <Footer />
         </div>
     </ApolloProvider>

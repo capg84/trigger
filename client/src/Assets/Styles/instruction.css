@@ -25,9 +25,7 @@
 #button-rehome {
     border-radius: 10px;
     border: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Patrick Hand', cursive;
     background: rgb(173, 121, 64);
     color: white;
 }
@@ -35,9 +33,7 @@
 #button-adopt {
     border-radius: 10px;
     border: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Patrick Hand', cursive;
     background: white;
     color: rgb(173, 121,64);
 }
@@ -53,9 +49,7 @@
 div .card {
     background: rgb(173, 121, 64);
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Patrick Hand', cursive;
     border-radius: 10px;
     border: 0px;
     width: 200px;
@@ -64,9 +58,7 @@ div .card {
 .instructionHeader {
     background: white;
     color: rgb(173, 121,64);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;;
+    font-family: 'Patrick Hand', cursive;
     text-align: center;
     padding: 5px;
   }

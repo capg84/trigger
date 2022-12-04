@@ -12,11 +12,6 @@ import Navigation from './Components/navigation';
 import PageContainer from './Components/pageContainer';
 
 
-import InstructionProvider from './Utils/instruction';
-import Instruction from './Components/instruction';
-
-
-
 import './Assets/Styles/instruction.css';
 
 const httpLink = createHttpLink({
@@ -44,9 +39,6 @@ function App() {
         <div>
         <Header />
         <PageContainer />
-        <InstructionProvider>
-          <Instruction />
-        </InstructionProvider>
         <Footer />
         </div>
     </ApolloProvider>

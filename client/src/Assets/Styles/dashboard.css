@@ -34,18 +34,28 @@
 
 /* MANAGE LISTINGS STYLING */
 
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .listings-container {
     background-color: rgb(173, 121, 64);
     border-radius: 10px;
-    width: 350px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
+    margin: 30px 15px;
 }
 
 .listing-item {
     display: flex;
     flex-direction: row;
+    color: white;
+    margin-top: 15px;
 }
 
 .edit-btn, .del-btn {

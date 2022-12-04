@@ -2,6 +2,10 @@
     margin: 30px 50px;
 }
 
+.dashboard-component {
+    background-color: #dbc0a9;
+}
+
 .dashboard-nav {
     margin-bottom: 20px;
 }

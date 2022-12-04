@@ -41,7 +41,9 @@ const Dashboard = () => {
         currentComponent={currentComponent}
         handleComponentChange={handleComponentChange}
       />
+      <div className="dashboard-component">
       {renderComponent()}
+      </div>
       </div>
     </div>
   );

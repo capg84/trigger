@@ -25,7 +25,7 @@ const typeDefs = gql`
     breed: String
     medicalHistory: String!
     colour: String
-    image: String
+    image: String!
     dateCreated: String
     userLikes: [User]
     userlikeCount: Int
@@ -50,8 +50,7 @@ const typeDefs = gql`
     breed: String
     medicalHistory: String!
     colour: String
-    image: String
-    dateCreated: String
+    image: String!
   }
   type Message {
     _id: ID!
@@ -71,6 +70,9 @@ const typeDefs = gql`
     pets: [Pet]!
     pet(petId: ID!): Pet
     getmessages(from: ID!): [Message]!
+    userPets: [Pet]
+    likedPets: [Pet]
+    userLikes: [User]
   }
   type Mutation {
     login(email: String!, password: String!): Auth

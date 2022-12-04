@@ -47,6 +47,15 @@ const resolvers = {
       .sort({dateCreated: -1})
   
       return messages;
+    },
+    userPets: async () => {
+      return Pet.find();
+    },
+    likedPets: async () => {
+      return Pet.find();
+    },
+    userLikes: async () => {
+      return User.find();
     }, 
   },
   Mutation: {
@@ -85,12 +94,14 @@ const resolvers = {
     },
     savePet: async (parent, { pet }, context) => {
       if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
+        const user = await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { likedPets: pet } },
           { new: true }
         );
-        return updatedUser;
+        pet.userLikes.push(user._id);
+        pet.save();
+        return user;
       }
     },
     removeLikedPet: async (parent, { petId }, context) => {

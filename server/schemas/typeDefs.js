@@ -8,6 +8,7 @@ const typeDefs = gql`
     country: String
     description: String
     likedCount: Int
+    petCount: Int
     messageCount: Int
     userPets: [Pet]
     likedPets: [Pet]
@@ -25,8 +26,9 @@ const typeDefs = gql`
     breed: String
     medicalHistory: String!
     colour: String
-    image: String
+    image: String!
     dateCreated: String
+    owner: User
     userLikes: [User]
     userlikeCount: Int
     commentCount: Int
@@ -34,24 +36,23 @@ const typeDefs = gql`
   }
   type Comment {
     _id: ID
-    userId: User
+    commenter: User
     commentBody: String!
     dateCreated: String
   }
   input PetInput {
-    _id: ID
-    name: String!
-    age: String!
-    gender: String!
-    species: String!
-    description: String!
-    city: String!
-    country: String!
+    _id: ID!
+    name: String
+    age: String
+    gender: String
+    species: String
+    description: String
+    city: String
+    country: String
     breed: String
-    medicalHistory: String!
+    medicalHistory: String
     colour: String
     image: String
-    dateCreated: String
   }
   type Message {
     _id: ID!
@@ -71,13 +72,17 @@ const typeDefs = gql`
     pets: [Pet]!
     pet(petId: ID!): Pet
     getmessages(from: ID!): [Message]!
+    userPets: [Pet]
+    likedPets: [Pet]
+    userLikes: [User]
+    messages: [Message]
   }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth
-    savePet(pet: PetInput!): User
-    addPet(input: PetInput!): User
-    updatePet(petId: ID!, input: PetInput!): Pet
+    savePet(petId: ID!): User
+    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User
+    updatePet(petId: ID!, name: String, age: String, gender: String, species: String, description: String, city: String, country: String, breed: String, medicalHistory: String, colour: String, image: String): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet

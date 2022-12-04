@@ -1,43 +1,54 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function createUser() {
+function CreateUser() {
   return (
-    <Form>
-      <Form.Group className="mb-3" >
-        <Form.Label>Full name</Form.Label>
-        <Form.Control type="species" placeholder="Enter full name" />
-        <Form.Text className="text-muted">
-          required
-        </Form.Text>
+    <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "100px",
+    marginBottom: "150px", padding: "2vh" }}>
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>FULL NAME:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="species" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group className="mb-3" >
-        <Form.Label>Description</Form.Label>
-        <Form.Control type="description" placeholder="Description" />
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>EMAIL:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="species" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group className="mb-3" >
-        <Form.Label>City</Form.Label>
-        <Form.Control type="city" placeholder="City" />
-        <Form.Text className="text-muted">
-          required
-        </Form.Text>
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" controlId="formBasicPassword" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>PASSWORD:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="colour" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group className="mb-3" >
-        <Form.Label>Country</Form.Label>
-        <Form.Control type="country" placeholder="Country" />
-        <Form.Text className="text-muted">
-          required
-        </Form.Text>
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>CITY:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
-        Create Pet
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>COUNTRY:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" />
+      </Form.Group>
+
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>LOOKING FOR:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="OPTIONAL" />
+      </Form.Group>
+
+      <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "20px" }}>DESCRIPTION:</Form.Label>
+        <textarea style={{color: "#AD7940", fontSize: "20px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
+        className="form-control input" />
+      </Form.Group>
+      
+
+      <Button style={{  width: "25vh", marginLeft: "42%", backgroundColor: "#9CCBC3", color: "#f2faf5", 
+      marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}}
+       variant="primary" type="submit">
+        CREATE PROFILE
       </Button>
     </Form>
   );
 }
 
-export default createUser;
+export default CreateUser;

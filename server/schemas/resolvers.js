@@ -22,14 +22,23 @@ const resolvers = {
         return await User.find({})
         .populate('userPets')
         .populate('likedPets')
-        .populate('messages');
+        .populate('messages')
+        .populate({
+          path: 'messages',
+          populate: 'from'
+        });
     },
     pets: async () => {
-      return Pet.find().populate('userLikes').sort({dateCreated: -1});
+      return Pet.find({})
+      .populate('userLikes')
+      .populate('owner')
+      .sort({dateCreated: -1});
     },
   
     pet: async (parent, { petId }) => {
-      return Pet.findOne({ _id: petId });
+      return Pet.findOne({ _id: petId })
+      .populate('owner')
+      .populate('comments')
     },
     getmessages: async (parent, { from }, context) => {
       if (!context.user) {
@@ -47,6 +56,20 @@ const resolvers = {
       .sort({dateCreated: -1})
   
       return messages;
+    },
+    userPets: async () => {
+      return Pet.find();
+    },
+    likedPets: async () => {
+      return Pet.find();
+    },
+    userLikes: async () => {
+      return User.find();
+    },
+    messages: async() => {
+      return Message.find({})
+      .populate("from")
+      .sort({dateCreated: -1});
     }, 
   },
   Mutation: {
@@ -83,14 +106,17 @@ const resolvers = {
           { new: true }
         );
     },
-    savePet: async (parent, { pet }, context) => {
+    savePet: async (parent, { petId }, context) => {
       if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
+        const pet = await Pet.findOne({_id: petId})
+        const user = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { likedPets: pet } },
+          { $addToSet: { likedPets: petId } },
           { new: true }
         );
-        return updatedUser;
+        pet.userLikes.push(user._id);
+        pet.save();
+        return user;
       }
     },
     removeLikedPet: async (parent, { petId }, context) => {
@@ -101,41 +127,51 @@ const resolvers = {
       );
       return updatedUser;
     },
-    addPet: async (parent, { input }, context) => {
+    addPet: async (parent, { ...petInput }, context) => {
         if (context.user) {
-            const updatedUser = await User.findOneAndUpdate(
-              { _id: context.user._id },
-              { $addToSet: { userPets: input } },
-              { new: true }
-            );
-            return updatedUser;
+          const user = await User.findOne({_id: context.user._id});
+          const petInfo = await Pet.create({
+            ...petInput,
+            owner: user
+          })
+          user.userPets.push(petInfo._id);
+          user.save();
+          return petInfo;
         }
     },
-    updatePet: async (parent, { petId, input }) => {
+    updatePet: async (parent, { petId, ...input }, context) => {
         // Find and update the matching Pet using the destructured args
-        return await Pet.findOneAndUpdate(
-          { _id: petId }, 
-          { ...input },
-          // Return the newly updated object instead of the original
-          { new: true }
-        );
+        if(context.user) {
+          return await Pet.findOneAndUpdate(
+            { _id: petId }, 
+            { ...input },
+            // Return the newly updated object instead of the original
+            { new: true }
+          );
+        }
     },
-    removePet: async (parent, { petId }) => {
+    removePet: async (parent, { petId }, context) => {
+      if (context.user) {
         return Pet.findOneAndDelete({ _id: petId });
+      }
     },
-    addComment: async (parent, { petId, commentId }) => {
+    addComment: async (parent, { petId, commentBody }, context) => {
+      if (context.user) {
         return Pet.findOneAndUpdate(
           { _id: petId },
-          { $push: { comments: { _id: commentId } } },
-          { new: true }
+          { $addToSet: { comments: { commentBody } } },
+          { new: true, runValidators: true }
         );
+      }
     },
-    removeComment: async (parent, { petId, commentId }) => {
+    removeComment: async (parent, { petId, commentId }, context) => {
+      if (context.user) {
         return Pet.findOneAndUpdate(
           { _id: petId },
           { $pull: { comments: { _id: commentId } } },
           { new: true }
         );
+      }
     },
     sendMessage: async (parent, { to, messageText }, context) => {
         if (context.user) {
@@ -153,6 +189,8 @@ const resolvers = {
                 to,
                 from: context.user._id
             })
+            recipient.messages.push(message._id);
+            recipient.save();
             return message;
         }
     },

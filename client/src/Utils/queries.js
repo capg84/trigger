@@ -87,7 +87,7 @@ export const GET_COMMENTS = gql`
 
 export const GET_MESSAGES = gql`{
     query getmessages ($from: ID!){
-        getmessages (from: $_id) {
+        getmessages (from: $from) {
             messageText
             read
             dateCreated

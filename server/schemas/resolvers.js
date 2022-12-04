@@ -22,7 +22,11 @@ const resolvers = {
         return await User.find({})
         .populate('userPets')
         .populate('likedPets')
-        .populate('messages');
+        .populate('messages')
+        .populate({
+          path: 'messages',
+          populate: 'from'
+        });
     },
     pets: async () => {
       return Pet.find().populate('userLikes').sort({dateCreated: -1});
@@ -56,6 +60,11 @@ const resolvers = {
     },
     userLikes: async () => {
       return User.find();
+    },
+    messages: async() => {
+      return Message.find({})
+      .populate("from")
+      .sort({dateCreated: -1});
     }, 
   },
   Mutation: {
@@ -112,14 +121,23 @@ const resolvers = {
       );
       return updatedUser;
     },
-    addPet: async (parent, { input }, context) => {
+    addPet: async (parent, { name, age, gender, species, description, city, country, medicalHistory, image }, context) => {
         if (context.user) {
-            const updatedUser = await User.findOneAndUpdate(
-              { _id: context.user._id },
-              { $addToSet: { userPets: input } },
-              { new: true }
-            );
-            return updatedUser;
+          const user = await User.findOne({_id: context.user._id})
+          const petInfo = await Pet.create({
+            name,
+            age,
+            gender,
+            species,
+            description,
+            city,
+            country,
+            medicalHistory,
+            image
+          })
+          user.userPets.push(petInfo._id);
+          user.save();
+          return petInfo;
         }
     },
     updatePet: async (parent, { petId, input }) => {

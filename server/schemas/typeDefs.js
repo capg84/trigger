@@ -8,6 +8,7 @@ const typeDefs = gql`
     country: String
     description: String
     likedCount: Int
+    petCount: Int
     messageCount: Int
     userPets: [Pet]
     likedPets: [Pet]
@@ -73,12 +74,13 @@ const typeDefs = gql`
     userPets: [Pet]
     likedPets: [Pet]
     userLikes: [User]
+    messages: [Message]
   }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth
     savePet(pet: PetInput!): User
-    addPet(input: PetInput!): User
+    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User
     updatePet(petId: ID!, input: PetInput!): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User

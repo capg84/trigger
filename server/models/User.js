@@ -77,4 +77,8 @@ userSchema.virtual("messageCount").get(function () {
   return this.messages.length;
 });
 
+userSchema.virtual("petCount").get(function () {
+  return this.userPets.length;
+});
+
 module.exports = model("User", userSchema);

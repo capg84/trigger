@@ -31,7 +31,7 @@ const Dashboard = () => {
     <div>
       <div className="currentPageIdentifier">
         <a className="item-link" href="/">
-          HOME{" "}
+          HOME
         </a>
         <p>/ MY TRIGGER</p>
       </div>

@@ -1,11 +1,7 @@
-// import FileBase64 from 'react-file-base64';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import { useState, useMutation } from 'react'
 
-
-
-function CreatePet() {
+function EditListing() {
  
   return (
     <div className="formContainer">
@@ -68,20 +64,4 @@ function CreatePet() {
   );
 }
 
-export default CreatePet;
-
-
-// <Form.Group className="mb-3" >
-// <Form.Label>Upload image of your pet</Form.Label>
-// <Form.Control type="file" placeholder="Image" accept="image/png image.jpg" />
-// // onchange={e => setItem({...item, title: e.taret.value })}/>
-// // <FileBase64
-// // multiple={ false }
-// // onDone={ ({base64}) => setItem({...item, image: base64 }) } />
-// <Button variant="primary" type="btn">
-// Choose image
-// </Button>
-// <Form.Text className="text-muted">
-//   required
-// </Form.Text>
-// </Form.Group>
+export default EditListing;

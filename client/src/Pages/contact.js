@@ -2,9 +2,15 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-
 export default function Contact() {
-
+  return (
+    <main>
+      <div className="currentPageIdentifier">
+        <a className="item-link" href="/">
+          HOME
+        </a>
+        <p>/ CONTACT</p>
+      </div>
     return (
         <main>
 
@@ -42,7 +48,5 @@ export default function Contact() {
                 </Form>
             </section>
         </main>
-
-
-    )
+  );
 }

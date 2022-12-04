@@ -2,17 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-// 
-
-
 import Header from "./Components/header"
 import Footer from './Components/footer';
-import Contact from "./Pages/contact"
-// import Navigation from "./Components/navigation"
-
 import PageContainer from './Components/pageContainer';
-
-
 import './Assets/Styles/instruction.css';
 
 const httpLink = createHttpLink({

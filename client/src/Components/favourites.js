@@ -1,3 +1,5 @@
+import '../Assets/Styles/dashboard.css';
+
 const Favourites = () => {
   return (
     <div className="outer-container">

@@ -68,3 +68,40 @@
 }
 
 /* MY MESSAGES STYLING */
+
+.message-outer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-container {
+
+}
+
+.single-user {
+    padding: 20px;
+    width: 100%;
+}
+
+.single-user:hover {
+    background-color: green;
+}
+
+.username-chat, .date-created {
+    color: rgb(173, 121, 64);
+}
+
+.user-message {
+    background-color: rgb(173, 121, 64);
+    color: #f7f5ed;
+    padding: 7px;
+}
+
+.message-container {
+    padding: 20px;
+    background-color: #f7f5ed;
+}
+
+#message {
+    width: 100%;
+}

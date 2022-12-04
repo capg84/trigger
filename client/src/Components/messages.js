@@ -1,10 +1,10 @@
-import '../Assets/Styles/dashboard.css';
+import "../Assets/Styles/dashboard.css";
 
 const Messages = () => {
   return (
     <div className="message-outer-container">
       <div className="user-container">
-        <div>
+        <div className="single-user">
           <p>Username</p>
         </div>
         <div>
@@ -31,10 +31,9 @@ const Messages = () => {
         <div className="date-created">
           <p>Date created here</p>
         </div>
-        <div className="message-button">
-          <button className="send-btn" id="send">
-            SEND
-          </button>
+        <div className="send-message">
+          <input type="text" id="message" name="message" />
+          <input type="submit" id="send-btn" value="SEND" />
         </div>
       </div>
     </div>

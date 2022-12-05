@@ -43,13 +43,11 @@ code {
   border-radius: 20px;
   color: #f2faf5;
   font-family: 'Patrick Hand', cursive;
+  text-justify: auto;
   
 
 }
 
-.font {
-  font-family: 'Patrick Hand', cursive;
-}
 
 .input {
   margin-bottom: 1vh;

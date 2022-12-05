@@ -1,14 +1,14 @@
 import '../Assets/Styles/dashboard.css';
 
-const DashboardNav = () => {
+const DashboardNav = ({ currentComponent, handleComponentChange }) => {
     return (
         <nav className="dashboard-nav">
             <div className="links">
-                <a className="item-link-nav" href="/dashboard/:userId/create">CREATE A LISTING</a>
-                <a className="item-link-nav" href="/dashboard/:userId/manage">MANAGE A LISTING</a>
-                <a className="item-link-nav" href="/dashboard/:userId/favourites">♡ FAVOURITES</a>
-                <a className="item-link-nav" href="/dashboard/:userId/messages">MY MESSAGES</a>
-                <a className="item-link-nav" href="/dashboard/:userId/account">UPDATE ACCOUNT DETAILS</a>
+                <a className="item-link-nav" href="/dashboard/:userId/create" onClick={() => handleComponentChange('Create')}>CREATE A LISTING</a>
+                <a className="item-link-nav" href="/dashboard/:userId/manage" onClick={() => handleComponentChange('Manage')}>MANAGE A LISTING</a>
+                <a className="item-link-nav" href="/dashboard/:userId/favourites" onClick={() => handleComponentChange('Favourites')}>♡ FAVOURITES</a>
+                <a className="item-link-nav" href="/dashboard/:userId/messages" onClick={() => handleComponentChange('Messages')}>MY MESSAGES</a>
+                <a className="item-link-nav" href="/dashboard/:userId/account" onClick={() => handleComponentChange('Account')}>UPDATE ACCOUNT DETAILS</a>
             </div>
         </nav>
     );

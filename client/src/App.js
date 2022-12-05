@@ -18,7 +18,7 @@ import Dashboard from "./Pages/myTrigger";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
 import Pet from "./Components/pet";
-import EditPet from "./Components/edit-listing";
+//import EditPet from "./Components/edit-listing";
 import CreateListing from "./Components/create-pet";
 import ManageListing from "./Components/manage-listings";
 import Favourites from "./Components/favourites";
@@ -26,7 +26,6 @@ import Messages from "./Components/messages";
 import Account from "./Components/user-account";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
-import Favourites from "./Components/favourites";
 
 
 
@@ -72,7 +71,7 @@ function App() {
               <Route path="/dashboard/:userId/favourites" element={<Favourites />} />
               <Route path="/dashboard/:userId/messages" element={<Messages />} />
               <Route path="/dashboard/:userId/account" element={<Account />} />
-              <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} />
+{/*               <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
             </Routes>
           </div>
           <Footer />

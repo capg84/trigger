@@ -1,7 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useMutation } from '@apollo/client';
+import { UPDATE_PET } from '../Utils/mutations';
 
-function EditListing() {
+function EditListing({ pet }) {
  
   return (
     <div className="formContainer">

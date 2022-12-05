@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import EditListing from "../Components/edit-listing";
 import { useMutation } from '@apollo/client';
-import { REMOVE_PET, UPDATE_PET } from '../Utils/mutations';
+import { REMOVE_PET } from '../Utils/mutations';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';

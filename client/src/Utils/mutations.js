@@ -23,12 +23,12 @@ export const CREATE_USER = gql`
     $country: String!, 
     $description: String!) {
     addUser(
-      fullname: $fullname!, 
-      email: $email!,
-      password: $password!,
-      city: $city!, 
-      country: $country!, 
-      description: $description!) {
+      fullname: $fullname, 
+      email: $email,
+      password: $password,
+      city: $city, 
+      country: $country, 
+      description: $description) {
       token
       user {
         _id
@@ -53,12 +53,12 @@ mutation createPet(
   $medicalHistory: String!
   $image: String! ) {
     createPet(
-      species: $species!, 
-      name: $name!, 
-      age: $age!,
-      gender: $gender!, 
-      description: $description!, 
-      city: $city!,
+      species: $species, 
+      name: $name, 
+      age: $age,
+      gender: $gender, 
+      description: $description, 
+      city: $city,
       country: $country,
       breed: $breed,
       colour: $colour,
@@ -75,7 +75,7 @@ mutation createPet(
 
 `;
 
-export const LIKE_PET = gql`
+/* export const LIKE_PET = gql`
 
 `;
 
@@ -94,7 +94,7 @@ export const UPDATE_USER = gql`
 export const UPDATE_PET = gql`
 
 `;
-
+ */
 
 
 

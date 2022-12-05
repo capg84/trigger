@@ -4,16 +4,11 @@ import Form from 'react-bootstrap/Form';
 
 export default function Contact() {
   return (
-    <main>
-      <div className="currentPageIdentifier">
-        <a className="item-link" href="/">
-          HOME
-        </a>
-        <p>/ CONTACT</p>
-      </div>
-            <div>
-                <h3 style={{ color: "#AD7940", padding: "2vh" }}>HOME / CONTACT</h3>
-            </div>
+            <main>
+             <div className="currentPageIdentifier">
+          <p style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }}>
+            <a style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }} className="item-link" href="/">HOME</a>/ CONTACT</p>
+        </div>
 
             <section className="contact" style={{ paddingTop: "75px" }} >
                 <Form style={{

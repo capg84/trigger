@@ -27,3 +27,36 @@ code {
   margin-bottom: 1vh;
 
 }
+
+.container-fluid {
+  background-color: #9CCBC3;
+  font-family: 'Patrick Hand', cursive;
+
+
+}
+
+.header {
+  width: 50%;
+  text-align: end;
+  margin: 1px;
+}
+
+
+.header-text {
+  color: #f2faf5;
+  font-size: 75px;
+  width: 48%;
+
+}
+
+.header-buttons {
+  margin: auto;
+  width: 48%;
+  text-align: end;
+ 
+
+}
+
+.header-search {
+  height: 5vh;
+}

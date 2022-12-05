@@ -17,19 +17,18 @@ import Account from "../Components/user-account";
 //import DashboardNav from "../Components/dashboard-nav";
 import "../Assets/Styles/dashboard.css";
 
+
 const Dashboard = () => {
   let { pathname } = useLocation();
   return (
     <div>
       <div className="currentPageIdentifier">
-        <a className="item-link" href="/">
-          HOME
-        </a>
-        <p>/ MY TRIGGER</p>
+        <p style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }}>
+          <a style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }} className="item-link" href="/">HOME</a>/ MY TRIGGER</p>
       </div>
       <div className="dashboard-container">
         <nav className="dashboard-nav">
-          <div className="links">
+          <div className="links" style={{ width:"100%", display: "flex", flexWrap: "wrap", textAlign: "center" }}>
 {/*           <Link to={`${pathname}/create`} className="item-link-nav">
                 CREATE A LISTING
             </Link> */}
@@ -83,5 +82,4 @@ export default Dashboard;
     }
     return <Account />;
   };
-
-  const handleComponentChange = (component) => setCurrentComponent(component); */
+*/

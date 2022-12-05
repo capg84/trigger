@@ -20,10 +20,10 @@ const ManageListing = ({ pets }) => {
 
   })
 
-  const handleRemovePet = async (pet) => {
+  const handleRemovePet = async (petId) => {
     try {
       const { data } = await removePet({
-        variables: { pet },
+        variables: { petId },
       });
     } catch (err) {
       console.error(err);
@@ -55,9 +55,9 @@ const ManageListing = ({ pets }) => {
         </div>
         <div style={{ textAlign: "center", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
           <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
-            variant="primary">EDIT</Button>
+            variant="primary" onClick={() => handleEditPet(pet._id)}>EDIT</Button>
           <Button style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
-          padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary">DELETE</Button>
+          padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary" onClick={() => handleRemovePet(pet._id)}>DELETE</Button>
         </div>
       </div>
     </Card>

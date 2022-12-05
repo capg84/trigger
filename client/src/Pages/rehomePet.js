@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
-const RehomePet = () => {
+const AllPets = () => {
   return (
 
     <main>
@@ -61,4 +61,4 @@ const RehomePet = () => {
   );
 };
 
-export default RehomePet;
+export default AllPets;

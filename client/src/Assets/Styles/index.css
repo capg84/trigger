@@ -23,6 +23,27 @@ code {
 
 }
 
+.about-main{
+  background-image: url("../Images/trigger.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 25px;
+}
+
+.about-trigger{
+  background-color: #AD7940;
+  opacity: 0.8;
+  width: 30%;
+  height: fit-content;
+  margin: 7vh;
+  padding: 3vh;
+  border-radius: 20px;
+  color: #f2faf5;
+
+}
+
 .input {
   margin-bottom: 1vh;
 

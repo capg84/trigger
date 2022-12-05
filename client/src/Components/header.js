@@ -9,7 +9,7 @@ export default function Header() {
     return (
 
         <header className='container-fluid'>
-            <div style={{ width: "100%", display: "flex", flexWrap:"wrap"}} >
+            <div style={{ width: "100%", display: "flex", flexWrap:"wrap", flexDirection:"row"}} >
                 <div className='header' >
                     <h1 className='header-text'>TRIGGER</h1>
                     {/* <img src="../Assets/Images/logo.png" alt="trigger" width="10vh" height="10vh"></img> */}

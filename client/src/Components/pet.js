@@ -23,8 +23,7 @@ const Pet = () => {
   if (!pet?.name) {
     return (
       <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        No pet found with this ID!
       </h4>
     );
   }

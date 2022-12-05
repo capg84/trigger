@@ -218,7 +218,7 @@ export const USER_LIKES = gql`{
 
 export const PET = gql`{
     query pet ($petId: ID!){
-        pets (petId: $petId) {
+        pet (petId: $petId) {
             _id
             name
             age

@@ -30,6 +30,9 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <nav className="dashboard-nav">
           <div className="links">
+{/*           <Link to={`${pathname}/create`} className="item-link-nav">
+                CREATE A LISTING
+            </Link> */}
             <Link to="/dashboard/:userId/create" className="item-link-nav">
                 CREATE A LISTING
             </Link>

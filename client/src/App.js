@@ -19,8 +19,14 @@ import Login from "./Components/login";
 import Signup from "./Components/signup";
 import Pet from "./Components/pet";
 import EditPet from "./Components/edit-listing";
+import CreateListing from "./Components/create-pet";
+import ManageListing from "./Components/manage-listings";
+import Favourites from "./Components/favourites";
+import Messages from "./Components/messages";
+import Account from "./Components/user-account";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
+import Favourites from "./Components/favourites";
 
 
 
@@ -59,9 +65,14 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pets/:petId" element={<Pet />} />
-              <Route path="/pets/edit/:petId" element={<EditPet />} />
+              <Route path="/dashboard/:userId" element={<Dashboard />} />
+              <Route path="/dashboard/:userId/create" element={<CreateListing />} />
+              <Route path="/dashboard/:userId/manage" element={<ManageListing />} />
+              <Route path="/dashboard/:userId/favourites" element={<Favourites />} />
+              <Route path="/dashboard/:userId/messages" element={<Messages />} />
+              <Route path="/dashboard/:userId/account" element={<Account />} />
+              <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} />
             </Routes>
           </div>
           <Footer />

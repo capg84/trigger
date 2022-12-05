@@ -1,1 +1,35 @@
-const fluffy = import from 
+const db = require('../config/connection');
+const { User, Pet, Message } = require('../models');
+
+const userData = require('./userData.json');
+const petData = require('./petData.json');
+
+db.once('open', async () => {
+  // clean database
+  await User.deleteMany({});
+  await Pet.deleteMany({});
+  await Message.deleteMany({});
+
+  // bulk create each model
+  const users = await User.insertMany(userData);
+  const pets = await Pet.insertMany(petData);
+
+  for (newPet of pets) {
+    // randomly add each pet to a user liked pets
+    const tempUser = users[Math.floor(Math.random() * users.length)];
+    tempUser.likedPets.push(newPet._id);
+    await tempUser.save();
+
+    // randomly add a user to each pet
+    const tempuser = users[Math.floor(Math.random() * users.length)];
+    newPet.owner = tempuser._id;
+    await newPet.save();
+
+    // reference Pet on user model, too
+    tempuser.userPets.push(newPet._id);
+    await tempuser.save();
+  }
+
+  console.log('all done!');
+  process.exit(0);
+});

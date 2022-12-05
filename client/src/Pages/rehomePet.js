@@ -47,14 +47,13 @@ const RehomePet = () => {
           </div>
         </Card>
      
-
-        <div>
-          <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", 
-          fontSize: "15px", width: "10rem", marginBottom: "50px" }} variant="primary">MORE INFO</Button>
-        </div>
-
       </section>
 
+
+      <div style={{width: "100%", textAlign: "center"}}>
+          <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", 
+          fontSize: "15px", width: "10rem", margin: "50px" }} variant="primary">SEE MORE PETS</Button>
+        </div>
 
 
     </main>

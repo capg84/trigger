@@ -5,6 +5,9 @@ import React from 'react';
 export default function Header() {
 
     return (
+
+
+
         <header className='container-fluid' style={{ backgroundColor: "#9CCBC3", width: "100%" }} >
             <div className='container-fluid' style={{ display: 'flex', flexWrap: "wrap", }}>
                 <div style={{ margin: "auto", display: 'flex', flexWrap: "wrap", height: "100px" }}>
@@ -20,7 +23,8 @@ export default function Header() {
                     <button style={{ color: "#f2faf5", backgroundColor: "#AD7940", height: "5vh" }} className="mx-5 rounded btn">DONATE NOW</button>
                 </div>
             </div>
-        </header>
+        </header> 
+    
 
     )
 }

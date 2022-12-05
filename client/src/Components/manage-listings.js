@@ -19,17 +19,6 @@ import Button from 'react-bootstrap/Button';
 const ManageListing = ({ pets }) => {
   const { userId } = useParams();
   const [removePet, { error }] = useMutation(REMOVE_PET);
-  //const [updatePet, { error }] = useMutation(UPDATE_PET);
-
-/*   const handleEditPet = async (petId) => {
-    try {
-      const { data } = await updatePet({
-        variables: { petId },
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }; */
 
   const handleRemovePet = async (petId) => {
     try {

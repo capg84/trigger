@@ -5,39 +5,39 @@ function CreateUser() {
   return (
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "100px",
     marginBottom: "150px", padding: "2vh" }}>
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>FULL NAME:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="species" placeholder="REQUIRED" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>FULL NAME:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }} type="species" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>EMAIL:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="species" placeholder="REQUIRED" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>EMAIL:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }}  type="species" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" controlId="formBasicPassword" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>PASSWORD:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="colour" placeholder="REQUIRED" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" controlId="formBasicPassword" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>PASSWORD:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }}  type="colour" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>CITY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>CITY:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }}  type="name" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>COUNTRY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>COUNTRY:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }}  type="name" placeholder="REQUIRED" />
       </Form.Group>
 
-      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>LOOKING FOR:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="OPTIONAL" />
+      <Form.Group style={{ width: "94%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "15px" }}>LOOKING FOR:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "15px" }}  type="name" placeholder="OPTIONAL" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "20px" }}>DESCRIPTION:</Form.Label>
-        <textarea style={{color: "#AD7940", fontSize: "20px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
+        <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "15px" }}>DESCRIPTION:</Form.Label>
+        <textarea style={{color: "#AD7940", fontSize: "15px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
         className="form-control input" />
       </Form.Group>
       

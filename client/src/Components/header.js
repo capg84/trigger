@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import "../Assets/Styles/index.css"
 
 
 // HTML for footer which is imported in App.js
@@ -6,26 +8,23 @@ export default function Header() {
 
     return (
 
-
-
-        <header className='container-fluid' style={{ backgroundColor: "#9CCBC3", width: "100%" }} >
-            <div className='container-fluid' style={{ display: 'flex', flexWrap: "wrap", }}>
-                <div style={{ margin: "auto", display: 'flex', flexWrap: "wrap", height: "100px" }}>
-                    <h1 style={{ color: "#f2faf5", fontSize: "10vh", marginLeft: "10vh" }}>TRIGGER</h1>
-                    {/* <img src="../Assets/Images/trigger.png" alt="trigger" width="10vh" height="10vh"></img> */}
+        <header className='container-fluid'>
+            <div style={{ width: "100%", display: "flex", flexWrap:"wrap"}} >
+                <div className='header' >
+                    <h1 className='header-text'>TRIGGER</h1>
+                    {/* <img src="../Assets/Images/logo.png" alt="trigger" width="10vh" height="10vh"></img> */}
                 </div>
 
-                <div style={{ width: "80vh"}}></div>
-
-                <div style={{ margin: "auto" , paddingTop:"10px", }}>
-                    <input style={{ height: "5vh", width: "35vh" }} placeholder="SEARCH FOR A PET" className="mb-3 rounded" />
-                    <button className=" rounded ms-1 btn" style={{ height: "5vh", color: "#f2faf5", backgroundColor: "#718C7B" }}>FIND A PET</button>
-                    <button style={{ color: "#f2faf5", backgroundColor: "#AD7940", height: "5vh" }} className="mx-5 rounded btn">DONATE NOW</button>
+                <div className='header-buttons'>
+                    <input style={{ width: "40vh"}}  className="header-search rounded" placeholder="SEARCH FOR A PET" />
+                    <Button style={{ backgroundColor: "#718C7B", marginLeft: "3px"}} className="header-search rounded">FIND A PET</Button>
+                    <Button style={{ backgroundColor: "#AD7940", margin: "0 5vh 0 8vh "}} className="header-search rounded">DONATE NOW</Button>
                 </div>
-            </div>
-        </header> 
+                </div>
+       
+        </header>
+
     
-
     )
 }
 

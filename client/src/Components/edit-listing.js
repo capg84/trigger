@@ -12,9 +12,10 @@ function EditListing({pet}) {
   const [colour, setColour] = useState();
   const [name, setName] = useState();
   const [description, setDescription] = useState();
+  const [gender, setGender] = useState();
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
-  const [medical, setMedical] = useState();
+  const [medicalHistory, setMedicalHistory] = useState();
   const [updatePet, { error }] = useMutation(UPDATE_PET);
 
 const handleEditPet = async (event) => {
@@ -22,7 +23,7 @@ const handleEditPet = async (event) => {
   console.log(event);
     try {
       const { data } = await updatePet({
-        variables: {id: pet._id,  } 
+        variables: {id: pet._id, species, breed, image, colour, name, description, gender, city, country, medicalHistory } 
       });
     } catch (err) {
       console.error(err);
@@ -50,6 +51,11 @@ const handleEditPet = async (event) => {
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }}className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>COLOUR:</Form.Label>
         <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="colour" placeholder="REQUIRED" value={`${pet.colour}`} name="colour" onChange={(event) => setColour(event.target.value)}/>
+      </Form.Group>
+
+      <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }}className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>GENDER:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="gender" placeholder="REQUIRED" value={`${pet.gender}`} name="gender" onChange={(event) => setGender(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
@@ -82,7 +88,7 @@ const handleEditPet = async (event) => {
 
       <Form.Group style={{ width: "93%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>MEDICAL HISTORY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="medical-history" placeholder="REQUIRED" value={`${pet.medicalHistory}`} name="medical" onChange={(event) => setMedical(event.target.value)}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="medical-history" placeholder="REQUIRED" value={`${pet.medicalHistory}`} name="medicalHistory" onChange={(event) => setMedicalHistory(event.target.value)}/>
       </Form.Group>
 
       <Button style={{  width: "25vh", marginLeft: "42%", backgroundColor: "#9CCBC3", color: "#f2faf5", marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}}

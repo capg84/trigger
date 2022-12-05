@@ -1,10 +1,10 @@
 const { User, Pet, Message } = require("../models");
 const { UserInputError, AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const { populate } = require("../models/Pet");
 
 const resolvers = {
   Query: {
+    // Get a User(me) dashboard when signed in
     me: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id })
@@ -18,6 +18,7 @@ const resolvers = {
         return user;
       }
     },
+    // get all users
     users: async () => {
         return await User.find({})
         .populate('userPets')
@@ -28,18 +29,20 @@ const resolvers = {
           populate: 'from'
         });
     },
+    // get all pets
     pets: async () => {
       return Pet.find({})
       .populate('userLikes')
       .populate('owner')
       .sort({dateCreated: -1});
     },
-  
+    // get a single pet
     pet: async (parent, { petId }) => {
       return Pet.findOne({ _id: petId })
       .populate('owner')
       .populate('comments')
     },
+    // get messages from a particular user when signed in
     getmessages: async (parent, { from }, context) => {
       if (!context.user) {
         throw new AuthenticationError('invalid token')
@@ -57,15 +60,19 @@ const resolvers = {
   
       return messages;
     },
+    // get user's pets
     userPets: async () => {
       return Pet.find();
     },
+    // get user's liked pets
     likedPets: async () => {
       return Pet.find();
     },
+    // get users that liked a pet
     userLikes: async () => {
       return User.find();
     },
+    // get all messages
     messages: async() => {
       return Message.find({})
       .populate("from")
@@ -73,6 +80,7 @@ const resolvers = {
     }, 
   },
   Mutation: {
+    // login user
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -90,11 +98,13 @@ const resolvers = {
 
       return { token, user };
     },
+    // add a new user
     addUser: async (parent, { fullname, email, password }) => {
       const user = await User.create({ fullname, email, password });
       const token = signToken(user);
       return { token, user };
     },
+    // update user information when signed in
     aboutMe: async (parent, { description, city, country }, context) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
@@ -106,6 +116,7 @@ const resolvers = {
           { new: true }
         );
     },
+    // like a pet when signed in
     savePet: async (parent, { petId }, context) => {
       if (context.user) {
         const pet = await Pet.findOne({_id: petId})
@@ -119,6 +130,7 @@ const resolvers = {
         return user;
       }
     },
+    // remove a liked pet or a user pet when signed in
     removeLikedPet: async (parent, { petId }, context) => {
       const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
@@ -127,6 +139,7 @@ const resolvers = {
       );
       return updatedUser;
     },
+    // add a pet when signed in
     addPet: async (parent, { ...petInput }, context) => {
         if (context.user) {
           const user = await User.findOne({_id: context.user._id});
@@ -139,6 +152,7 @@ const resolvers = {
           return petInfo;
         }
     },
+    // update pet details with additional information when signed in
     updatePet: async (parent, { petId, ...input }, context) => {
         // Find and update the matching Pet using the destructured args
         if(context.user) {
@@ -150,11 +164,13 @@ const resolvers = {
           );
         }
     },
+    // remove a pet when signed in
     removePet: async (parent, { petId }, context) => {
       if (context.user) {
         return Pet.findOneAndDelete({ _id: petId });
       }
     },
+    // add a comment when signed in
     addComment: async (parent, { petId, commentBody }, context) => {
       if (context.user) {
         return Pet.findOneAndUpdate(
@@ -164,6 +180,7 @@ const resolvers = {
         );
       }
     },
+    // remove a comment when signed in
     removeComment: async (parent, { petId, commentId }, context) => {
       if (context.user) {
         return Pet.findOneAndUpdate(
@@ -173,6 +190,7 @@ const resolvers = {
         );
       }
     },
+    // send a message to a user
     sendMessage: async (parent, { to, messageText }, context) => {
         if (context.user) {
             const recipient = await User.findOne({ _id: to });

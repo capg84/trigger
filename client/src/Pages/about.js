@@ -13,11 +13,11 @@ const About = () => {
 
         <div className="about-trigger">
           <div>
-            <h1>TRIGGER</h1>
+            <h1 >TRIGGER</h1>
           </div>
 
-          <div>
-            <p>Created in loving memory of Trigger who sadly passed away in November 2022. Trigger was origanlly found
+          <div >
+            <p >Created in loving memory of Trigger who sadly passed away in November 2022. Trigger was origanlly found
               living on Tram tracks in South Manchester by South Manchester Cat Rehoming charity, he was badly injured with multiple 
               cuts over his body.
             </p>

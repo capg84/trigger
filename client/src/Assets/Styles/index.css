@@ -30,6 +30,7 @@ code {
   background-size: cover;
   height: 100vh;
   padding-top: 25px;
+
 }
 
 .about-trigger{
@@ -41,7 +42,13 @@ code {
   padding: 3vh;
   border-radius: 20px;
   color: #f2faf5;
+  font-family: 'Patrick Hand', cursive;
+  
 
+}
+
+.font {
+  font-family: 'Patrick Hand', cursive;
 }
 
 .input {

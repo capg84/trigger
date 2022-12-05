@@ -1,4 +1,5 @@
-import '../Assets/Styles/dashboard.css';
+import "../Assets/Styles/dashboard.css";
+import { useParams, Link } from "react-router-dom";
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -21,20 +22,15 @@ const ManageListing = () => {
           <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>GENDER: <span></span></h6>
           <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span></span></h6>
         </div>
-
         <div style={{ textAlign: "center", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
           <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
             variant="primary">EDIT</Button>
           <Button style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
           padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary">DELETE</Button>
         </div>
-
       </div>
     </Card>
-
-
-
-    </main>
+</main>
 
     // <div className="outer-container">
     //   <div className="listings-container">

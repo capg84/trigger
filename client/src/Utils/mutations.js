@@ -5,7 +5,8 @@ import { gql } from '@apollo/client';
 export const LOGIN_USER = gql`
   mutation login($email: String! $password: String!) {
     login( email: $email password: $password) {
-      token user {
+      token 
+      user {
         _id
         username
       }
@@ -13,93 +14,129 @@ export const LOGIN_USER = gql`
   }
 `;
 
-
 export const CREATE_USER = gql`
-  mutation addUser(
-    $fullname: String!, 
-    $email: String!, 
-    $password: String!, 
-    $city: String!, 
-    $country: String!, 
-    $description: String!) {
-    addUser(
-      fullname: $fullname, 
-      email: $email,
-      password: $password,
-      city: $city, 
-      country: $country, 
-      description: $description) {
+  mutation addUser($fullname: String!, $email: String!, $password: String!) {
+    addUser(fullname: $fullname, email: $email, password: $password) {
       token
       user {
         _id
         email
-        
+      }
+    }
+  }
+`;
+
+export const SAVE_PET = gql`
+  mutation savePet($petId: ID!){
+    savePet (petId: $petId){
+      _id
+      likedPets{
+        _id
       }
     }
   }
 `;
 
 export const CREATE_PET = gql`
-mutation createPet(
-  $species: String!, 
-  $name: String!, 
-  $age: String!, 
-  $gender: String!, 
-  $description: String!, 
-  $city: String!,
-  $country: String!, 
-  $breed: String!, 
-  $colour: String!,
-  $medicalHistory: String!
-  $image: String! ) {
-    createPet(
-      species: $species, 
-      name: $name, 
-      age: $age,
-      gender: $gender, 
-      description: $description, 
-      city: $city,
-      country: $country,
-      breed: $breed,
-      colour: $colour,
-      medicalHistory: $medicalHistory,
-      image: $image) {
-        token
-        user {
+mutation addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!) {
+    addPet(name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image){
         _id
-        name
-
-    }
+        fullname
+        userPets{
+            _id
+        }
   }
 }
+`;
 
+export const UPDATE_PET = gql`
+mutation updatePet ($petId: ID!, $name: String, $age: String, $gender: String, $species: String, $description: String, $city: String, $country: String, $breed: String, $medicalHistory: String, $colour: String, $image: String){
+  updatePet (petId: $petId, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, breed: $breed, medicalHistory: $medicalHistory, colour: $colour, image: $image){
+    _id
+    name
+    age
+    gender
+    species
+    description
+    city
+    country
+    breed
+    medicalHistory
+    colour
+    image
+  }
+}
 `;
 
 export const REMOVE_PET = gql`
-
+mutation removePet($petId: ID!){
+  removePet (petId: $petId){
+    _id
+  }
+}
 `;
 
-/* export const LIKE_PET = gql`
-
+export const REMOVE_LIKE = gql`
+  mutation removeLikedPet($petId: ID!){
+    savePet (petId: $petId){
+      _id
+      likedPets{
+        _id
+      }
+    }
+  }
 `;
 
 export const COMMENT_PET = gql`
-
+  mutation addComment($petId: ID!, $commentBody: String!){
+    addComment(petId: $petId, commentBody: $petId){
+      _id
+      comments{
+        _id
+        commenter
+        commentBody
+        dateCreated
+      }
+    }
+  }
 `;
 
-export const MESSAGE_USER = gql`
-
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($petId: ID!, $commentId: ID!){
+    removeComment(petId: $petId, commentId: $commentId){
+      _id
+      comments{
+        _id
+        commenter
+        commentBody
+      }
+    }
+  }
 `;
 
-export const UPDATE_USER = gql`
-
+export const ABOUT_ME = gql`
+mutation aboutMe (_id: ID!, description: String!, city: String!, country: String!){
+  aboutMe (_id: $_id, description: $description, city: $city, country: $country){
+    _id
+    description
+    city
+    country
+  }
+}
 `;
- */
-export const UPDATE_PET = gql`
 
+export const SEND_MESSAGE = gql`
+ mutation sendMessage($to: ID!, $messageText: String!) {
+  sendMessage(to: $to, messageText: messageText){
+    _id
+    messageText
+    read
+    dateCreated
+    from
+    to
+  }
+ }
 `;
-
-
 
 
 

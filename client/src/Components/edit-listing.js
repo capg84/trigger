@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_PET } from '../Utils/mutations';
 
 function EditListing({pet}) {
-  // Create state variables for the fields in the formg
+  // Create state variables for the fields in the form
   const [species, setSpecies] = useState();
   const [breed, setBreed] = useState();
   const [image, setImage] = useState();

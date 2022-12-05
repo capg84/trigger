@@ -32,9 +32,9 @@ const Dashboard = () => {
   const user = data?.me || {};
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
+/*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
     return <Navigate to={`/dashboard/${userId}`}/>;
-  }
+  } */
 
   if (loading) {
     return <div>Loading...</div>;

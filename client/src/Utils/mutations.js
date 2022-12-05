@@ -94,11 +94,11 @@ export const MESSAGE_USER = gql`
 export const UPDATE_USER = gql`
 
 `;
-
+ */
 export const UPDATE_PET = gql`
 
 `;
- */
+
 
 
 

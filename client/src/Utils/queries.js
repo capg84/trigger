@@ -151,8 +151,8 @@ export const USER_PROFILES = gql`
 `;
 
 export const MY_PROFILE = gql`
-  query singleUser($_id: ID!) {
-    me(_id: $_id) {
+  query singleUser($userId: ID!) {
+    me(userId: $userId) {
       fullname
       email
       city

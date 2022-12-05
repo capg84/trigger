@@ -98,7 +98,7 @@ const Dashboard = () => {
         <div className="dashboard-component">
           <Routes>
             <Route path="/create" element={<CreateListing />} />
-            <Route path="manage" element={<ManageListing pets={user.userpets}/>} />
+            <Route path="/manage/*" element={<ManageListing pets={user.userpets}/>} />
             <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />

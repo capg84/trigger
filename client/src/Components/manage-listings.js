@@ -9,6 +9,7 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
+import EditListing from "../Components/edit-listing";
 import { useMutation } from '@apollo/client';
 import { REMOVE_PET, UPDATE_PET } from '../Utils/mutations';
 
@@ -71,6 +72,11 @@ const ManageListing = ({ pets }) => {
           <Button style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
           padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary" onClick={() => handleRemovePet(pet._id)}>DELETE</Button>
         </div>
+      </div>
+      <div>
+      <Routes>
+            <Route path="/edit/:petId" element={<EditListing pet={pet}/>} />
+      </Routes>
       </div>
     </Card>
   ))}

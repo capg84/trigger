@@ -32,9 +32,9 @@ const Dashboard = () => {
   const user = data?.me || {};
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
+/*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
     return <Navigate to={`/dashboard/${userId}`}/>;
-  }
+  } */
 
   if (loading) {
     return <div>Loading...</div>;
@@ -75,30 +75,33 @@ const Dashboard = () => {
             {/*           <Link to={`${pathname}/create`} className="item-link-nav">
                 CREATE A LISTING
             </Link> */}
-            <Link to="/dashboard/:userId/create" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/create`} className="item-link-nav">
               CREATE A LISTING
             </Link>
-            <Link to="/dashboard/:userId/manage" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/manage`} className="item-link-nav">
               MANAGE A LISTING
             </Link>
-            <Link to="/dashboard/:userId/favourites" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/favourites`} className="item-link-nav">
               ♡ FAVOURITES
             </Link>
-            <Link to="/dashboard/:userId/messages" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/messages`} className="item-link-nav">
               MY MESSAGES
             </Link>
-            <Link to="/dashboard/:userId/account" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/account`} className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link>
+{/*             <Link to="/dashboard/:userId/account" className="item-link-nav">
+              UPDATE ACCOUNT DETAILS
+            </Link> */}
           </div>
         </nav>
         <div className="dashboard-component">
           <Routes>
             <Route path="/create" element={<CreateListing />} />
-            <Route path="manage" element={<ManageListing />} />
-            <Route path="/favourites" element={<Favourites />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/manage/*" element={<ManageListing pets={user.userpets}/>} />
+            <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
+            <Route path="/messages" element={<Messages messages={user.messages}/>} />
+            <Route path="/account" element={<Account user={user}/>} />
           </Routes>
         </div>
       </div>

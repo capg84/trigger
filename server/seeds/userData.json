@@ -1,0 +1,28 @@
+[
+    {
+      "fullname": "Cyprian Gomes",
+      "email": "cyprian@test.com",
+      "password": "password1234"
+    },
+    {
+      "fullname": "Dave Monaghan",
+      "email": "dave@test.com",
+      "password": "password1234"
+    },
+    {
+      "fullname": "Haruka Hashimoto",
+      "email": "haruka@test.com",
+      "password": "password1234"
+    },
+    {
+      "fullname": "Nene Beji",
+      "email": "nene@test.com",
+      "password": "password1234"
+    },
+    {
+      "fullname": "Priscilla Luong",
+      "email": "priscilla@test.com",
+      "password": "password1234"
+    }
+  ]
+  

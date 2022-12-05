@@ -11,7 +11,7 @@ function Navigation({ currentPage, handlePageChange }) {
             <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/about">ABOUT</a>
           </li>
           <li className="nav-item ms-5">
-            <a style={{ color: "#f2faf5" }} className="nav-link" href="/search">REHOME A PET</a>
+            <a style={{ color: "#f2faf5" }} className="nav-link" href="/pets">REHOME A PET</a>
           </li>
           <li className="nav-item ms-5 ">
             <a style={{ color: "#f2faf5" }} className="nav-link" href="/advice">PET CARE ADVICE</a>

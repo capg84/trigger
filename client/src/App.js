@@ -12,11 +12,13 @@ import Footer from "./Components/footer";
 import Home from "./Pages/home";
 import About from "./Pages/about";
 import Advice from "./Pages/Advice";
-import Search from "./Pages/rehomePet";
+import AllPets from "./Pages/rehomePet";
 import Contact from "./Pages/contact";
 import Dashboard from "./Pages/myTrigger";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
+import Pet from "./Components/pet";
+import EditPet from "./Components/edit-listing";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
 
@@ -52,12 +54,14 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/search" element={<Search />} />
+              <Route path="/pets" element={<AllPets />} />
               <Route path="/advice" element={<Advice />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/pets/:petId" element={<Pet />} />
+              <Route path="/pets/edit/:petId" element={<EditPet />} />
             </Routes>
           </div>
           <Footer />

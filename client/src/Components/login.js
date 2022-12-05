@@ -74,6 +74,7 @@ const Login = (props) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "20px" }}
               type="email"
+              name="email"
               placeholder="ENTER EMAIL"
               value={formState.email}
               onChange={handleChange}
@@ -93,6 +94,7 @@ const Login = (props) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "20px" }}
               type="password"
+              name="password"
               placeholder="ENTER PASSWORD"
               value={formState.password}
               onChange={handleChange}

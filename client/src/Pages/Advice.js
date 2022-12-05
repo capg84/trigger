@@ -1,14 +1,12 @@
 const Advice = () => {
   return (
-    <div>
-      <div className="currentPageIdentifier">
-        <a className="item-link" href="/">
-          HOME
-        </a>
-        <p>/ PET CARE ADVICE</p>
-      </div>
-      <h1>Advice</h1>
-    </div>
+<div>
+<div className="currentPageIdentifier">
+  <p style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }}>
+    <a style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }} className="item-link" href="/">HOME</a>/ PET CARE ADVICE</p>
+</div>
+
+</div>
   );
 };
 

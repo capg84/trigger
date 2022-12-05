@@ -39,50 +39,50 @@ const handleEditPet = async (event) => {
     marginBottom: "150px", padding: "2vh" }}>
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>ANIMAL SPECIES:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="species" placeholder="REQUIRED" value={`${pet.species}`} />
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="species" placeholder="REQUIRED" value={`${pet.species}`} name="species" onChange={(event) => setSpecies(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>BREED:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="breed" placeholder="REQUIRED" value={`${pet.breed}`} />
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="breed" placeholder="REQUIRED" value={`${pet.breed}`} name="breed" onChange={(event) => setBreed(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }}className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>COLOUR:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="colour" placeholder="REQUIRED" value={`${pet.colour}`}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="colour" placeholder="REQUIRED" value={`${pet.colour}`} name="colour" onChange={(event) => setColour(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>NAME:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" value={`${pet.name}`}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="name" placeholder="REQUIRED" value={`${pet.name}`} name="name" onChange={(event) => setName(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "100%", marginLeft: "3%" ,  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px"  }}>UPLOAD IMAGE OF YOUR PET:</Form.Label>
-        <Form.Control style={{ width: "81%", fontSize: "20px", display: "inline-block" }} type="file" placeholder="ENTER IMAGE" value={`${pet.image}`}accept="image/png image.jpg" />
+        <Form.Control style={{ width: "81%", fontSize: "20px", display: "inline-block" }} type="file" placeholder="ENTER IMAGE" value={`${pet.image}`} accept="image/png image.jpg" name="image" onChange={(event) => setImage(event.target.value)}/>
         <Button style={{   backgroundColor: "#9CCBC3", color: "#f2faf5", fontSize: "20px", marginLeft:"1vh", marginBottom:"1vh"}}
         variant="primary" type="btn">UPLOAD IMAGE</Button>
       </Form.Group> 
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "20px" }}>DESCRIPTION:</Form.Label>
-        <textarea style={{color: "#AD7940", fontSize: "20px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" value={`${pet.description}`}
+        <textarea style={{color: "#AD7940", fontSize: "20px", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" value={`${pet.description}`} name="description" onChange={(event) => setDescription(event.target.value)}
         className="form-control input" />
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>CITY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="city" placeholder="REQUIRED" value={`${pet.city}`}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="city" placeholder="REQUIRED" value={`${pet.city}`} name="city" onChange={(event) => setCity(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "45%", marginLeft: "3%", display: "inline-block" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>COUNRTY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="country" placeholder="REQUIRED" value={`${pet.country}`}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }}  type="country" placeholder="REQUIRED" value={`${pet.country}`} name="country" onChange={(event) => setCountry(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "93%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "20px" }}>MEDICAL HISTORY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="medical-history" placeholder="REQUIRED" value={`${pet.medicalHistory}`}/>
+        <Form.Control style={{color: "#AD7940", fontSize: "20px" }} type="medical-history" placeholder="REQUIRED" value={`${pet.medicalHistory}`} name="medical" onChange={(event) => setMedical(event.target.value)}/>
       </Form.Group>
 
       <Button style={{  width: "25vh", marginLeft: "42%", backgroundColor: "#9CCBC3", color: "#f2faf5", marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}}

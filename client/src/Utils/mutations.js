@@ -75,6 +75,10 @@ mutation createPet(
 
 `;
 
+export const REMOVE_PET = gql`
+
+`;
+
 /* export const LIKE_PET = gql`
 
 `;

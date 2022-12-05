@@ -1,10 +1,37 @@
 import "../Assets/Styles/dashboard.css";
-import { useParams, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Navigate,
+  Routes,
+  Link,
+  useParams,
+  useLocation,
+} from "react-router-dom";
+import { useMutation } from '@apollo/client';
+import { REMOVE_PET } from '../Utils/mutations';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const ManageListing = () => {
+const ManageListing = ({ pets }) => {
+  const [removePet, { error }] = useMutation(REMOVE_PET)
+
+  const handleRemovePet = async (pet) => {
+    try {
+      const { data } = await removePet({
+        variables: { pet },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (!pets.length) {
+    return <h3>No pets yet</h3>;
+  }
+
   return (
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
     <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 

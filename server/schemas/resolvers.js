@@ -1,7 +1,6 @@
 const { User, Pet, Message } = require("../models");
 const { UserInputError, AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const { populate } = require("../models/Pet");
 
 const resolvers = {
   Query: {

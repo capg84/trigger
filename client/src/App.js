@@ -65,12 +65,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:petId" element={<Pet />} />
-              <Route path="/dashboard/:userId" element={<Dashboard />} />
-              <Route path="/dashboard/:userId/create" element={<CreateListing />} />
-              <Route path="/dashboard/:userId/manage" element={<ManageListing />} />
-              <Route path="/dashboard/:userId/favourites" element={<Favourites />} />
-              <Route path="/dashboard/:userId/messages" element={<Messages />} />
-              <Route path="/dashboard/:userId/account" element={<Account />} />
+              <Route path="/dashboard/:userId/*" element={<Dashboard />} />
 {/*               <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
             </Routes>
           </div>

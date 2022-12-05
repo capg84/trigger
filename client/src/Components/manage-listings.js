@@ -16,7 +16,9 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
-  const [removePet, { error }] = useMutation(REMOVE_PET)
+  const [removePet, { error }] = useMutation(REMOVE_PET, {
+
+  })
 
   const handleRemovePet = async (pet) => {
     try {
@@ -34,7 +36,9 @@ const ManageListing = ({ pets }) => {
 
   return (
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
-    <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 
+  { pets && 
+  pets.map((pet) => (
+    <Card key={pet} style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 
           margin: "3.5vh", padding: "2vh 0 3vh 3vh" }}>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <div>
@@ -44,10 +48,10 @@ const ManageListing = ({ pets }) => {
           }} alt="pet" src="/" />
         </div>
         <div style={{ padding: "1rem", textAlign: "start" }}>
-          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>PET NAME: <span></span></h6>
-          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>AGE: <span></span></h6>
-          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>GENDER: <span></span></h6>
-          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span></span></h6>
+        <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>PET NAME: <span>{pet.name}</span></h6>
+          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>AGE: <span>{pet.age}</span></h6>
+          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>GENDER: <span>{pet.gender}</span></h6>
+          <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span>{pet.location}</span></h6>
         </div>
         <div style={{ textAlign: "center", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
           <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
@@ -57,6 +61,7 @@ const ManageListing = ({ pets }) => {
         </div>
       </div>
     </Card>
+  ))}
 </main>
 
     // <div className="outer-container">

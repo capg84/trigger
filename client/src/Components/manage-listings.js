@@ -10,15 +10,25 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useMutation } from '@apollo/client';
-import { REMOVE_PET } from '../Utils/mutations';
+import { REMOVE_PET, UPDATE_PET } from '../Utils/mutations';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
-  const [removePet, { error }] = useMutation(REMOVE_PET, {
+  const { userId } = useParams();
+  const [removePet, { error }] = useMutation(REMOVE_PET);
+  //const [updatePet, { error }] = useMutation(UPDATE_PET);
 
-  })
+/*   const handleEditPet = async (petId) => {
+    try {
+      const { data } = await updatePet({
+        variables: { petId },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }; */
 
   const handleRemovePet = async (petId) => {
     try {
@@ -54,8 +64,10 @@ const ManageListing = ({ pets }) => {
           <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span>{pet.location}</span></h6>
         </div>
         <div style={{ textAlign: "center", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
+        <Link to={`/dashboard/${userId}/edit/${pet._id}`}>
           <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
-            variant="primary" onClick={() => handleEditPet(pet._id)}>EDIT</Button>
+            variant="primary">EDIT</Button>
+          </Link>
           <Button style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
           padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary" onClick={() => handleRemovePet(pet._id)}>DELETE</Button>
         </div>

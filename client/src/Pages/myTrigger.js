@@ -75,21 +75,24 @@ const Dashboard = () => {
             {/*           <Link to={`${pathname}/create`} className="item-link-nav">
                 CREATE A LISTING
             </Link> */}
-            <Link to="/dashboard/:userId/create" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/create`} className="item-link-nav">
               CREATE A LISTING
             </Link>
-            <Link to="/dashboard/:userId/manage" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/manage`} className="item-link-nav">
               MANAGE A LISTING
             </Link>
-            <Link to="/dashboard/:userId/favourites" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/favourites`} className="item-link-nav">
               ♡ FAVOURITES
             </Link>
-            <Link to="/dashboard/:userId/messages" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/messages`} className="item-link-nav">
               MY MESSAGES
             </Link>
-            <Link to="/dashboard/:userId/account" className="item-link-nav">
+            <Link to={`/dashboard/${userId}/account`} className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link>
+{/*             <Link to="/dashboard/:userId/account" className="item-link-nav">
+              UPDATE ACCOUNT DETAILS
+            </Link> */}
           </div>
         </nav>
         <div className="dashboard-component">

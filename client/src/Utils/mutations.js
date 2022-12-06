@@ -50,7 +50,7 @@ export const SAVE_PET = gql`
 `;
 
 export const CREATE_PET = gql`
-mutation addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!) {
+mutation addPet($name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!) {
     addPet(name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image){
         _id
         fullname
@@ -127,7 +127,7 @@ export const REMOVE_COMMENT = gql`
 `;
 
 export const ABOUT_ME = gql`
-mutation aboutMe (_id: ID!, description: String!, city: String!, country: String!){
+mutation aboutMe ($_id: ID!, $description: String!, $city: String!, $country: String!){
   aboutMe (_id: $_id, description: $description, city: $city, country: $country){
     _id
     description

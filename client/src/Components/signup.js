@@ -36,9 +36,11 @@ function Signup() {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
+      console.log(data)
       Auth.login(data.addUser.token);
+      console.log(data.addUser.token)
     } catch (e) {
+      console.log(error)
       console.error(e);
     }
   };
@@ -66,8 +68,10 @@ function Signup() {
         >
           <Form.Group 
             style={{ width: "80%", marginLeft: "10%" }}
+
             className="mb-3 font-signup"
             controlId="formBasicEmail"
+
           >
             <Form.Label
               style={{ color: "#f2faf5", width: "80%", fontSize: "3vh" }}
@@ -75,8 +79,10 @@ function Signup() {
               FULL NAME:
             </Form.Label>
             <Form.Control
+
               style={{ color: "#AD7940", fontSize: "3vh" }}
               type="email"
+
               placeholder="ENTER FULL NAME "
               name="fullname"
               value={formState.name}

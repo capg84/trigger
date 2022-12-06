@@ -71,11 +71,12 @@ const typeDefs = gql`
     users: [User]
     pets: [Pet]!
     pet(petId: ID!): Pet
-    getmessages(from: ID!): [Message]!
+    getmessages(from: ID!): [Message]
     userPets: [Pet]
     likedPets: [Pet]
     userLikes: [User]
     messages: [Message]
+ 
   }
   type Mutation {
     login(email: String!, password: String!): Auth
@@ -87,7 +88,7 @@ const typeDefs = gql`
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet
     removeComment(petId: ID!, commentId: ID!): Pet
-    aboutMe(id: ID!, description: String!, city: String!, country: String!): User
+    aboutMe(id: ID!, description: String, city: String, country: String): User
     sendMessage(to: ID!, messageText: String!): Message
   }
 `;

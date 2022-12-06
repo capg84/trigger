@@ -17,9 +17,9 @@ const Account = ({ user }) => {
   const [fullname, setFullname] = useState();
   const [email, setEmail] = useState();
   /*   const [password, setPassword] = useState(); */
-  const [city, setCity] = useState(' ');
-  const [country, setCountry] = useState(' ');
-  const [description, setDescription] = useState(' ');
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
+  const [description, setDescription] = useState();
 
   const [aboutMe, { error }] = useMutation(UPDATE_USER);
 
@@ -36,7 +36,8 @@ const Account = ({ user }) => {
       console.error(err);
     }
   };
-
+//console.log(user)
+ console.log('city:', city)
   return (
     <div className="formContainer">
       {Auth.loggedIn() ? (
@@ -65,7 +66,7 @@ const Account = ({ user }) => {
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
               placeholder="EXISTING NAME"
-              value={user.fullname}
+              defaultValue={user.fullname}
               onChange={(event) => setFullname(event.target.value)}
             />
           </Form.Group>
@@ -83,7 +84,7 @@ const Account = ({ user }) => {
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="email"
               placeholder="EXISTING EMAIL"
-              value={user.email}
+              defaultValue={user.email}
               onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Group>
@@ -118,7 +119,7 @@ const Account = ({ user }) => {
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
               placeholder="EXISTING CITY"
-              value={user.city}
+              defaultValue={user.city}
               onChange={(event) => setCity(event.target.value)}
             />
           </Form.Group>
@@ -136,7 +137,7 @@ const Account = ({ user }) => {
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
               placeholder="EXISTING COUNTRY"
-              value={user.country}
+              defaultValue={user.country}
               onChange={(event) => setCountry(event.target.value)}
             />
           </Form.Group>
@@ -160,7 +161,7 @@ const Account = ({ user }) => {
               type="description"
               placeholder="EXISTING DESCRIPTION"
               className="form-control input"
-              value={user.description}
+              defaultValue={user.description}
               onChange={(event) => setDescription(event.target.value)}
             />
           </Form.Group>

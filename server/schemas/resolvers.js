@@ -52,8 +52,9 @@ const resolvers = {
       if (!otherUser) {
         throw new UserInputError('User not found')
       }
+      const myId = context.user._id;
 
-      const messages = await Message.find({})
+      const messages = await Message.find({from: from, to: myId})
       .populate('from')
       .populate('to')
       .sort({dateCreated: -1})
@@ -62,15 +63,15 @@ const resolvers = {
     },
     // get user's pets
     userPets: async () => {
-      return Pet.find();
+      return await Pet.find();
     },
     // get user's liked pets
     likedPets: async () => {
-      return Pet.find();
+      return await Pet.find();
     },
     // get users that liked a pet
     userLikes: async () => {
-      return User.find();
+      return await User.find();
     },
     // get all messages
     messages: async() => {
@@ -78,6 +79,25 @@ const resolvers = {
       .populate("from")
       .sort({dateCreated: -1});
     }, 
+    // messages: async(parent, args, context) => {
+      // if (!context.user) {
+      //   throw new AuthenticationError('invalid token')
+      // }
+      // const myId = context.user._id;
+    //   const myId = "638e8021abfb5f081a21f64c";
+    //   console.log(myId)
+    //   const messages = await Message.find({to: myId});
+    //   console.log(messages)
+      
+      
+    //   //const results = await Message.find({to: myId});
+    //   const results = await Message.aggregate([
+    //     {$match: {to: myId}},
+    //     {$project: {to:1}},
+    //     {$group: {to: "$to"}}
+    //   ]);
+    //   console.log(results);
+    // }
   },
   Mutation: {
     // login user

@@ -39,7 +39,6 @@ function Signup() {
       Auth.login(data.addUser.token);
       console.log(data.addUser.token)
     } catch (e) {
-      console.log(error)
       console.error(e);
     }
   };

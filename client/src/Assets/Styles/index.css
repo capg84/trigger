@@ -2,6 +2,7 @@
   font-family: 'Patrick Hand', cursive;
 }
 
+
 body {
   margin: 0;
   font-family: 'Patrick Hand', cursive;
@@ -18,12 +19,20 @@ code {
 
 
 
-.contact {
+.contact,
+.hero-image,
+.petcare-advice,
+.all-pets {
   background-image: url("../Images/hero.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+
+}
+
+.hero-image {
+  width: 100%;
 
 }
 
@@ -38,7 +47,7 @@ code {
 }
 
 .about-trigger{
-  background-color: #AD7940;
+  background-color: #718C7B;
   opacity: 0.8;
   width: 30%;
   height: fit-content;
@@ -47,6 +56,7 @@ code {
   border-radius: 20px;
   color: #f2faf5;
   font-family: 'Patrick Hand', cursive;
+  text-align: justify;
   
 
 }
@@ -74,14 +84,21 @@ code {
 
 }
 
+.header-1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .header-text {
   color: #f2faf5;
   font-size: 75px;
-  margin-right: 100px;
+
+  margin-right: 200px;
   align-items: center;
 
-}
 
 
 
@@ -109,4 +126,7 @@ code {
     display: flex;
     flex-wrap: wrap;
   }
+
+
 }
+

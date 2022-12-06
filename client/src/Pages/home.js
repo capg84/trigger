@@ -1,4 +1,5 @@
 import React from 'react';
+import "../Assets/Styles/index.css"
 // import { useQuery } from '@apollo/client';
 
 import InstructionProvider from '../Utils/instruction';
@@ -12,6 +13,10 @@ const Home = () => {
 
   return (
     <main>
+      
+    <div className='hero-image'>
+
+    </div>
         <InstructionProvider>
           <Instruction />
         </InstructionProvider>

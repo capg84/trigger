@@ -74,14 +74,16 @@ function Signup() {
 
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "3vh" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2vh" }}
+
             >
               FULL NAME:
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "3vh" }}
-              type="email"
+              style={{ color: "#AD7940", fontSize: "2vh" }}
+              type="name"
 
               placeholder="ENTER FULL NAME "
               name="fullname"
@@ -96,12 +98,16 @@ function Signup() {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "3vh" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
+
             >
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "3vh" }}
+
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+
               type="email"
               placeholder="ENTER EMAIL"
               name="email"
@@ -116,12 +122,16 @@ function Signup() {
             controlId="formBasicPassword"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "3vh" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
+
             >
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "3vh" }}
+
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+
               type="password"
               placeholder="ENTER PASSWORD"
               name="password"
@@ -129,7 +139,9 @@ function Signup() {
               onChange={handleChange}
             />
           </Form.Group>
-      <div style={{width: "100%", textAlign: "center"}}>
+
+          <div style={{width: "100%", textAlign: "center"}}>
+
           <Button
             style={{
               width: "15vh",

@@ -30,8 +30,10 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
+      console.log(data.login.token, "++++++++++++++++++++++++")
     } catch (e) {
       console.error(e);
+
     }
 
     // clear form values
@@ -39,6 +41,7 @@ const Login = (props) => {
       email: "",
       password: "",
     });
+
   };
 
   return (
@@ -67,12 +70,12 @@ const Login = (props) => {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
             >
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
               type="email"
               name="email"
               placeholder="ENTER EMAIL"
@@ -87,12 +90,12 @@ const Login = (props) => {
             controlId="formBasicPassword"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
             >
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
               type="password"
               name="password"
               placeholder="ENTER PASSWORD"
@@ -100,22 +103,23 @@ const Login = (props) => {
               onChange={handleChange}
             />
           </Form.Group>
+
           <div style={{ width: "100%", textAlign: "center" }}>
-          <Button
-            style={{
-              width: "15vh",
-      
-              backgroundColor: "#9CCBC3",
-              color: "#f2faf5",
-              marginBottom: "2vh",
-              marginTop: "2vh",
-              fontSize: "20px",
-            }}
-            variant="primary"
-            type="submit"
-          >
-            LOGIN
-          </Button>
+            <Button
+              style={{
+                width: "15vh",
+                backgroundColor: "#9CCBC3",
+                color: "#f2faf5",
+                marginBottom: "2vh",
+                marginTop: "2vh",
+                fontSize: "20px",
+              }}
+              variant="primary"
+              type="submit"
+            >
+              LOGIN
+            </Button>
+
           </div>
         </Form>
       )}

@@ -30,6 +30,9 @@ function Navigation({ currentPage, handlePageChange }) {
           <li className="nav-item active ms-2 me-2">
             <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/signup">SIGNUP</a>
           </li>
+          <li className="nav-item active ms-2 me-2">
+            <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/">LOG OUT</a>
+          </li>
           <h4 style={{ fontSize: "5vh" }} className="nav-item mt-1">|</h4>
           <li className="nav-item ms-2">
             <a style={{ color: "#f2faf5" }} className="nav-link " href="/dashboard/:userId">MY TRIGGER</a>
@@ -38,6 +41,7 @@ function Navigation({ currentPage, handlePageChange }) {
       </div>
     </div>
   </nav>
+
   )
 }
 

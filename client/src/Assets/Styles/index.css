@@ -1,3 +1,7 @@
+* {
+  font-family: 'Patrick Hand', cursive;
+}
+
 body {
   margin: 0;
   font-family: 'Patrick Hand', cursive;
@@ -59,32 +63,50 @@ code {
 .container-fluid {
   background-color: #9CCBC3;
   font-family: 'Patrick Hand', cursive;
+  width: 100%;
 
 
 }
 
 .header {
   width: 50%;
-  text-align: end;
-  margin: 1px;
+  text-align: center;
+
 }
 
 
 .header-text {
   color: #f2faf5;
   font-size: 75px;
-  width: 48%;
+  margin-right: 100px;
+  align-items: center;
 
 }
 
-.header-buttons {
-  margin: auto;
-  width: 48%;
-  text-align: end;
- 
 
+
+.header-1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-search {
   height: 5vh;
+}
+
+@media screen and (max-width: 900px) {
+  .search input,
+  .search Button
+  {
+    margin: 2vh;
+  }
+  .container-fluid,
+  .header-1 {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

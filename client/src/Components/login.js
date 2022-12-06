@@ -100,11 +100,11 @@ const Login = (props) => {
               onChange={handleChange}
             />
           </Form.Group>
-
+          <div style={{ width: "100%", textAlign: "center" }}>
           <Button
             style={{
               width: "15vh",
-              marginLeft: "45%",
+      
               backgroundColor: "#9CCBC3",
               color: "#f2faf5",
               marginBottom: "2vh",
@@ -116,6 +116,7 @@ const Login = (props) => {
           >
             LOGIN
           </Button>
+          </div>
         </Form>
       )}
       {error && (

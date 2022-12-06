@@ -2,28 +2,30 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useMutation } from "@apollo/client";
-import { UPDATE_USER } from "../Utils/mutations";
+import { ABOUT_ME } from "../Utils/mutations";
+import { Link, useParams } from "react-router-dom";
 
 import Auth from "../Utils/auth";
 
 const Account = ({ user }) => {
   const { userId } = useParams();
   // Create state variables for the fields in the form
-  const [fullname, setFullname] = useState();
-  const [email, setEmail] = useState();
+
   /*   const [password, setPassword] = useState(); */
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
   const [description, setDescription] = useState();
+  const [fullname, setFullname] = useState();
+  const [email, setEmail] = useState();
 
-  const [aboutMe, { error }] = useMutation(UPDATE_USER);
+  const [aboutMe, { error }] = useMutation(ABOUT_ME);
 
   const handleEditUser = async (event) => {
     event.preventDefault();
     console.log(event);
     try {
       const { data } = await aboutMe({
-        variables: { userId: userId, description, city, country },
+        variables: { userId: userId, description, city, country, fullname, email },
       });
     } catch (err) {
       console.error(err);

@@ -29,8 +29,6 @@ export const CREATE_USER = gql`
 export const UPDATE_USER = gql`
   mutation aboutMe($description: String, $city: String, $country: String) {
     aboutMe(description: $description, city: $city, country: $country) {
-      fullname
-      email
       city
       country
       description

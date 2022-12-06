@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import "../Assets/Styles/index.css"
 
 import { useMutation } from "@apollo/client";
@@ -49,7 +49,7 @@ function Signup() {
     <div>
       {data ? (
         <p>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
+          Success! You may now head <Link to={`/dashboard/${data.addUser.user._id}`}>back to the homepage.</Link>
         </p>
       ) : (
         <Form

@@ -68,6 +68,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:petId" element={<Pet />} />
+{/*               <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />
               {/* <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
             </Routes>

@@ -11,8 +11,8 @@ db.once('open', async () => {
   await Message.deleteMany({});
 
   // bulk create each model
-  const users = await User.insertMany(userData);
-  const pets = await Pet.insertMany(petData);
+  const users = await User.create(userData);
+  const pets = await Pet.create(petData);
 
   for (newPet of pets) {
     // randomly add each pet to a user liked pets

@@ -11,7 +11,7 @@ const AllPets = () => {
           <p style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }}>
             <a style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }} className="item-link" href="/">HOME</a>/ REHOME A PET</p>
         </div>
-        <h1 style={{ marginLeft: "4vh", color: "#AD7940", fontSize: "30px" }} >SEARCH</h1>
+        {/* <h1 style={{ marginLeft: "4vh", color: "#AD7940", fontSize: "30px" }} >SEARCH</h1> */}
       </div>
 
 <div className='all-pets'>

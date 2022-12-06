@@ -81,6 +81,7 @@ code {
 .header {
   width: 50%;
   text-align: center;
+
 }
 
 .header-1 {
@@ -94,9 +95,19 @@ code {
 .header-text {
   color: #f2faf5;
   font-size: 75px;
+
   margin-right: 200px;
   align-items: center;
 
+
+
+
+.header-1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-search {
@@ -115,4 +126,7 @@ code {
     display: flex;
     flex-wrap: wrap;
   }
+
+
 }
+

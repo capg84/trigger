@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import "../Assets/Styles/index.css"
 
 
+
 // HTML for footer which is imported in App.js
 export default function Header() {
 
     return (
 
         <header className='container-fluid'>
+
             <div className='header-1' >
                 <div className="header">
                     <h1 className='header-text'>TRIGGER</h1>
@@ -23,9 +25,6 @@ export default function Header() {
 
 
         </header>
-
-
-
 
     )
 }

@@ -38,10 +38,7 @@ const ManageListing = ({ pets }) => {
     }
   };
   console.log(pets);
-  if (!pets) {
-    return <h3>No pets yet</h3>;
-  }
-
+  
   return (
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
   { pets && 

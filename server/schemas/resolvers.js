@@ -126,13 +126,11 @@ const resolvers = {
       return { token, user };
     },
     // update user information when signed in
-    aboutMe: async (parent, { description, city, country }, context) => {
+    aboutMe: async (parent, { ...userInput }, context) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
           { _id: context.user._id }, 
-          { description },
-          { city },
-          { country },
+          { ...userInput },
           // Return the newly updated object instead of the original
           { new: true }
         );

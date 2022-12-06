@@ -19,7 +19,7 @@ export const SEARCH_PETS = gql`
     }
     Comments {
       _id
-      userId
+      commenter
       commentBody
       dateCreated
     }
@@ -45,7 +45,7 @@ export const SEARCH_PET_SPECIES = gql`
     }
     Comments {
       _id
-      userId
+      commenter
       commentBody
       dateCreated
     }
@@ -71,7 +71,7 @@ export const SEARCH_PET_BREED = gql`
     }
     Comments {
       _id
-      userId
+      commenter
       commentBody
       dateCreated
     }
@@ -233,7 +233,7 @@ export const PET = gql`
         _id
       }
       comments {
-        userId {
+        commenter {
           _id
         }
         commentBody

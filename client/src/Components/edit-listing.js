@@ -16,6 +16,7 @@ function EditListing({pet}) {
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
   const [medicalHistory, setMedicalHistory] = useState();
+
   const [updatePet, { error }] = useMutation(UPDATE_PET);
 
 const handleEditPet = async (event) => {
@@ -23,7 +24,7 @@ const handleEditPet = async (event) => {
   console.log(event);
     try {
       const { data } = await updatePet({
-        variables: {id: pet._id, species, breed, image, colour, name, description, gender, city, country, medicalHistory } 
+        variables: { petId: pet._id, species, breed, image, colour, name, description, gender, city, country, medicalHistory } 
       });
     } catch (err) {
       console.error(err);

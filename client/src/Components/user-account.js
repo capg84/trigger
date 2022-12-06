@@ -4,7 +4,10 @@ import Form from "react-bootstrap/Form";
 import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../Utils/mutations';
 
-const Account = () => {
+import Auth from '../../utils/auth';
+
+const Account = ({ user }) => {
+  const { userId } = useParams();
   // Create state variables for the fields in the form
   const [fullname, setFullname] = useState();
   const [email, setEmail] = useState();
@@ -20,7 +23,7 @@ const Account = () => {
     console.log(event);
       try {
         const { data } = await aboutMe({
-          variables: { } 
+          variables: { userId} 
         });
       } catch (err) {
         console.error(err);

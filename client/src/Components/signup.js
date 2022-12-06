@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
+import "../Assets/Styles/index.css"
 
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../Utils/mutations";
@@ -62,21 +63,28 @@ function Signup() {
             marginBottom: "150px",
             padding: "2vh",
             borderRadius: "20px",
+          
           }}
         >
-          <Form.Group
+          <Form.Group 
             style={{ width: "80%", marginLeft: "10%" }}
-            className="mb-3"
-            controlId="formBasicName"
+
+            className="mb-3 font-signup"
+            controlId="formBasicEmail"
+
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2vh" }}
+
             >
               FULL NAME:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+
+              style={{ color: "#AD7940", fontSize: "2vh" }}
               type="name"
+
               placeholder="ENTER FULL NAME "
               name="fullname"
               value={formState.name}
@@ -90,12 +98,16 @@ function Signup() {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
+
             >
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+
               type="email"
               placeholder="ENTER EMAIL"
               name="email"
@@ -110,12 +122,16 @@ function Signup() {
             controlId="formBasicPassword"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
+
             >
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+
               type="password"
               placeholder="ENTER PASSWORD"
               name="password"
@@ -124,10 +140,11 @@ function Signup() {
             />
           </Form.Group>
 
+          <div style={{width: "100%", textAlign: "center"}}>
+
           <Button
             style={{
               width: "15vh",
-              marginLeft: "45%",
               backgroundColor: "#9CCBC3",
               color: "#f2faf5",
               marginBottom: "2vh",
@@ -138,6 +155,7 @@ function Signup() {
           >
             SIGNUP
           </Button>
+          </div>
         </Form>
       )}
       {error && (

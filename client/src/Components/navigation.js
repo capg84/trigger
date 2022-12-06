@@ -42,8 +42,8 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
+
   )
 }
 

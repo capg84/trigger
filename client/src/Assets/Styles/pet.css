@@ -1,0 +1,189 @@
+.pet {
+    height: 100px;
+    width: 100px;
+    background-color: #d0efea;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 25px;
+    color: black;
+    font-family: 'Patrick Hand', cursive;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    border: solid black 1px;
+
+}
+
+.date-created {
+    position: absolute;
+    color: white;
+
+}
+
+
+.btn-secondary {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+}
+
+.btn-secondary {
+    text-align: center;
+    background: #ed2553;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+    padding: 10px 17px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+
+}
+
+
+
+
+.header-container-pet {
+    text-align: center;
+    padding: 3vh;
+    width: 100%;
+    background-color: #65806f;
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.header-text-pet {
+    font-size: 50px;
+    color: white;
+
+}
+
+.pet-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.pet-image-div {
+    width: 60%;
+    height: 60vh;
+    text-align: center;
+
+}
+
+.pet-image {
+    border-radius: 10px;
+    border: solid black 1px;
+    width: 50vh;
+    height: 60vh;
+}
+
+
+.pet-details {
+    padding-top: 2vh;
+    width: 40%;
+    height: 60vh;
+
+}
+
+.pet-details h6 {
+    font-size: 4vh;
+    margin: 0vh 0 4vh 0;
+
+}
+
+.pet-description h6 {
+    font-size: 4vh;
+    margin-top: 40px;
+
+}
+
+.pet-description {
+    text-align: justify;
+    padding: 0 8% 0 8%;
+    font-size: 3vh;
+    margin: 75px 0 50px 0;
+
+}
+
+.pet-buttons-div {
+    width: 100%;
+}
+
+.pet-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.pet-buttons button {
+    background-color: #AD7940;
+    margin: 30px 0 30px 0;
+    width: 200px;
+}
+
+.comment-section {
+    background-color: #65806f;
+    width: 80%;
+    margin-left: 10%;
+    padding: 10vh;
+    border-radius: 0 0 10px 10px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+    border-bottom: black solid 1px;
+
+}
+
+.saved-comments {
+    background-color: #d0efea;
+    height: fit-content;
+    border-radius: 10px;
+    margin-top: 5vh;
+}
+
+.comment-text {
+    padding: 2vh;
+    text-align: justify;
+}
+
+@media screen and (max-width: 900px) {
+    .pet-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ;
+
+}
+
+@media screen and (max-width: 900px) {
+    .pet,
+    .comment-section,
+    .saved-comments,
+    .comment-text{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .pet-image,
+    .pet-details
+    {
+      margin-left: 5vh;
+    }
+}

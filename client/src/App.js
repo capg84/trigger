@@ -29,6 +29,8 @@ import Navigation from "./Components/navigation";
 
 
 
+
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -66,7 +68,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:petId" element={<Pet />} />
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />
-{/*               <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
+              {/* <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
             </Routes>
           </div>
           <Footer />

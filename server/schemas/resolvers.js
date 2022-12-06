@@ -74,8 +74,9 @@ const resolvers = {
       return await User.find();
     },
     // get all messages
-    messages: async() => {
-      return Message.find({})
+    messages: async(parent, args, context) => {
+      const myId = context.user._id;
+      return Message.find({to: myId})
       .populate("from")
       .sort({dateCreated: -1});
     }, 

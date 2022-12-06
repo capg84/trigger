@@ -26,6 +26,7 @@ import Messages from "./Components/messages";
 import Account from "./Components/user-account";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
+import CreatePet from "./Components/create-pet";
 
 
 
@@ -67,6 +68,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:petId" element={<Pet />} />
+{/*               <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />
               {/* <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}
             </Routes>

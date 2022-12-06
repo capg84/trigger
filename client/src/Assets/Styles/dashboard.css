@@ -74,9 +74,7 @@
     flex-direction: row;
 }
 
-.user-container {
 
-}
 
 .single-user {
     padding: 20px;
@@ -119,4 +117,9 @@
 .formContainer {
     margin: 0 40px;
     padding: 40px 0;
+    background-image: url("../Images/pets/Marshmallow.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }

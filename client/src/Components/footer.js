@@ -15,30 +15,30 @@ export default function Footer() {
           <h4 style={{ color: "#f2faf5" }}>© 2022 Copyright: TRIGGER</h4>
 
         </div>
-<div>
-        <a className="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-        ><i style={{ color: "#f2faf5" }} className="fab fa-facebook-f"></i></a>
+        <div style={{ display: "flex", flexWrap: "wrap", height: "auto" }}>
+          <a className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          ><i style={{ color: "#f2faf5" }} className="fab fa-facebook-f"></i></a>
 
-        <a className="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-        ><i style={{ color: "#f2faf5" }} className="fab fa-twitter"></i></a>
+          <a className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          ><i style={{ color: "#f2faf5" }} className="fab fa-twitter"></i></a>
 
-        <a className="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-        ><i style={{ color: "#f2faf5" }} className="fab fa-google"></i></a>
-        <a className="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark">
-          <i style={{ color: "#f2faf5" }} className="fab fa-instagram"></i></a>
-          </div>
+          <a className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          ><i style={{ color: "#f2faf5" }} className="fab fa-google"></i></a>
+          <a className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark">
+            <i style={{ color: "#f2faf5" }} className="fab fa-instagram"></i></a>
+        </div>
 
       </div>
 

@@ -11,10 +11,10 @@ const AllPets = () => {
           <p style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }}>
             <a style={{ color: "#AD7940", padding: "2vh", fontSize: "30px" }} className="item-link" href="/">HOME</a>/ REHOME A PET</p>
         </div>
-        <h1 style={{ marginLeft: "4vh", color: "#AD7940", fontSize: "30px" }} >SEARCH</h1>
+        {/* <h1 style={{ marginLeft: "4vh", color: "#AD7940", fontSize: "30px" }} >SEARCH</h1> */}
       </div>
 
-
+<div className='all-pets'>
       <div style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>CATS</Button>
@@ -55,7 +55,7 @@ const AllPets = () => {
           fontSize: "15px", width: "10rem", margin: "50px" }} variant="primary">SEE MORE PETS</Button>
         </div>
 
-
+        </div>
     </main>
 
   );

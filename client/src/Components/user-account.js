@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import {
+  BrowserRouter as Router,
+  Link,
+  useParams,
+} from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { UPDATE_USER } from "../Utils/mutations";
 

@@ -43,8 +43,8 @@ function CreateUser() {
       
 
       <Button style={{  width: "25vh", marginLeft: "42%", backgroundColor: "#9CCBC3", color: "#f2faf5", 
-      marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}}
-       variant="primary" type="submit">
+              marginBottom: "2vh", marginTop: "2vh", fontSize: "20px"}}
+              variant="primary" type="submit">
         CREATE PROFILE
       </Button>
     </Form>

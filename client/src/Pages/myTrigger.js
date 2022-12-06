@@ -24,17 +24,18 @@ import Auth from "../Utils/auth";
 const Dashboard = () => {
   let { pathname } = useLocation();
   const { userId } = useParams();
-  const { loading, data } = useQuery(MY_PROFILE, {
-    variables: { userId: userId },
-  });
+  const { loading, data } = useQuery(MY_PROFILE);
 
   // Check if data is returning from the `MY_PROFILE` query
   const user = data?.me || {};
+  console.log('data:', data);
+  
+  console.log('user:', user)
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
 /*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
     return <Navigate to={`/dashboard/${userId}`}/>;
-  } */
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -46,7 +47,8 @@ const Dashboard = () => {
         You need to be logged in to see the dashboard. Use the links above to sign up or log in!
       </h4>
     );
-  }
+  } */
+
   return (
     <div>
       <div className="currentPageIdentifier">
@@ -98,7 +100,7 @@ const Dashboard = () => {
         <div className="dashboard-component">
           <Routes>
             <Route path="/create" element={<CreateListing />} />
-            <Route path="/manage/*" element={<ManageListing pets={user.userpets}/>} />
+            <Route path="/manage" element={<ManageListing pets={user.userpets}/>} />
             <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />

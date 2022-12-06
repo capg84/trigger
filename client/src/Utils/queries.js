@@ -151,57 +151,58 @@ export const USER_PROFILES = gql`
 `;
 
 export const MY_PROFILE = gql`
-  query singleUser {
-    me {
-      fullname
-      email
+query singleUser {
+  me {
+    _id
+    fullname
+    email
+    city
+    country
+    description
+    userPets {
+      _id
+      species
+      name
+      age
+      gender
+      description
       city
       country
+      breed
+      medicalHistory
+      colour
+      image
+      dateCreated
+    }
+    likedPets {
+      _id
+      species
+      name
+      age
+      gender
       description
-      userpets {
-        _id
-        species
-        name
-        age
-        gender
-        description
-        city
-        country
-        breed
-        medicalHistory
-        colour
-        image
-        dateCreated
+      city
+      country
+      breed
+      medicalHistory
+      colour
+      image
+      dateCreated
+    }
+    messages {
+      _id
+      messageText
+      read
+      dateCreated
+      from {
+        fullname
       }
-      LikedPets {
-        _id
-        species
-        name
-        age
-        gender
-        description
-        city
-        country
-        breed
-        medicalHistory
-        colour
-        image
-        dateCreated
-      }
-      messages {
-        _id
-        messageText
-        read
-        dateCreated
-        from {
-          fullname
-        }
-        to {
-          fullname
-        }
+      to {
+        fullname
       }
     }
   }
+}
 `;
 
 export const USER_LIKES = gql`

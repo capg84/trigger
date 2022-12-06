@@ -23,6 +23,8 @@ const Account = ({ user }) => {
 
   const [aboutMe, { error }] = useMutation(UPDATE_USER);
 
+  console.log('logged in:', Auth.loggedIn())
+
   const handleEditUser = async (event) => {
     event.preventDefault();
     console.log(event);
@@ -34,10 +36,6 @@ const Account = ({ user }) => {
       console.error(err);
     }
   };
-
-  if (!user.length) {
-    return <h3>No user found</h3>;
-  }
 
   return (
     <div className="formContainer">
@@ -162,7 +160,7 @@ const Account = ({ user }) => {
               type="description"
               placeholder="EXISTING DESCRIPTION"
               className="form-control input"
-              value={`${user.description}`}
+              value={user.description}
               onChange={(event) => setDescription(event.target.value)}
             />
           </Form.Group>
@@ -188,7 +186,7 @@ const Account = ({ user }) => {
               {error.message}
             </div>
           )}
-        </Form>
+        </Form> 
       ) : (
         <p>
           You need to be logged in to update account. Please{" "}

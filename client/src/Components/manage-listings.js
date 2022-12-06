@@ -12,15 +12,23 @@ import {
 import EditListing from "../Components/edit-listing";
 import { useMutation } from '@apollo/client';
 import { REMOVE_PET } from '../Utils/mutations';
+import Auth from "../Utils/auth";
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
   const { userId } = useParams();
+  console.log('id:', userId)
   const [removePet, { error }] = useMutation(REMOVE_PET);
 
   const handleRemovePet = async (petId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
     try {
       const { data } = await removePet({
         variables: { petId },
@@ -29,8 +37,8 @@ const ManageListing = ({ pets }) => {
       console.error(err);
     }
   };
-
-  if (!pets.length) {
+  console.log(pets);
+  if (!pets) {
     return <h3>No pets yet</h3>;
   }
 

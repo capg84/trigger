@@ -45,7 +45,7 @@ const Login = (props) => {
     <div>
       {data ? (
         <p>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
+          Success! You may now head <Link to={`/dashboard/${data.login.user._id}`}>back to the homepage.</Link>
         </p>
       ) : (
         <Form

@@ -2,10 +2,15 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import "../Assets/Styles/index.css"
 
+import Auth from '../Utils/auth';
+
 
 // HTML for footer which is imported in App.js
 export default function Header() {
-
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+      };
     return (
 
         <header className='container-fluid'>

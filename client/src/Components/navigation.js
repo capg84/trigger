@@ -8,7 +8,7 @@ import Auth from '../Utils/auth';
 function Navigation({ currentPage, handlePageChange }) {
   console.log('Nav', Auth.getProfile())
   return(
-    <nav className="navbar navbar-expand-lg" style={{ padding: "0" }}>
+  <nav className="navbar navbar-expand-lg" style={{ padding: "0" }}>
     <div style={{ color: "#f2faf5",  backgroundColor: "#718C7B" }} className="container-fluid">
 
       <div  className="" id="navbarExample01">
@@ -42,9 +42,23 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
+/*     {Auth.loggedIn() ? (
+              <li className="nav-item active ms-2 me-2">
+                <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/" onClick={() => Auth.logout()}>LOG OUT</a>
+              </li>
+            ) : (
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item active ms-2">
+                  <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/login">LOGIN</a>
+                </li>
 
-  )
-}
+                <li className="nav-item active ms-2 me-2">
+                  <a style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" href="/signup">SIGNUP</a>
+                </li>
+              </ul>
+  ) */
+  )}
 
 export default Navigation;

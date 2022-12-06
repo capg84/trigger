@@ -26,6 +26,7 @@ import Messages from "./Components/messages";
 import Account from "./Components/user-account";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
+import CreatePet from "./Components/create-pet";
 
 
 

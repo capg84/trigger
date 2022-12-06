@@ -18,7 +18,7 @@ const About = () => {
 
           <div >
             <p >Created in loving memory of Trigger who sadly passed away in November 2022. Trigger was origanlly found
-              living on Tram tracks in South Manchester by South Manchester Cat Rehoming charity, he was badly injured with multiple 
+              living on tram tracks in South Manchester by South Manchester Cat Rehoming charity, he was badly injured with multiple 
               cuts over his body.
             </p>
             <p>Trigger was nursed back to health in a foster home, then found his forever where he lived the rest of days as a happy cat. 

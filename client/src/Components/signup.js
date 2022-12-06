@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../Assets/Styles/index.css"
 
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../Utils/mutations";
@@ -70,12 +71,12 @@ function Signup() {
             controlId="formBasicName"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2vh" }}
             >
               FULL NAME:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+              style={{ color: "#AD7940", fontSize: "2vh" }}
               type="name"
               placeholder="ENTER FULL NAME "
               name="fullname"
@@ -90,12 +91,12 @@ function Signup() {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
             >
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
               type="email"
               placeholder="ENTER EMAIL"
               name="email"
@@ -110,12 +111,12 @@ function Signup() {
             controlId="formBasicPassword"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
             >
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "20px" }}
+              style={{ color: "#AD7940", fontSize: "2.5vh" }}
               type="password"
               placeholder="ENTER PASSWORD"
               name="password"
@@ -123,11 +124,10 @@ function Signup() {
               onChange={handleChange}
             />
           </Form.Group>
-
+          <div style={{width: "100%", textAlign: "center"}}>
           <Button
             style={{
               width: "15vh",
-              marginLeft: "45%",
               backgroundColor: "#9CCBC3",
               color: "#f2faf5",
               marginBottom: "2vh",
@@ -138,6 +138,7 @@ function Signup() {
           >
             SIGNUP
           </Button>
+          </div>
         </Form>
       )}
       {error && (

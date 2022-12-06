@@ -11,7 +11,7 @@ const Account = ({ user }) => {
   // Create state variables for the fields in the form
   const [fullname, setFullname] = useState();
   const [email, setEmail] = useState();
-/*   const [password, setPassword] = useState(); */
+  /*   const [password, setPassword] = useState(); */
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
   const [description, setDescription] = useState();
@@ -61,7 +61,9 @@ const Account = ({ user }) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
-              placeholder="EXISTING NAME" onChange={(event) => setFullname(event.target.value)}
+              placeholder="EXISTING NAME"
+              value={`${user.fullname}`}
+              onChange={(event) => setFullname(event.target.value)}
             />
           </Form.Group>
 
@@ -77,7 +79,9 @@ const Account = ({ user }) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="email"
-              placeholder="EXISTING EMAIL" onChange={(event) => setEmail(event.target.value)}
+              placeholder="EXISTING EMAIL"
+              value={`${user.email}`}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Group>
 
@@ -110,7 +114,9 @@ const Account = ({ user }) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
-              placeholder="EXISTING CITY" onChange={(event) => setCity(event.target.value)}
+              placeholder="EXISTING CITY"
+              value={`${user.city}`}
+              onChange={(event) => setCity(event.target.value)}
             />
           </Form.Group>
 
@@ -126,7 +132,9 @@ const Account = ({ user }) => {
             <Form.Control
               style={{ color: "#AD7940", fontSize: "15px" }}
               type="text"
-              placeholder="EXISTING COUNTRY" onChange={(event) => setCountry(event.target.value)}
+              placeholder="EXISTING COUNTRY"
+              value={`${user.country}`}
+              onChange={(event) => setCountry(event.target.value)}
             />
           </Form.Group>
 
@@ -148,7 +156,9 @@ const Account = ({ user }) => {
               }}
               type="description"
               placeholder="EXISTING DESCRIPTION"
-              className="form-control input" onChange={(event) => setDescription(event.target.value)}
+              className="form-control input"
+              value={`${user.description}`}
+              onChange={(event) => setDescription(event.target.value)}
             />
           </Form.Group>
 
@@ -168,6 +178,11 @@ const Account = ({ user }) => {
               UPDATE DETAILS
             </Button>
           </div>
+          {error && (
+            <div className="col-12 my-3 bg-danger text-white p-3">
+              {error.message}
+            </div>
+          )}
         </Form>
       ) : (
         <p>

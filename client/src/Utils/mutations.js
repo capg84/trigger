@@ -27,15 +27,15 @@ export const CREATE_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation aboutMe($description: String, $city: String, $country: String) {
-    aboutMe(description: $description, city: $city, country: $country) {
-      fullname
-      email
-      city
-      country
-      description
-    }
+mutation aboutMe($aboutMeId: ID!) {
+  aboutMe(id: $aboutMeId) {
+    fullname
+    email
+    city
+    country
+    description
   }
+}
 `;
 
 export const SAVE_PET = gql`
@@ -51,19 +51,30 @@ export const SAVE_PET = gql`
 
 export const CREATE_PET = gql`
 mutation addPet($name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!) {
-    addPet(name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image){
-        _id
-        fullname
-        userPets{
-            _id
-        }
+  addPet(name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image) {
+    _id
+    fullname
+    userPets {
+      _id
+      name
+      age
+      gender
+      species
+      description
+      city
+      country
+      breed
+      medicalHistory
+      colour
+      image
+    }
   }
 }
 `;
 
 export const UPDATE_PET = gql`
-mutation updatePet ($petId: ID!, $name: String, $age: String, $gender: String, $species: String, $description: String, $city: String, $country: String, $breed: String, $medicalHistory: String, $colour: String, $image: String){
-  updatePet (petId: $petId, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, breed: $breed, medicalHistory: $medicalHistory, colour: $colour, image: $image){
+mutation updatePet($petId: ID!) {
+  updatePet(petId: $petId) {
     _id
     name
     age
@@ -100,17 +111,21 @@ export const REMOVE_LIKE = gql`
 `;
 
 export const COMMENT_PET = gql`
-  mutation addComment($petId: ID!, $commentBody: String!){
-    addComment(petId: $petId, commentBody: $petId){
+mutation addComment($petId: ID!, $commentBody: String!) {
+  addComment(petId: $petId, commentBody: $commentBody) {
+    _id
+    name
+    comments {
       _id
-      comments{
+      commenter {
         _id
-        commenter
-        commentBody
-        dateCreated
+        fullname
       }
+      commentBody
+      dateCreated
     }
   }
+}
 `;
 
 export const REMOVE_COMMENT = gql`
@@ -124,17 +139,6 @@ export const REMOVE_COMMENT = gql`
       }
     }
   }
-`;
-
-export const ABOUT_ME = gql`
-mutation aboutMe ($_id: ID!, $description: String!, $city: String!, $country: String!){
-  aboutMe (_id: $_id, description: $description, city: $city, country: $country){
-    _id
-    description
-    city
-    country
-  }
-}
 `;
 
 export const SEND_MESSAGE = gql`

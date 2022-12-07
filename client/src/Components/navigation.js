@@ -5,11 +5,8 @@ import {
   Link,
 } from "react-router-dom";
 
-
-
-
-
-function Navigation({ currentPage, handlePageChange }) {
+function Navigation() {
+  //console.log("Nav", Auth.getProfile());
   return (
     <nav className="navbar navbar-expand-lg" style={{ padding: "0" }}>
       <div style={{ color: "#f2faf5", backgroundColor: "#718C7B" }} className="container-fluid">
@@ -30,7 +27,6 @@ function Navigation({ currentPage, handlePageChange }) {
             </li>
           </ul>
         </div>
-
         <div style={{ marginRight: "10vh" }}>
           <ul style={{ fontSize: "3vh" }} className="navbar-nav me-auto mb-2 mb-lg-0">
             {Auth.loggedIn() ? (

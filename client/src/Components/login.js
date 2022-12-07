@@ -75,7 +75,7 @@ const Login = (props) => {
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{ fontSize: "2.5vh" }}
               type="email"
               name="email"
               placeholder="ENTER EMAIL"
@@ -95,7 +95,7 @@ const Login = (props) => {
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{  fontSize: "2.5vh" }}
               type="password"
               name="password"
               placeholder="ENTER PASSWORD"

@@ -10,6 +10,10 @@ import {
 
 
 function Navigation({ currentPage, handlePageChange }) {
+
+
+  
+
   return (
     <nav className="navbar navbar-expand-lg" style={{ padding: "0" }}>
       <div style={{ color: "#f2faf5", backgroundColor: "#718C7B" }} className="container-fluid">
@@ -50,7 +54,7 @@ function Navigation({ currentPage, handlePageChange }) {
             )}
             <h4 style={{ fontSize: "5vh" }} className="nav-item mt-1">|</h4>
             <li className="nav-item ms-2">
-              <Link style={{ color: "#f2faf5" }} className="nav-link " >MY TRIGGER</Link>
+              <Link style={{ color: "#f2faf5" }} className="nav-link " href="/dashboard/:userId">MY TRIGGER</Link>
             </li>
           </ul>
         </div>
@@ -62,6 +66,6 @@ function Navigation({ currentPage, handlePageChange }) {
 
 export default Navigation;
 
-// to={`/dashboard/${Auth.getProfile()?.data?._id}`}
+
 
 

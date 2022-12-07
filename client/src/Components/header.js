@@ -22,13 +22,11 @@ export default function Header() {
                 </div>
                 <div className="search" >
                     <input style={{ width: "40vh" }} className="header-search rounded" placeholder="SEARCH FOR A PET" />
-                    <Button style={{ backgroundColor: "#718C7B", marginLeft: "3px" }} className="header-search rounded">FIND A PET</Button>
-                    <Button style={{ backgroundColor: "#AD7940", margin: "0 5vh 0 8vh " }} className="header-search rounded">DONATE NOW</Button>
+                    <Button style={{ backgroundColor: "#718C7B", marginLeft: "3px", fontSize:"2vh" }} className="header-search rounded">FIND A PET</Button>
+                    <Button style={{ backgroundColor: "#AD7940", margin: "0 5vh 0 8vh ", fontSize:"2vh" }} className="header-search rounded">DONATE NOW</Button>
                 </div>
 
             </div>
-
-
         </header>
 
     )

@@ -161,6 +161,16 @@
     text-align: justify;
 }
 
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
 @media screen and (max-width: 900px) {
     .pet-div {
         display: flex;

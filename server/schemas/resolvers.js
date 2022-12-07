@@ -30,7 +30,7 @@ const resolvers = {
         });
     },
     // get all pets
-    pets: async () => {
+    allPets: async () => {
       return Pet.find({})
       .populate('userLikes')
       .populate('owner')

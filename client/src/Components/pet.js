@@ -4,12 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Image from "../Assets/Images/pets/Dodo.jpg"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Auth from "../Utils/auth"
 
 import { Navigate, useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import {  useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
-import Auth from "../Utils/auth";
+
 
 const Pet = () => {
   const { petId } = useParams();
@@ -86,14 +87,17 @@ const Pet = () => {
         </div>
 
         <div className="saved-comments">
+
           <div className="comment-header">
             <h6>{ }</h6>
             <h6>{ }</h6>
+            <span class="material-symbols-outlined">delete</span>
           </div>
 
           <div className="comment-text">
             <p>{ }</p>
           </div>
+
         </div>
       </div>
     </section>

@@ -69,7 +69,7 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    pets: [Pet]!
+    allPets: [Pet]!
     pet(petId: ID!): Pet
     getmessages(from: ID!): [Message]
     userPets: [Pet]

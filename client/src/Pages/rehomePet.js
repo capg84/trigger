@@ -10,6 +10,9 @@ import {
 import Pet from "../Components/pet";
 
 const AllPets = () => {
+  // GET ALL PETS FUNC TO BE COMPLETED - CREATED A CONST FOR PETS 
+  //SO THAT THE BELOW ROUTE / LINK / MAP FUNC DOES NOT THROW AN ERROR
+  const pets = []
   return (
 
     <main>

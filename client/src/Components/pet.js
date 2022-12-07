@@ -4,15 +4,22 @@ import Button from 'react-bootstrap/Button';
 import Image from "../Assets/Images/pets/Dodo.jpg"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Navigate, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams,
+} from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
 
 const Pet = ({ singlePet }) => {
+  const userId = Auth.getProfile().data._id;
+  console.log(userId);
   const { petId } = useParams();
-
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
@@ -61,8 +68,18 @@ const Pet = ({ singlePet }) => {
 
       <div className="pet-buttons-div">
         <div className="pet-buttons">
+          <Link to="/rehome">
           <Button>BACK TO PETS</Button>
+          </Link>
+          {Auth.loggedIn() ? (
+          <Link to={`/dashboard/${userId}}/messages/${pet.owner._id}`}>
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          </Link>
+          ) : (
+          <Link to="/login">
+            <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          </Link>
+          )}
         </div>
       </div>
     </div>

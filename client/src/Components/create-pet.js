@@ -5,9 +5,13 @@ import Form from 'react-bootstrap/Form';
 import "../Assets/Styles/dashboard.css"
 import { useMutation } from "@apollo/client";
 import { CREATE_PET } from "../Utils/mutations";
-// import { useState, useMutation } from 'react'
+import {
+  BrowserRouter as Router,
+  Link,
+  useParams,
+} from "react-router-dom";
 
-import Auth from '../../utils/auth';
+import Auth from '../Utils/auth';
 
 function CreatePet({ user }) {
   const [name, setName] = useState('');
@@ -22,14 +26,14 @@ function CreatePet({ user }) {
   const [colour, setColour] = useState('');
   const [image, setImage] = useState('');
 
-  const [createPet, { error }] = useMutation(CREATE_PET);
+  const [addPet, { error }] = useMutation(CREATE_PET);
 
   const handleCreatePet = async (event) => {
     event.preventDefault();
     console.log(event);
 
     try {
-      const { data } = await createPet({
+      const { data } = await addPet({
         variables: {
           species,
           breed,
@@ -44,6 +48,7 @@ function CreatePet({ user }) {
           age,
         },
       });
+      console.log(data.addPet);
     } catch (err) {
       console.error(err);
     }
@@ -57,68 +62,63 @@ function CreatePet({ user }) {
       
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "50px",
     marginBottom: "150px", padding: "2vh" }} onSubmit={handleCreatePet}>
+
+<Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setName(event.target.value)}/>
+      </Form.Group>
+
+      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>AGE:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setAge(event.target.value)}/>
+      </Form.Group>
+
+      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>GENDER:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setGender(event.target.value)}/>
+      </Form.Group>
+
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>ANIMAL SPECIES:</Form.Label>
-
-        <Form.Control style={{fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" onChange={(event) => setSpecies(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>BREED:</Form.Label>
-
-        <Form.Control style={{fontSize: "2.5vh" }}  type="species" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="species" placeholder="REQUIRED" onChange={(event) => setBreed(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COLOUR:</Form.Label>
-
-        <Form.Control style={{ fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" />
-
-      </Form.Group>
-
-      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
-
-        <Form.Control style={{ fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" onChange={(event) => setColour(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" ,  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh"  }}>UPLOAD IMAGE OF YOUR PET:</Form.Label>
-        <Form.Control style={{ width: "100%", fontSize: "2.5vh", display: "inline-block" }} type="file" placeholder="ENTER IMAGE" accept="image/png image.jpg" />
+        <Form.Control style={{ width: "100%", fontSize: "2.5vh", display: "inline-block" }} type="file" placeholder="ENTER IMAGE" onChange={(event) => setImage(event.target.value)} accept="image/png image.jpg" />
         {/* <Button style={{   backgroundColor: "#9CCBC3", color: "#f2faf5", fontSize: "15px", marginLeft:"1vh", marginBottom:"1vh"}}
         variant="primary" type="btn">UPLOAD IMAGE</Button> */}
       </Form.Group> 
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh" }}>DESCRIPTION:</Form.Label>
-
-        <textarea style={{ fontSize: "2.5vh", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
-        className="form-control input" />
-
+        <textarea style={{color: "#AD7940", fontSize: "2.5vh", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
+        className="form-control input" onChange={(event) => setDescription(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>CITY:</Form.Label>
-
-        <Form.Control style={{ fontSize: "2.5vh" }}  type="city" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="city" placeholder="REQUIRED" onChange={(event) => setCity(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COUNRTY:</Form.Label>
-
-        <Form.Control style={{ fontSize: "2.5vh" }}  type="country" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="country" placeholder="REQUIRED" onChange={(event) => setCountry(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>MEDICAL HISTORY:</Form.Label>
-
-        <Form.Control style={{ fontSize: "2.5vh" }} type="medical-history" placeholder="REQUIRED" />
-
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }} type="medical-history" placeholder="REQUIRED" onChange={(event) => setMedicalHistory(event.target.value)}/>
       </Form.Group>
         <div style={{ textAlign: "center"}}>
       <Button style={{  width: "25vh",  backgroundColor: "#9CCBC3", color: "#f2faf5", 
@@ -129,11 +129,11 @@ function CreatePet({ user }) {
       </div>
     </Form>
     </div>
-    ):(
+    ) : (
       <p>
-      You need to be logged in to share your thoughts. Please{' '}
-      <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-    </p>
+        You need to be logged in to update account. Please{" "}
+        <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+      </p>
     )}
     </div>
   );

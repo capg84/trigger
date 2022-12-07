@@ -1,6 +1,13 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams,
+} from "react-router-dom";
+import Pet from "../Components/pet";
 
 const AllPets = () => {
   return (
@@ -44,6 +51,9 @@ const AllPets = () => {
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span></span></h6>
               <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary">MORE INFO</Button>
             </div>
+            <Routes>
+              <Route path="/edit/:petId" element={<Pet pet={pet}/>} />
+            </Routes>
           </div>
         </Card>
      

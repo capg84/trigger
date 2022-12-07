@@ -31,6 +31,7 @@ const Login = (props) => {
 
       Auth.login(data.login.token);
       console.log(data.login.token, "++++++++++++++++++++++++")
+      window.location.href=`/dashboard/${data.login.user._id}`;
     } catch (e) {
       console.error(e);
 
@@ -48,7 +49,7 @@ const Login = (props) => {
     <div>
       {data ? (
         <p>
-          Success! You may now head <Link to={`/dashboard/${data.login.user._id}`}>back to the homepage.</Link>
+          Success! You may now head <Link to={`/dashboard/${data.login.user._id}`}> to the dashboard.</Link>
         </p>
       ) : (
         <Form

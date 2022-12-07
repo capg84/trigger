@@ -30,10 +30,15 @@ function Navigation() {
         <div style={{ marginRight: "10vh" }}>
           <ul style={{ fontSize: "3vh" }} className="navbar-nav me-auto mb-2 mb-lg-0">
             {Auth.loggedIn() ? (
+              <>
               <li className="nav-item active ms-2 me-2">
-                <Link style={{ color: "#f2faf5" }} className="nav-link" aria-current="page" to="/home"
-                  onClick={() => Auth.logout()}>LOG OUT</Link>
+                <Link style={{ color: "#f2faf5" }} className="nav-link" to="/home" onClick={() => Auth.logout()}>LOG OUT</Link>
               </li>
+              <h4 style={{ fontSize: "5vh" }} className="nav-item mt-1">|</h4>
+              <li className="nav-item ms-2">
+                <Link style={{ color: "#f2faf5" }} className="nav-link " to={`/dashboard/${Auth.getProfile()?.data?._id}`} >MY TRIGGER</Link>
+              </li>
+              </>
             ) : (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item active ms-2">
@@ -44,13 +49,8 @@ function Navigation() {
                 </li>
               </ul>
             )}
-            <h4 style={{ fontSize: "5vh" }} className="nav-item mt-1">|</h4>
-            <li className="nav-item ms-2">
-              <Link style={{ color: "#f2faf5" }} className="nav-link " >MY TRIGGER</Link>
-            </li>
           </ul>
         </div>
-
       </div>
     </nav>
   )
@@ -58,6 +58,6 @@ function Navigation() {
 
 export default Navigation;
 
-// to={`/dashboard/${Auth.getProfile()?.data?._id}`}
+
 
 

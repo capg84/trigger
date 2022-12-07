@@ -225,11 +225,14 @@ export const PET = gql`
       city
       country
       breed
-      medical
-      history
+      medicalHistory
       colour
       image
       dateCreated
+      owner {
+        _id
+        fullname
+      }
       userLikes {
         _id
       }

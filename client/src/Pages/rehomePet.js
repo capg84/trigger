@@ -1,8 +1,19 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams,
+} from "react-router-dom";
+import Pet from "../Components/pet";
 
 const AllPets = () => {
+  // GET ALL PETS FUNC TO BE COMPLETED - CREATED A CONST FOR PETS 
+  //SO THAT THE BELOW ROUTE / LINK / MAP FUNC DOES NOT THROW AN ERROR
+  // Each individual pet must be passed as a prop to the individual pet page
+  const pets = []
   return (
 
     <main>
@@ -28,7 +39,7 @@ const AllPets = () => {
       </div>
 
       <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
-
+      { pets && pets.map((pet) => (
         <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
           <div style={{ display: "flex" }}>
             <div>
@@ -42,11 +53,16 @@ const AllPets = () => {
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span></span></h6>
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span></span></h6>
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span></span></h6>
+              <Link to={`/pets/${pet._id}`}>
               <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary">MORE INFO</Button>
+              </Link>
             </div>
+            <Routes>
+              <Route path="/:petId" element={<Pet singlePet={pet}/>} />
+            </Routes>
           </div>
         </Card>
-     
+       ))}
       </section>
 
 

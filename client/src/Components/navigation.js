@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Auth from "../Utils/auth";
 
-function Navigation({ currentPage, handlePageChange }) {
+function Navigation() {
   console.log("Nav", Auth.getProfile());
   return (
     <nav className="navbar navbar-expand-lg" style={{ padding: "0" }}>
@@ -55,7 +55,7 @@ function Navigation({ currentPage, handlePageChange }) {
         </div>
 
         <div style={{ marginRight: "10vh" }}>
-          {Auth.loggedIn() ? (
+{/*           {Auth.loggedIn() ? (
             <li className="nav-item active ms-2 me-2">
               <Link
                 style={{ color: "#f2faf5" }}
@@ -102,7 +102,7 @@ function Navigation({ currentPage, handlePageChange }) {
                 </Link>
               </li>
             </ul>
-          )}
+          )} */}
         </div>
       </div>
     </nav>

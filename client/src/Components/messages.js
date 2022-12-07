@@ -1,4 +1,5 @@
 import "../Assets/Styles/dashboard.css";
+import avatar from "../Assets/Images"
 
 const Messages = () => {
   return (

@@ -49,10 +49,12 @@ const AllPets = () => {
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span></span></h6>
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span></span></h6>
               <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span></span></h6>
+              <Link to={`/pets/${pet._id}`}>
               <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary">MORE INFO</Button>
+              </Link>
             </div>
             <Routes>
-              <Route path="/edit/:petId" element={<Pet pet={pet}/>} />
+              <Route path="/:petId" element={<Pet pet={pet}/>} />
             </Routes>
           </div>
         </Card>

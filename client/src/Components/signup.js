@@ -69,7 +69,7 @@ function Signup() {
             style={{ width: "80%", marginLeft: "10%" }}
 
             className="mb-3 font-signup"
-            controlId="formBasicEmail"
+            controlId="formBasicName"
 
           >
             <Form.Label

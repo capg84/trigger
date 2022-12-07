@@ -27,7 +27,7 @@ export const CREATE_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-mutation AboutMe($fullname: String, $email: String, $description: String, $city: String, $country: String) {
+mutation aboutMe($fullname: String, $email: String, $description: String, $city: String, $country: String) {
   aboutMe(fullname: $fullname, email: $email, description: $description, city: $city, country: $country) {
     city
     country

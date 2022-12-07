@@ -5,9 +5,13 @@ import Form from 'react-bootstrap/Form';
 import "../Assets/Styles/dashboard.css"
 import { useMutation } from "@apollo/client";
 import { CREATE_PET } from "../Utils/mutations";
-// import { useState, useMutation } from 'react'
+import {
+  BrowserRouter as Router,
+  Link,
+  useParams,
+} from "react-router-dom";
 
-import Auth from '../../utils/auth';
+import Auth from '../Utils/auth';
 
 function CreatePet({ user }) {
   const [name, setName] = useState('');
@@ -113,11 +117,11 @@ function CreatePet({ user }) {
       </div>
     </Form>
     </div>
-    ):(
+    ) : (
       <p>
-      You need to be logged in to share your thoughts. Please{' '}
-      <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-    </p>
+        You need to be logged in to update account. Please{" "}
+        <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+      </p>
     )}
     </div>
   );

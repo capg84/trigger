@@ -85,12 +85,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             BREED:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "2.5vh" }}
             type="breed"
             placeholder="REQUIRED"
             value={`${pet.breed}`}
@@ -104,12 +104,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             COLOUR:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ fontSize: "2.5vh" }}
             type="colour"
             placeholder="REQUIRED"
             value={`${pet.colour}`}
@@ -123,12 +123,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             GENDER:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ fontSize: "2.5vh" }}
             type="gender"
             placeholder="REQUIRED"
             value={`${pet.gender}`}
@@ -142,12 +142,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             NAME:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "20px" }}
             type="name"
             placeholder="REQUIRED"
             value={`${pet.name}`}
@@ -161,12 +161,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             UPLOAD IMAGE OF YOUR PET:
           </Form.Label>
           <Form.Control
-            style={{ width: "81%", fontSize: "20px", display: "inline-block" }}
+            style={{ width: "81%", fontSize: "2.5vh", display: "inline-block" }}
             type="file"
             placeholder="ENTER IMAGE"
             value={`${pet.image}`}
@@ -178,7 +178,7 @@ function EditListing({ pet }) {
             style={{
               backgroundColor: "#9CCBC3",
               color: "#f2faf5",
-              fontSize: "20px",
+              fontSize: "2.5vh",
               marginLeft: "1vh",
               marginBottom: "1vh",
             }}

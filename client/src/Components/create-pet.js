@@ -14,22 +14,22 @@ function CreatePet() {
     marginBottom: "150px", padding: "2vh" }}>
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>ANIMAL SPECIES:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" />
+        <Form.Control style={{fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>BREED:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="species" placeholder="REQUIRED" />
+        <Form.Control style={{fontSize: "2.5vh" }}  type="species" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COLOUR:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" />
+        <Form.Control style={{ fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" />
+        <Form.Control style={{ fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" ,  }} className="mb-3" >
@@ -41,23 +41,23 @@ function CreatePet() {
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh" }}>DESCRIPTION:</Form.Label>
-        <textarea style={{color: "#AD7940", fontSize: "2.5vh", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
+        <textarea style={{ fontSize: "2.5vh", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
         className="form-control input" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>CITY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="city" placeholder="REQUIRED" />
+        <Form.Control style={{ fontSize: "2.5vh" }}  type="city" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COUNRTY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="country" placeholder="REQUIRED" />
+        <Form.Control style={{ fontSize: "2.5vh" }}  type="country" placeholder="REQUIRED" />
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>MEDICAL HISTORY:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }} type="medical-history" placeholder="REQUIRED" />
+        <Form.Control style={{ fontSize: "2.5vh" }} type="medical-history" placeholder="REQUIRED" />
       </Form.Group>
         <div style={{ textAlign: "center"}}>
       <Button style={{  width: "25vh",  backgroundColor: "#9CCBC3", color: "#f2faf5", 

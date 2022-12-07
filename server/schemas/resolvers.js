@@ -53,8 +53,12 @@ const resolvers = {
         throw new UserInputError('User not found')
       }
       const myId = context.user._id;
+      const userIds = [myId, otherUser._id]
 
-      const messages = await Message.find({from: from, to: myId})
+      const messages = await Message.find({
+        from: {$in: userIds},
+        to: {$in: userIds}
+      })
       .populate('from')
       .populate('to')
       .sort({dateCreated: -1})
@@ -76,29 +80,37 @@ const resolvers = {
     // get all messages
     messages: async(parent, args, context) => {
       const myId = context.user._id;
-      return Message.find({to: myId})
-      .populate("from")
+      let users = await User.find({});
+      const allMessages = await Message.find({to: myId
+        // $or: [{from: myId}, {to: myId}]
+      })
+      .populate('from')
       .sort({dateCreated: -1});
+      const groupedMessages = allMessages.map(message => {
+        const from = message.from._id
+        const groupedfrom = from.map()
+        console.log("from", from);
+        return from;
+      })
+      return groupedMessages;
     }, 
-    // messages: async(parent, args, context) => {
-      // if (!context.user) {
-      //   throw new AuthenticationError('invalid token')
-      // }
-      // const myId = context.user._id;
-    //   const myId = "638e8021abfb5f081a21f64c";
-    //   console.log(myId)
-    //   const messages = await Message.find({to: myId});
-    //   console.log(messages)
-      
-      
-    //   //const results = await Message.find({to: myId});
-    //   const results = await Message.aggregate([
-    //     {$match: {to: myId}},
-    //     {$project: {to:1}},
-    //     {$group: {to: "$to"}}
-    //   ]);
-    //   console.log(results);
-    // }
+
+    messagesfrom: async(parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('invalid token')
+      }
+      const myId = context.user._id;
+      const messages = await Message.aggregate([
+        {$match: {to: myId}},
+        {$sort: {dateCreated: -1}},
+        {$group:{
+          _id: "$from",
+          message: {$first: "$messageText"},
+        },
+        },
+      ]);
+      return messages;
+    }
   },
   Mutation: {
     // login user
@@ -126,13 +138,11 @@ const resolvers = {
       return { token, user };
     },
     // update user information when signed in
-    aboutMe: async (parent, { description, city, country }, context) => {
+    aboutMe: async (parent, { ...userInput }, context) => {
         // Find and update the matching User using the destructured args
         return await User.findOneAndUpdate(
           { _id: context.user._id }, 
-          { description },
-          { city },
-          { country },
+          { ...userInput },
           // Return the newly updated object instead of the original
           { new: true }
         );

@@ -89,9 +89,11 @@ const typeDefs = gql`
     removeLikedPet(petId: ID!): User
     addComment(petId: ID!, commentBody: String!): Pet
     removeComment(petId: ID!, commentId: ID!): Pet
-    aboutMe(id: ID!, fullname: String, email: String, description: String, city: String, country: String): User
+    aboutMe(fullname: String, email: String, description: String, city: String, country: String): User
     sendMessage(to: ID!, messageText: String!): Message
   }
 `;
 
 module.exports = typeDefs;
+
+/* aboutMe(id: ID!, fullname: String, email: String, description: String, city: String, country: String): User */

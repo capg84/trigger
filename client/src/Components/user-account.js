@@ -30,7 +30,7 @@ const Account = ({ user }) => {
     console.log(event);
     try {
       const { data } = await aboutMe({
-        variables: { description, city, country },
+        variables: { fullname, email, description, city, country },
       });
     } catch (err) {
       console.error(err);

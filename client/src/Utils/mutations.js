@@ -27,6 +27,18 @@ export const CREATE_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
+mutation AboutMe($fullname: String, $email: String, $description: String, $city: String, $country: String) {
+  aboutMe(fullname: $fullname, email: $email, description: $description, city: $city, country: $country) {
+    city
+    country
+    description
+    email
+    fullname
+  }
+}
+`;
+
+/* export const UPDATE_USER = gql`
 mutation aboutMe($aboutMeId: ID!) {
   aboutMe(id: $aboutMeId) {
     fullname
@@ -36,7 +48,7 @@ mutation aboutMe($aboutMeId: ID!) {
     description
   }
 }
-`;
+`; */
 
 export const SAVE_PET = gql`
   mutation savePet($petId: ID!){

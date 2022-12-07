@@ -4,14 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Image from "../Assets/Images/pets/Dodo.jpg"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
 
-const Pet = () => {
+const Pet = ({ singlePet }) => {
   const { petId } = useParams();
 
   const { loading, data } = useQuery(PET, {

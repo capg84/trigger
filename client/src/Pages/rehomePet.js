@@ -12,6 +12,7 @@ import Pet from "../Components/pet";
 const AllPets = () => {
   // GET ALL PETS FUNC TO BE COMPLETED - CREATED A CONST FOR PETS 
   //SO THAT THE BELOW ROUTE / LINK / MAP FUNC DOES NOT THROW AN ERROR
+  // Each individual pet must be passed as a prop to the individual pet page
   const pets = []
   return (
 
@@ -57,7 +58,7 @@ const AllPets = () => {
               </Link>
             </div>
             <Routes>
-              <Route path="/:petId" element={<Pet pet={pet}/>} />
+              <Route path="/:petId" element={<Pet singlePet={pet}/>} />
             </Routes>
           </div>
         </Card>

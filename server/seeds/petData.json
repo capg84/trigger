@@ -10,7 +10,7 @@
       "breed": "Turkish Van",
       "medicalHistory": "Got last booster shot on the 23rd of November 2022.",
       "colour": "White",
-      "image": "../../client/src/Assets/Images/pets/Fluffy.jpg"
+      "image": "../client/src/Assets/Images/pets/Fluffy.jpg"
     },
     {
       "name": "Oscar",
@@ -23,7 +23,7 @@
       "breed": "Russian Blue",
       "medicalHistory": "Due for a booster in 3 weeks.",
       "colour": "Black",
-      "image": "../../client/src/Assets/Images/pets/Oscar.jpg"
+      "image": "../client/src/Assets/Images/pets/Oscar.jpg"
     },
     {
       "name": "Leo",
@@ -36,7 +36,7 @@
       "breed": "Norwegian Forest",
       "medicalHistory": "Just Got a booster on the 7th of October 2022.",
       "colour": "Beige, Brown and white",
-      "image": "../../client/src/Assets/Images/pets/Leo.jpg"
+      "image": "../client/src/Assets/Images/pets/Leo.jpg"
     },
     {
       "name": "Polly",
@@ -49,7 +49,7 @@
       "breed": "Ring-Necked Parakeet",
       "medicalHistory": "Not vaccinated",
       "colour": "Green",
-      "image": "../../client/src/Assets/Images/pets/Polly.jpg"
+      "image": "../client/src/Assets/Images/pets/Polly.jpg"
     },
     {
       "name": "Dodo",
@@ -62,7 +62,7 @@
       "breed": "Cockatoo",
       "medicalHistory": "Got polyomavirus vaccine at 6 weeks.",
       "colour": "Pink and white",
-      "image": "../../client/src/Assets/Images/pets/Dodo.jpg"
+      "image": "../client/src/Assets/Images/pets/Dodo.jpg"
     },
     {
         "name": "Stitch",
@@ -75,7 +75,7 @@
         "breed": "Pomsky",
         "medicalHistory": "Not vaccinated",
         "colour": "Black and white",
-        "image": "../../client/src/Assets/Images/pets/Stitch.webp"
+        "image": "../client/src/Assets/Images/pets/Stitch.webp"
     },
     {
         "name": "Milo",
@@ -88,7 +88,7 @@
         "breed": "Chinese Shar-pei",
         "medicalHistory": "Not vaccinated",
         "colour": "Black",
-        "image": "../../client/src/Assets/Images/pets/Milo.jpg"
+        "image": "../client/src/Assets/Images/pets/Milo.jpg"
     },
     {
         "name": "Marshmallow",
@@ -101,7 +101,7 @@
         "breed": "Holland Lop",
         "medicalHistory": "Got his annual shot on the 15th of April 2022.",
         "colour": "Brown",
-        "image": "../../client/src/Assets/Images/pets/Marshmallow.jpg"
+        "image": "../client/src/Assets/Images/pets/Marshmallow.jpg"
     },
     {
         "name": "Strawberry",
@@ -114,7 +114,7 @@
         "breed": "Appaloosa",
         "medicalHistory": "Vaccinated with Tetanus, Flu and EHV vaccine.",
         "colour": "Brown and white",
-        "image": "../../client/src/Assets/Images/pets/Strawberry.jpg"
+        "image": "../client/src/Assets/Images/pets/Strawberry.jpg"
     },
     {
         "name": "Cookie",
@@ -127,7 +127,7 @@
         "breed": "American Guinea Pig",
         "medicalHistory": "Does not require vaccination. Rather annual check-ups.",
         "colour": "Brown",
-        "image": "../../client/src/Assets/Images/pets/Cookie.webp"
+        "image": "../client/src/Assets/Images/pets/Cookie.webp"
     },
     {
         "name": "Nemo",
@@ -140,6 +140,6 @@
         "breed": "Fancy Goldfish",
         "medicalHistory": "Not vaccinated",
         "colour": "white and orange.",
-        "image": "../../client/src/Assets/Images/pets/Nemo.png"
+        "image": "../client/src/Assets/Images/pets/Nemo.png"
     }
   ]

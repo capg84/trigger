@@ -21,8 +21,8 @@ code {
 
 .contact,
 .hero-image,
-.petcare-advice,
-.all-pets {
+.petcare-advice
+ {
   background-image: url("../Images/hero.jpeg");
   background-position: center;
   background-repeat: no-repeat;

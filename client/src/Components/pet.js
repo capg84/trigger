@@ -35,7 +35,7 @@ const Pet = ({ singlePet }) => {
 
     <div className="pet">
       <div className="header-container-pet">
-        <p className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
+        <p style={{color: "white"}} className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
         <button class="btn-secondary like-review">
           <i class="fa fa-heart" aria-hidden="true"></i> Like
         </button>

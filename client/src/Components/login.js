@@ -71,12 +71,12 @@ const Login = (props) => {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
+              style={{  width: "80%", fontSize: "2.5vh" }}
             >
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{  fontSize: "2.5vh" }}
               type="email"
               name="email"
               placeholder="ENTER EMAIL"
@@ -96,7 +96,7 @@ const Login = (props) => {
               PASSWORD:
             </Form.Label>
             <Form.Control
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{ fontSize: "2.5vh" }}
               type="password"
               name="password"
               placeholder="ENTER PASSWORD"
@@ -113,7 +113,7 @@ const Login = (props) => {
                 color: "#f2faf5",
                 marginBottom: "2vh",
                 marginTop: "2vh",
-                fontSize: "20px",
+                fontSize: "2.5vh",
               }}
               variant="primary"
               type="submit"

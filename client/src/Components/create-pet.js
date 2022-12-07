@@ -1,35 +1,88 @@
 // import FileBase64 from 'react-file-base64';
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "../Assets/Styles/dashboard.css"
+import { useMutation } from "@apollo/client";
+import { CREATE_PET } from "../Utils/mutations";
 // import { useState, useMutation } from 'react'
 
+import Auth from '../../utils/auth';
 
+function CreatePet({ user }) {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
+  const [species, setSpecies] = useState('');
+  const [description, setDescription] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [breed, setBreed] = useState('');
+  const [medicalHistory, setMedicalHistory] = useState('');
+  const [colour, setColour] = useState('');
+  const [image, setImage] = useState('');
 
-function CreatePet() {
- 
+  const [createPet, { error }] = useMutation(CREATE_PET);
+
+  const handleCreatePet = async (event) => {
+    event.preventDefault();
+    console.log(event);
+
+    try {
+      const { data } = await createPet({
+        variables: {
+          species,
+          breed,
+          image,
+          colour,
+          name,
+          description,
+          gender,
+          city,
+          country,
+          medicalHistory,
+          age,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
+    <div>
+    {Auth.loggedIn() ? (
+
     <div className="formContainer">
+      
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "50px",
-    marginBottom: "150px", padding: "2vh" }}>
+    marginBottom: "150px", padding: "2vh" }} onSubmit={handleCreatePet}>
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>ANIMAL SPECIES:</Form.Label>
+
         <Form.Control style={{fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>BREED:</Form.Label>
+
         <Form.Control style={{fontSize: "2.5vh" }}  type="species" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COLOUR:</Form.Label>
+
         <Form.Control style={{ fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
+
         <Form.Control style={{ fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" ,  }} className="mb-3" >
@@ -41,23 +94,31 @@ function CreatePet() {
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh" }}>DESCRIPTION:</Form.Label>
+
         <textarea style={{ fontSize: "2.5vh", height:"100px", width: "99%"}}  type="description" placeholder="REQUIRED" 
         className="form-control input" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>CITY:</Form.Label>
+
         <Form.Control style={{ fontSize: "2.5vh" }}  type="city" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COUNRTY:</Form.Label>
+
         <Form.Control style={{ fontSize: "2.5vh" }}  type="country" placeholder="REQUIRED" />
+
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>MEDICAL HISTORY:</Form.Label>
+
         <Form.Control style={{ fontSize: "2.5vh" }} type="medical-history" placeholder="REQUIRED" />
+
       </Form.Group>
         <div style={{ textAlign: "center"}}>
       <Button style={{  width: "25vh",  backgroundColor: "#9CCBC3", color: "#f2faf5", 
@@ -67,6 +128,13 @@ function CreatePet() {
       </Button>
       </div>
     </Form>
+    </div>
+    ):(
+      <p>
+      You need to be logged in to share your thoughts. Please{' '}
+      <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+    </p>
+    )}
     </div>
   );
 }

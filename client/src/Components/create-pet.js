@@ -61,6 +61,22 @@ function CreatePet({ user }) {
       
     <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "50px",
     marginBottom: "150px", padding: "2vh" }} onSubmit={handleCreatePet}>
+
+<Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setName(event.target.value)}/>
+      </Form.Group>
+
+      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>AGE:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setAge(event.target.value)}/>
+      </Form.Group>
+
+      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
+        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>GENDER:</Form.Label>
+        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setGender(event.target.value)}/>
+      </Form.Group>
+
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>ANIMAL SPECIES:</Form.Label>
         <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }} type="species" placeholder="REQUIRED" onChange={(event) => setSpecies(event.target.value)}/>
@@ -74,11 +90,6 @@ function CreatePet({ user }) {
       <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
         <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>COLOUR:</Form.Label>
         <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="colour" placeholder="REQUIRED" onChange={(event) => setColour(event.target.value)}/>
-      </Form.Group>
-
-      <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>NAME:</Form.Label>
-        <Form.Control style={{color: "#AD7940", fontSize: "2.5vh" }}  type="name" placeholder="REQUIRED" onChange={(event) => setName(event.target.value)}/>
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" ,  }} className="mb-3" >

@@ -253,6 +253,7 @@ query messages {
     messageText
     dateCreated
     from {
+      _id
       fullname
     }
   }

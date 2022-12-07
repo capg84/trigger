@@ -246,3 +246,15 @@ export const PET = gql`
     }
   }
 `;
+
+export const MESSAGES = gql`
+query messages {
+  messages {
+    messageText
+    dateCreated
+    from {
+      fullname
+    }
+  }
+}
+`;

@@ -1,5 +1,7 @@
 import "../Assets/Styles/dashboard.css";
-import avatar from "../Assets/Images/message2.jpg"
+import { useQuery, useMutation } from '@apollo/client';
+import { image } from 'react-bootstrap'
+import avatar from "../Assets/Images/message2.jpg";
 const Messages = () => {
   return (
     <div className="message-outer-container">

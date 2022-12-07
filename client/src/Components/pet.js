@@ -24,53 +24,45 @@ const Pet = ({ singlePet }) => {
     return <h2>LOADING...</h2>;
   }
 
-  if (!pet?.name) {
-    return (
-      <h4>
-        No pet found with this ID!
-      </h4>
-    );
-  }
-
   return <main>
 
     <div className="pet">
       <div className="header-container-pet">
-        <p className="date-created">POST CREATED: <span>{ }</span></p>
+        <p className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
         <button class="btn-secondary like-review">
           <i class="fa fa-heart" aria-hidden="true"></i> Like
         </button>
-        <h3 className="header-text-pet">{ }</h3>
+        <h3 className="header-text-pet">{pet.name}</h3>
       </div>
 
       <div className="pet-div">
         <div className="pet-image-div">
-          <img className="pet-image" alt="pet" src={Image}></img>
+          <img className="pet-image" alt="pet" src={pet.image}></img>
         </div>
 
         <div className="pet-details">
-          <h6>AGE: <span>{ }</span></h6>
-          <h6>GENDER: <span>{ }</span></h6>
-          <h6>SPECIES: <span>{ }</span></h6>
-          <h6>BREED: <span>{ }</span></h6>
-          <h6>COLOUR: <span>{ }</span></h6>
-          <h6>CITY: <span>{ }</span></h6>
-          <h6>COUNTRY: <span>{ }</span></h6>
+          <h6>AGE: <span>{pet.age}</span></h6>
+          <h6>GENDER: <span>{pet.gender}</span></h6>
+          <h6>SPECIES: <span>{pet.species}</span></h6>
+          <h6>BREED: <span>{pet.breed}</span></h6>
+          <h6>COLOUR: <span>{pet.colour}</span></h6>
+          <h6>CITY: <span>{pet.city}</span></h6>
+          <h6>COUNTRY: <span>{pet.country}</span></h6>
         </div>
       </div>
 
 
       <div className="pet-description">
         <h6>DESCRIPTION:</h6>
-        <p>{ }</p>
+        <p>{pet.description}</p>
         <h6>MEDICAL HISTORY:</h6>
-        <p>{ }</p>
+        <p>{pet.medicalHistory}</p>
       </div>
 
       <div className="pet-buttons-div">
         <div className="pet-buttons">
           <Button>BACK TO PETS</Button>
-          <Button>MESSAGE: <span>{ }</span></Button>
+          <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
         </div>
       </div>
     </div>

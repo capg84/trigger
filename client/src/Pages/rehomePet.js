@@ -35,7 +35,7 @@ const AllPets = () => {
       </div>
 
       <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
-
+      { pets && pets.map((pet) => (
         <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
           <div style={{ display: "flex" }}>
             <div>
@@ -58,7 +58,7 @@ const AllPets = () => {
             </Routes>
           </div>
         </Card>
-     
+       ))}
       </section>
 
 

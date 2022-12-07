@@ -1,6 +1,5 @@
 import "../Assets/Styles/dashboard.css";
 import avatar from "../Assets/Images/message2.jpg"
-
 const Messages = () => {
   return (
     <div className="message-outer-container">

@@ -81,8 +81,7 @@ const resolvers = {
     // get all messages
     messages: async(parent, args, context) => {
       const myId = context.user._id;
-      let users = await User.find({});
-      const allMessages = await Message.find({to: myId
+      return await Message.find({to: myId
         // $or: [{from: myId}, {to: myId}]
       })
       .populate('from')

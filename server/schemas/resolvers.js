@@ -87,31 +87,13 @@ const resolvers = {
       })
       .populate('from')
       .sort({dateCreated: -1});
-      // const groupedMessages = allMessages.map(message => {
-      //   const from = message.from._id
-      //   const groupedfrom = from.map()
-      //   console.log("from", from);
-      //   return from;
-      // })
       const collection = collect(allMessages);
-    }, 
+      groupmessage = collection.groupBy('from');  
+      const grouped = groupmessage.all();
+      console.log('group:', grouped);
 
-    messagesfrom: async(parent, args, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('invalid token')
-      }
-      const myId = context.user._id;
-      const messages = await Message.aggregate([
-        {$match: {to: myId}},
-        {$sort: {dateCreated: -1}},
-        {$group:{
-          _id: "$from",
-          message: {$first: "$messageText"},
-        },
-        },
-      ]);
-      return messages;
-    }
+      return {allMessages};
+    }, 
   },
   Mutation: {
     // login user

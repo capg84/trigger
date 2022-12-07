@@ -26,14 +26,14 @@ function CreatePet({ user }) {
   const [colour, setColour] = useState('');
   const [image, setImage] = useState('');
 
-  const [createPet, { error }] = useMutation(CREATE_PET);
+  const [addPet, { error }] = useMutation(CREATE_PET);
 
   const handleCreatePet = async (event) => {
     event.preventDefault();
     console.log(event);
 
     try {
-      const { data } = await createPet({
+      const { data } = await addPet({
         variables: {
           species,
           breed,
@@ -48,6 +48,7 @@ function CreatePet({ user }) {
           age,
         },
       });
+      console.log(data.addPet);
     } catch (err) {
       console.error(err);
     }

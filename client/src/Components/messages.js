@@ -1,5 +1,5 @@
 import "../Assets/Styles/dashboard.css";
-import avatar from "../Assets/Images"
+import avatar from "../Assets/Images/message2.jpg"
 
 const Messages = () => {
   return (

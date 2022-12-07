@@ -1,6 +1,8 @@
 import "../Assets/Styles/dashboard.css";
 import { useQuery, useMutation } from '@apollo/client';
 import { image } from 'react-bootstrap'
+import { MESSAGES, GET_MESSAGES} from '../Utils/queries'
+import { SEND_MESSAGE } from "../Utils/mutations";
 import avatar from "../Assets/Images/message2.jpg";
 const Messages = () => {
   return (

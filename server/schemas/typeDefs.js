@@ -76,6 +76,7 @@ const typeDefs = gql`
     likedPets: [Pet]
     userLikes: [User]
     messages: [Message]
+    messagesfrom: [Message]
  
   }
   type Mutation {

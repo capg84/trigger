@@ -14,6 +14,7 @@ const typeDefs = gql`
     likedPets: [Pet]
     messages: [Message]
   }
+
   type Pet {
     _id: ID!
     name: String!
@@ -34,12 +35,14 @@ const typeDefs = gql`
     commentCount: Int
     comments: [Comment]
   }
+
   type Comment {
     _id: ID
     commenter: User
     commentBody: String!
     dateCreated: String
   }
+
   input PetInput {
     _id: ID!
     name: String
@@ -54,6 +57,7 @@ const typeDefs = gql`
     colour: String
     image: String
   }
+
   type Message {
     _id: ID!
     messageText: String!
@@ -62,14 +66,16 @@ const typeDefs = gql`
     from: User!
     to: User!
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Query {
     me: User
     users: [User]
-    pets: [Pet]!
+    allPets: [Pet]!
     pet(petId: ID!): Pet
     getmessages(from: ID!): [Message]
     userPets: [Pet]
@@ -79,6 +85,7 @@ const typeDefs = gql`
     messagesfrom: [Message]
  
   }
+  
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth

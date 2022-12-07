@@ -74,14 +74,14 @@ function Signup() {
           >
             <Form.Label
 
-              style={{ color: "#f2faf5", width: "80%", fontSize: "2vh" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
 
             >
               FULL NAME:
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2vh" }}
+              style={{ fontSize: "2.5vh" }}
               type="name"
 
               placeholder="ENTER FULL NAME "
@@ -105,7 +105,7 @@ function Signup() {
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{  fontSize: "2.5vh" }}
 
               type="email"
               placeholder="ENTER EMAIL"
@@ -129,7 +129,7 @@ function Signup() {
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{ fontSize: "2.5vh" }}
 
               type="password"
               placeholder="ENTER PASSWORD"

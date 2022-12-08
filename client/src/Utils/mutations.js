@@ -154,16 +154,19 @@ export const REMOVE_COMMENT = gql`
 `;
 
 export const SEND_MESSAGE = gql`
- mutation sendMessage($to: ID!, $messageText: String!) {
-  sendMessage(to: $to, messageText: messageText){
-    _id
+mutation sendMessage($to: ID!, $messageText: String!) {
+  sendMessage(to: $to, messageText: $messageText) {
     messageText
-    read
     dateCreated
-    from
-    to
+    from {
+      _id
+    }
+    to {
+      _id
+    }
+    read
   }
- }
+}
 `;
 
 

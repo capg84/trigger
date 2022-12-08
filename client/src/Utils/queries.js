@@ -88,9 +88,11 @@ export const GET_MESSAGES = gql`
       dateCreated
       from {
         _id
+        fullname
       }
       to {
         _id
+        fullname
       }
     }
   }

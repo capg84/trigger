@@ -86,12 +86,12 @@ const resolvers = {
       })
       .populate('from')
       .sort({dateCreated: -1});
-      const collection = collect(allMessages);
-      groupmessage = collection.groupBy('from');  
-      const grouped = groupmessage.all();
-      console.log('group:', grouped);
+      // const collection = collect(allMessages);
+      // groupmessage = collection.groupBy('from');  
+      // const grouped = groupmessage.all();
+      // console.log('group:', grouped);
 
-      return {allMessages};
+      // return {allMessages};
     }, 
   },
   Mutation: {

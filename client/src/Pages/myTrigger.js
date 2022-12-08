@@ -40,11 +40,7 @@ const Dashboard = () => {
 /*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
     return <Navigate to={`/dashboard/${userId}`}/>;
   }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
+  
   if (!user?.fullname) {
     return (
       <h4>
@@ -52,6 +48,10 @@ const Dashboard = () => {
       </h4>
     );
   } */
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>

@@ -37,9 +37,10 @@ const resolvers = {
       .populate('owner')
       .sort({dateCreated: -1});
     },
+
     // Gets pets by species
-    speciesPet: async (parent, { species }) => {
-      return Pet.findOne({ species: species })
+    speciesPet: async (parent,  {species} ) => {
+      return Pet.find({ species: species })
       .populate('owner')
       .populate('comments')
     },

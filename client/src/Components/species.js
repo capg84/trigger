@@ -17,6 +17,7 @@ import { SEARCH_PET_SPECIES } from '../Utils/queries';
 const Species = () => {
 
     const { species } = useParams();
+    console.log(species)
     const { loading, data } = useQuery(SEARCH_PET_SPECIES, {
         variables: { species: species }
     });
@@ -35,25 +36,25 @@ const Species = () => {
     <div className='all-pets'>
         <div style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <Link to={`/pets/Cat`}>
+                <Link to={`/pets/species/Cat`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>CATS</Button>
                 </Link>
-                <Link to={`/pets/Dog`}>
+                <Link to={`/pets/species/Dog`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>DOGS</Button>
                 </Link>
-                <Link to={`/pets/Rabbit`}>
+                <Link to={`/pets/species/Rabbit`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>RABBITS</Button>
                 </Link>
-                <Link to={`/pets/Horse`}>
+                <Link to={`/pets/species/Horse`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>HORSES</Button>
                 </Link>
-                <Link to={`/pets/Bird`}>
+                <Link to={`/pets/species/Bird`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>BIRDS</Button>
                 </Link>
-                <Link to={`/pets/Guinea pig`}>
+                <Link to={`/pets/species/Guinea pig`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>GUINEA PIGS</Button>
                 </Link>
-                <Link to={`/pets/Other`}>
+                <Link to={`/pets/species/Other`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>OTHER</Button>
                 </Link>
             </div>
@@ -68,7 +69,7 @@ const Species = () => {
                             <img style={{
                                 display: "flex", border: "solid black 1px", width: '10rem', height: "14rem",
                                 margin: "0.5rem", borderRadius: "10px"
-                            }} alt="pet" source={pet.image} />
+                            }} alt="pet" src={pet.image} />
                         </div>
                         <div style={{ padding: "1rem" }}>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>NAME: <span>{pet.name}</span></h6>

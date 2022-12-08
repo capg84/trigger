@@ -1,7 +1,6 @@
 import React from "react";
 import "../Assets/Styles/pet.css"
 import Button from 'react-bootstrap/Button';
-import Image from "../Assets/Images/pets/Dodo.jpg"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {
@@ -68,7 +67,7 @@ const Pet = ({ singlePet }) => {
 
       <div className="pet-buttons-div">
         <div className="pet-buttons">
-          <Link to="/rehome">
+          <Link to="/pets">
           <Button>BACK TO PETS</Button>
           </Link>
           {Auth.loggedIn() ? (
@@ -97,6 +96,7 @@ const Pet = ({ singlePet }) => {
           <div className="comment-header">
             <h6>{ }</h6>
             <h6>{ }</h6>
+            <span class="material-symbols-outlined">delete</span>
           </div>
 
           <div className="comment-text">

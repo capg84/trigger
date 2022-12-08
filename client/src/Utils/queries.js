@@ -97,9 +97,11 @@ export const GET_MESSAGES = gql`
       dateCreated
       from {
         _id
+        fullname
       }
       to {
         _id
+        fullname
       }
     }
   }
@@ -254,4 +256,17 @@ export const PET = gql`
       }
     }
   }
+`;
+
+export const MESSAGES = gql`
+query messages {
+  messages {
+    messageText
+    dateCreated
+    from {
+      _id
+      fullname
+    }
+  }
+}
 `;

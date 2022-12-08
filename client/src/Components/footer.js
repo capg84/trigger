@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import "../Assets/Styles/index.css";
 
 // HTML for footer which is imported in App.js
 export default function Footer() {
@@ -15,7 +14,7 @@ export default function Footer() {
           <h4 style={{ color: "#f2faf5" }}>© 2022 Copyright: TRIGGER</h4>
 
         </div>
-        <div style={{ display: "flex", flexWrap: "wrap", height: "auto" }}>
+        <div className="icons" style={{ display: "flex", flexWrap: "wrap", height: "auto" }}>
           <a className="btn btn-link btn-floating btn-lg text-dark m-1"
             href="#!"
             role="button"

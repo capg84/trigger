@@ -71,8 +71,7 @@ const Login = (props) => {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{  width: "80%", fontSize: "2.5vh" }}
-            >
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control

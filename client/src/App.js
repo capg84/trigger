@@ -27,9 +27,7 @@ import Account from "./Components/user-account";
 import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
 import CreatePet from "./Components/create-pet";
-
-
-
+import Species from "./Components/species";
 
 
 const httpLink = createHttpLink({
@@ -63,6 +61,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/pets" element={<AllPets />} />
+              <Route path="/pets/:species" element={<Species />} />
               <Route path="/advice" element={<Advice />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />

@@ -83,6 +83,7 @@ const typeDefs = gql`
     userLikes: [User]
     messages: [Message]
     messagesfrom: [Message]
+    speciesPet: [Pet]!
  
   }
   

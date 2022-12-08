@@ -103,8 +103,8 @@ mutation addPet($name: String!, $age: String!, $gender: String!, $species: Strin
 `; */
 
 export const UPDATE_PET = gql`
-mutation updatePet($petId: ID!) {
-  updatePet(petId: $petId) {
+mutation updatePet($breed: String, $colour: String, $name: String, $age: String, $gender: String, $species: String, $description: String, $city: String, $country: String, $medicalHistory: String, $image: String, $petId: ID!) {
+  updatePet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, petId: $petId) {
     _id
     name
     age

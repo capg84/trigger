@@ -20,11 +20,12 @@ import Account from "../Components/user-account";
 import "../Assets/Styles/dashboard.css";
 import { MY_PROFILE } from "../Utils/queries";
 import Auth from "../Utils/auth";
+import EditListing from "../Components/edit-listing";
 
 const Dashboard = () => {
-  let { pathname } = useLocation();
   const { userId } = useParams();
   const { loading, data } = useQuery(MY_PROFILE);
+  //const userPets = Auth.getProfile().data?.userPets;
 
   // Check if data is returning from the `MY_PROFILE` query
   const user = data?.me || {};
@@ -32,6 +33,7 @@ const Dashboard = () => {
   
   console.log('user:', user)
   console.log('user:', user.userPets)
+/*   const onePet = user.userPets[0] */
 
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
@@ -94,6 +96,9 @@ const Dashboard = () => {
             <Link to={`/dashboard/${userId}/account`} className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link>
+{/*             <Link to={`/dashboard/${userId}/edit`} className="item-link-nav">
+              EDIT
+            </Link> */}
 {/*             <Link to="/dashboard/:userId/account" className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link> */}
@@ -103,6 +108,7 @@ const Dashboard = () => {
           <Routes>
             <Route path="/create" element={<CreateListing />} />
             <Route path="/manage" element={<ManageListing pets={user.userPets}/>} />
+            <Route path="/edit/:petId" element={<EditListing />} />
             <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />

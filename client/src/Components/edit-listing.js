@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { UPDATE_PET } from "../Utils/mutations";
+import { PET } from "../Utils/queries";
+import {
+  BrowserRouter as Router,
+  useParams,
+} from "react-router-dom";
 
-function EditListing({ pet }) {
+function EditListing() {
   // Create state variables for the fields in the form
-  console.log('editPage:', pet);
+  const petId = useParams().petId;
+
   const [species, setSpecies] = useState();
   const [breed, setBreed] = useState();
   const [image, setImage] = useState();
@@ -18,7 +24,14 @@ function EditListing({ pet }) {
   const [country, setCountry] = useState();
   const [medicalHistory, setMedicalHistory] = useState();
 
-  const [updatePet, { error }] = useMutation(UPDATE_PET);
+  const { loading, data } = useQuery(PET, { variables: { petId }});
+  const [updatePet, { error }] = useMutation(UPDATE_PET, petId);
+
+  const pet = data?.pet;
+  if(data) {
+    console.log('pet:', pet);
+    console.log('image:', pet.image)
+  }
 
   const handleEditPet = async (event) => {
     event.preventDefault();
@@ -39,18 +52,16 @@ function EditListing({ pet }) {
           medicalHistory,
         },
       });
+      console.log(data)
     } catch (err) {
       console.error(err);
     }
   };
 
-  if (!pet.length) {
-    return <h3>No pet found</h3>;
-  }
-
   return (
+    
     <div className="formContainer">
-      <p>edit page</p>
+      {loading ? <p>Loading...</p> : 
       <Form
         onSubmit={handleEditPet}
         style={{
@@ -76,7 +87,7 @@ function EditListing({ pet }) {
             style={{ color: "#AD7940", fontSize: "20px" }}
             type="species"
             placeholder="REQUIRED"
-            value={`${pet.species}`}
+            defaultValue={`${pet.species}`}
             name="species"
             onChange={(event) => setSpecies(event.target.value)}
           />
@@ -95,7 +106,7 @@ function EditListing({ pet }) {
             style={{  fontSize: "2.5vh" }}
             type="breed"
             placeholder="REQUIRED"
-            value={`${pet.breed}`}
+            defaultValue={`${pet.breed}`}
             name="breed"
             onChange={(event) => setBreed(event.target.value)}
           />
@@ -114,7 +125,7 @@ function EditListing({ pet }) {
             style={{ fontSize: "2.5vh" }}
             type="colour"
             placeholder="REQUIRED"
-            value={`${pet.colour}`}
+            defaultValue={`${pet.colour}`}
             name="colour"
             onChange={(event) => setColour(event.target.value)}
           />
@@ -133,7 +144,7 @@ function EditListing({ pet }) {
             style={{ fontSize: "2.5vh" }}
             type="gender"
             placeholder="REQUIRED"
-            value={`${pet.gender}`}
+            defaultValue={`${pet.gender}`}
             name="gender"
             onChange={(event) => setGender(event.target.value)}
           />
@@ -152,13 +163,13 @@ function EditListing({ pet }) {
             style={{  fontSize: "20px" }}
             type="name"
             placeholder="REQUIRED"
-            value={`${pet.name}`}
+            defaultValue={`${pet.name}`}
             name="name"
             onChange={(event) => setName(event.target.value)}
           />
         </Form.Group>
 
-        <Form.Group
+{/*         <Form.Group
           style={{ width: "100%", marginLeft: "3%" }}
           className="mb-3"
         >
@@ -171,25 +182,12 @@ function EditListing({ pet }) {
             style={{ width: "81%", fontSize: "2.5vh", display: "inline-block" }}
             type="file"
             placeholder="ENTER IMAGE"
-            value={`${pet.image}`}
+             defaultValue={pet.image}  
             accept="image/png image.jpg"
             name="image"
             onChange={(event) => setImage(event.target.value)}
           />
-          <Button
-            style={{
-              backgroundColor: "#9CCBC3",
-              color: "#f2faf5",
-              fontSize: "2.5vh",
-              marginLeft: "1vh",
-              marginBottom: "1vh",
-            }}
-            variant="primary"
-            type="btn"
-          >
-            UPLOAD IMAGE
-          </Button>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3">
           <Form.Label
@@ -206,7 +204,7 @@ function EditListing({ pet }) {
             }}
             type="description"
             placeholder="REQUIRED"
-            value={`${pet.description}`}
+            defaultValue={`${pet.description}`}
             name="description"
             onChange={(event) => setDescription(event.target.value)}
             className="form-control input"
@@ -226,7 +224,7 @@ function EditListing({ pet }) {
             style={{ color: "#AD7940", fontSize: "20px" }}
             type="city"
             placeholder="REQUIRED"
-            value={`${pet.city}`}
+            defaultValue={`${pet.city}`}
             name="city"
             onChange={(event) => setCity(event.target.value)}
           />
@@ -245,7 +243,7 @@ function EditListing({ pet }) {
             style={{ color: "#AD7940", fontSize: "20px" }}
             type="country"
             placeholder="REQUIRED"
-            value={`${pet.country}`}
+            defaultValue={`${pet.country}`}
             name="country"
             onChange={(event) => setCountry(event.target.value)}
           />
@@ -261,7 +259,7 @@ function EditListing({ pet }) {
             style={{ color: "#AD7940", fontSize: "20px" }}
             type="medical-history"
             placeholder="REQUIRED"
-            value={`${pet.medicalHistory}`}
+            defaultValue={`${pet.medicalHistory}`}
             name="medicalHistory"
             onChange={(event) => setMedicalHistory(event.target.value)}
           />
@@ -280,7 +278,7 @@ function EditListing({ pet }) {
           variant="primary"
           type="submit"
         >
-          CREATE PET
+          UPDATE PET
         </Button>
         {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
@@ -288,7 +286,9 @@ function EditListing({ pet }) {
           </div>
         )}
       </Form>
+}
     </div>
+        
   );
 }
 

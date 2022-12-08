@@ -18,6 +18,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
+  console.log(pets)
   const { userId } = useParams();
   console.log('id:', userId)
   const [removePet, { error }] = useMutation(REMOVE_PET);

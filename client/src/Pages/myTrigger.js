@@ -31,6 +31,8 @@ const Dashboard = () => {
   console.log('data:', data);
   
   console.log('user:', user)
+  console.log('user:', user.userPets)
+
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
 /*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
@@ -100,7 +102,7 @@ const Dashboard = () => {
         <div className="dashboard-component">
           <Routes>
             <Route path="/create" element={<CreateListing />} />
-            <Route path="/manage" element={<ManageListing pets={user.userpets}/>} />
+            <Route path="/manage" element={<ManageListing pets={user.userPets}/>} />
             <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />

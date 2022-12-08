@@ -13,6 +13,7 @@ function EditListing() {
   // Create state variables for the fields in the form
   const petId = useParams().petId;
 
+  const [updateMessage, setUpdateMessage] = useState("");
   const [species, setSpecies] = useState();
   const [breed, setBreed] = useState();
   const [image, setImage] = useState();
@@ -53,6 +54,7 @@ function EditListing() {
         },
       });
       console.log(data)
+      setUpdateMessage("Pet successfully updated!")
     } catch (err) {
       console.error(err);
     }
@@ -287,6 +289,7 @@ function EditListing() {
         )}
       </Form>
 }
+<div style={{fontSize: "20px", color: "white", textAlign: "center"}}>{updateMessage}</div>
     </div>
         
   );

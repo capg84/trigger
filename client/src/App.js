@@ -61,7 +61,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/pets" element={<AllPets />} />
-              <Route path="/pets/:species" element={<Species />} />
+              <Route path="/pets/species/:species" element={<Species />} />
               <Route path="/advice" element={<Advice />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />

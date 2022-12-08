@@ -191,7 +191,7 @@ function EditListing({ pet }) {
 
         <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3">
           <Form.Label
-            style={{ color: "#f2faf5", width: "95%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "95%", fontSize: "2.5vh" }}
           >
             DESCRIPTION:
           </Form.Label>
@@ -216,12 +216,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             CITY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "2.5vh" }}
             type="city"
             placeholder="REQUIRED"
             value={`${pet.city}`}
@@ -235,12 +235,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             COUNRTY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ fontSize: "2.5vh" }}
             type="country"
             placeholder="REQUIRED"
             value={`${pet.country}`}
@@ -251,12 +251,12 @@ function EditListing({ pet }) {
 
         <Form.Group style={{ width: "93%", marginLeft: "3%" }} className="mb-3">
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             MEDICAL HISTORY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "2.5vh" }}
             type="medical-history"
             placeholder="REQUIRED"
             value={`${pet.medicalHistory}`}
@@ -273,7 +273,7 @@ function EditListing({ pet }) {
             color: "#f2faf5",
             marginBottom: "2vh",
             marginTop: "2vh",
-            fontSize: "20px",
+            fontSize: "2.5vh",
           }}
           variant="primary"
           type="submit"

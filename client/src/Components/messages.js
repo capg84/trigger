@@ -1,13 +1,12 @@
 import "../Assets/Styles/dashboard.css";
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
-import { Image, Form, Button } from 'react-bootstrap'
+import { Image, Form } from 'react-bootstrap'
 import { MESSAGES, GET_MESSAGES} from '../Utils/queries'
 import { SEND_MESSAGE } from "../Utils/mutations";
 import Auth from '../Utils/auth'
 import avatar from "../Assets/Images/message.jpg.webp";
 import { useState, useEffect } from "react";
 import EachMessage from './eachmessage';
-import { useRouteMatch } from "react-router-dom";
 
 const Messages = () => {
   const { loading, data } = useQuery(MESSAGES);
@@ -37,6 +36,7 @@ const Messages = () => {
 
     try {
       console.log('form data:', messageFormData)
+      // eslint-disable-next-line
       const { data: sendData } = await sendMessage({
         variables: { ...messageFormData },
       });

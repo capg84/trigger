@@ -9,7 +9,7 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
-import EditListing from "../Components/edit-listing";
+import EditListing from "./edit-listing";
 import { useMutation } from '@apollo/client';
 import { REMOVE_PET } from '../Utils/mutations';
 import Auth from "../Utils/auth";
@@ -18,7 +18,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
-  const { userId } = useParams();
+  console.log(pets)
+  const userId = Auth.getProfile().data?._id;
   console.log('id:', userId)
   const [removePet, { error }] = useMutation(REMOVE_PET);
 
@@ -33,16 +34,15 @@ const ManageListing = ({ pets }) => {
       const { data } = await removePet({
         variables: { petId },
       });
+      window.location.href=`/dashboard/${userId}/manage`;
     } catch (err) {
       console.error(err);
     }
   };
-  console.log(pets);
   
   return (
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
-  { pets && 
-  pets.map((pet) => (
+  {pets.map((pet) => (
     <Card key={pet} style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 
           margin: "3.5vh", padding: "2vh 0 3vh 3vh" }}>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -59,18 +59,18 @@ const ManageListing = ({ pets }) => {
           <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span>{pet.location}</span></h6>
         </div>
         <div style={{ textAlign: "center", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
-        <Link to={`/dashboard/${userId}/edit/${pet._id}`}>
-          <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
+        <Link key="two" to={`/dashboard/${userId}/edit/${pet._id}`}>
+          <Button key="three" style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "15vh", marginBottom: "1vh" }}
             variant="primary">EDIT</Button>
           </Link>
-          <Button style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
+          <Button key="four" style={{ marginLeft: "2vh", width: "15vh", backgroundColor: "#72552D", color: "#f2faf5", 
           padding: "1vh", margin: "0 0 1vh 2vh", fontSize: "15px"}} variant="primary" onClick={() => handleRemovePet(pet._id)}>DELETE</Button>
         </div>
       </div>
       <div>
-      <Routes>
-            <Route path="/edit/:petId" element={<EditListing pet={pet}/>} />
-      </Routes>
+{/*       <Routes>
+            <Route path="dashboard/:userId/edit/:petId" key="one" element={<EditListing pet={pet}/>} />
+      </Routes> */}
       </div>
     </Card>
   ))}

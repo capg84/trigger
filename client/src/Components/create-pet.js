@@ -27,9 +27,10 @@ function CreatePet({ user }) {
   const [image, setImage] = useState('');
 
   const [addPet, { error }] = useMutation(CREATE_PET);
-
+  const owner = Auth.getProfile().data?._id;
   const handleCreatePet = async (event) => {
     event.preventDefault();
+
     console.log(event);
 
     try {
@@ -46,6 +47,7 @@ function CreatePet({ user }) {
           country,
           medicalHistory,
           age,
+          owner,
         },
       });
       console.log(data.addPet);

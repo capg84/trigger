@@ -33,10 +33,10 @@ export const SEARCH_PET_SPECIES = gql`
   query speciesPet {
     speciesPet {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -45,12 +45,15 @@ export const SEARCH_PET_SPECIES = gql`
       colour
       image
       dateCreated
-    }
-    Comments {
-      _id
-      commenter
-      commentBody
-      dateCreated
+      comments {
+        _id
+        commenter {
+          _id
+          fullname
+        }
+        commentBody
+        dateCreated
+      }
     }
   }
 `;
@@ -59,10 +62,10 @@ export const SEARCH_PET_BREED = gql`
   query petBreed {
     petBreed {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -71,12 +74,15 @@ export const SEARCH_PET_BREED = gql`
       colour
       image
       dateCreated
-    }
-    Comments {
-      _id
-      commenter
-      commentBody
-      dateCreated
+      comments {
+        _id
+        commenter {
+          _id
+          fullname
+        }
+        commentBody
+        dateCreated
+      }
     }
   }
 `;

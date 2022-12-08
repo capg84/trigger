@@ -1,15 +1,15 @@
 .advice-container {
-  width: 70%;
+  width: 85%;
   height: fit-content;
   margin: 25px auto;
 }
 
 .advice-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-content: center;
   align-items: center;
-  height: 150px;
+  height: fit-content;
   margin: 15px 0px;
   border: solid 2px rgb(113, 140, 123);
   border-radius: 10px;
@@ -36,4 +36,51 @@ img {
 .btn {
   width: 90px;
   background-color: rgb(173, 121, 64);
+}
+
+/* styles for small tablet */
+@media screen and (min-width: 641px) {
+}
+
+/* styles for large tablets, laptop and desktops */
+@media screen and (min-width: 961px) {
+  .advice-container {
+    width: 70%;
+    height: fit-content;
+    margin: 25px auto;
+  }
+
+  .advice-item {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    height: 150px;
+    margin: 15px 0px;
+    border: solid 2px rgb(113, 140, 123);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 5px 5px rgba(113, 140, 123, 1);
+    background-color: #f2faf5;
+  }
+
+  .advice-image {
+    height: 124px;
+    border: solid 2px rgb(113, 140, 123);
+  }
+
+  img {
+    height: 120px;
+  }
+
+  .advice-text-el {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+  }
+
+  .btn {
+    width: 90px;
+    background-color: rgb(173, 121, 64);
+  }
 }

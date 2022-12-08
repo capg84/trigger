@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../Utils/mutations";
 import Auth from "../Utils/auth";
+import "../Assets/Styles/index.css";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -46,7 +47,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className="login-div">
       {data ? (
         <p>
           Success! You may now head <Link to={`/dashboard/${data.login.user._id}`}> to the dashboard.</Link>
@@ -54,6 +55,7 @@ const Login = (props) => {
       ) : (
         <Form
           onSubmit={handleFormSubmit}
+          className="login"
           style={{
             backgroundColor: "#AD7940",
             opacity: "0.8",
@@ -71,8 +73,7 @@ const Login = (props) => {
             controlId="formBasicEmail"
           >
             <Form.Label
-              style={{  width: "80%", fontSize: "2.5vh" }}
-            >
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}>
               EMAIL ADDRESS:
             </Form.Label>
             <Form.Control

@@ -30,39 +30,42 @@ query Query {
 `;
 
 export const SEARCH_PET_SPECIES = gql`
-  query speciesPet {
-    speciesPet {
+query speciesPet($species: String) {
+  speciesPet(species: $species) {
+    _id
+    name
+    age
+    gender
+    species
+    description
+    city
+    country
+    breed
+    medicalHistory
+    colour
+    image
+    dateCreated
+    comments {
       _id
-      species
-      name
-      age
-      gender
-      description
-      city
-      country
-      breed
-      medicalHistory
-      colour
-      image
-      dateCreated
-    }
-    Comments {
-      _id
-      commenter
+      commenter {
+        _id
+        fullname
+      }
       commentBody
       dateCreated
     }
   }
+}
 `;
 
 export const SEARCH_PET_BREED = gql`
   query petBreed {
     petBreed {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -71,12 +74,15 @@ export const SEARCH_PET_BREED = gql`
       colour
       image
       dateCreated
-    }
-    Comments {
-      _id
-      commenter
-      commentBody
-      dateCreated
+      comments {
+        _id
+        commenter {
+          _id
+          fullname
+        }
+        commentBody
+        dateCreated
+      }
     }
   }
 `;

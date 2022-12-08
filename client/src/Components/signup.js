@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import "../Assets/Styles/index.css"
-
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../Utils/mutations";
-
 import Auth from "../Utils/auth";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -62,6 +60,7 @@ function Signup() {
             marginBottom: "150px",
             padding: "2vh",
             borderRadius: "20px",
+            className: "signup"
           
           }}
         >

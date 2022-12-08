@@ -81,12 +81,12 @@ function EditListing() {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             ANIMAL SPECIES:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ cofontSize: "2.5vh" }}
             type="species"
             placeholder="REQUIRED"
             defaultValue={`${pet.species}`}
@@ -182,7 +182,6 @@ function EditListing() {
           </Form.Label>
           <Form.Control
             style={{ width: "81%", fontSize: "2.5vh", display: "inline-block" }}
-            type="file"
             placeholder="ENTER IMAGE"
              defaultValue={pet.image}  
             accept="image/png image.jpg"
@@ -193,7 +192,7 @@ function EditListing() {
 
         <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3">
           <Form.Label
-            style={{ color: "#f2faf5", width: "95%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "95%", fontSize: "2.5vh" }}
           >
             DESCRIPTION:
           </Form.Label>
@@ -218,12 +217,12 @@ function EditListing() {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             CITY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "2.5vh" }}
             type="city"
             placeholder="REQUIRED"
             defaultValue={`${pet.city}`}
@@ -237,12 +236,12 @@ function EditListing() {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             COUNRTY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ fontSize: "2.5vh" }}
             type="country"
             placeholder="REQUIRED"
             defaultValue={`${pet.country}`}
@@ -253,12 +252,12 @@ function EditListing() {
 
         <Form.Group style={{ width: "93%", marginLeft: "3%" }} className="mb-3">
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             MEDICAL HISTORY:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{  fontSize: "2.5vh" }}
             type="medical-history"
             placeholder="REQUIRED"
             defaultValue={`${pet.medicalHistory}`}
@@ -275,7 +274,7 @@ function EditListing() {
             color: "#f2faf5",
             marginBottom: "2vh",
             marginTop: "2vh",
-            fontSize: "20px",
+            fontSize: "2.5vh",
           }}
           variant="primary"
           type="submit"

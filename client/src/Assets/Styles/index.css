@@ -47,7 +47,7 @@ code {
 }
 
 .about-trigger{
-  background-color: #718C7B;
+  background-color: #AD7940;
   opacity: 0.8;
   width: 30%;
   height: fit-content;
@@ -114,6 +114,13 @@ code {
   height: 5vh;
 }
 
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
 @media screen and (max-width: 900px) {
   .search input,
   .search Button
@@ -121,12 +128,35 @@ code {
     margin: 2vh;
   }
   .container-fluid,
-  .header-1 {
+  .header-1
+  {
     height: auto;
     display: flex;
     flex-wrap: wrap;
+  
+  }
+  .search,
+  .login,
+  .signup,
+  .contact {
+    width: 90%;
+    margin-left: 5%;
+    
+
   }
 
+  .about-trigger {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .find-pet {
+    margin: 5vh;
+  }
+
+  .login-div {
+    width: 100%;
+  }
 
 }
 

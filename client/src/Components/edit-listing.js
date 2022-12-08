@@ -6,6 +6,7 @@ import { UPDATE_PET } from "../Utils/mutations";
 
 function EditListing({ pet }) {
   // Create state variables for the fields in the form
+  console.log('editPage:', pet);
   const [species, setSpecies] = useState();
   const [breed, setBreed] = useState();
   const [image, setImage] = useState();
@@ -49,6 +50,7 @@ function EditListing({ pet }) {
 
   return (
     <div className="formContainer">
+      <p>edit page</p>
       <Form
         onSubmit={handleEditPet}
         style={{

@@ -9,7 +9,7 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
-import EditListing from "../Components/edit-listing";
+import EditListing from "./edit-listing";
 import { useMutation } from '@apollo/client';
 import { REMOVE_PET } from '../Utils/mutations';
 import Auth from "../Utils/auth";
@@ -19,7 +19,7 @@ import Button from 'react-bootstrap/Button';
 
 const ManageListing = ({ pets }) => {
   console.log(pets)
-  const { userId } = useParams();
+  const userId = Auth.getProfile().data?._id;
   console.log('id:', userId)
   const [removePet, { error }] = useMutation(REMOVE_PET);
 
@@ -34,11 +34,11 @@ const ManageListing = ({ pets }) => {
       const { data } = await removePet({
         variables: { petId },
       });
+      window.location.href=`/dashboard/${userId}/manage`;
     } catch (err) {
       console.error(err);
     }
   };
-  console.log(pets);
   
   return (
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
@@ -70,7 +70,7 @@ const ManageListing = ({ pets }) => {
       </div>
       <div>
       <Routes>
-            <Route path="/edit/:petId" element={<EditListing pet={pet}/>} />
+            <Route path="/edit/:petId" key={userId} element={<EditListing pet={pet}/>} />
       </Routes>
       </div>
     </Card>

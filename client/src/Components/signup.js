@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import "../Assets/Styles/index.css"
-
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../Utils/mutations";
-
 import Auth from "../Utils/auth";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -62,6 +60,7 @@ function Signup() {
             marginBottom: "150px",
             padding: "2vh",
             borderRadius: "20px",
+            className: "signup"
           
           }}
         >
@@ -69,19 +68,19 @@ function Signup() {
             style={{ width: "80%", marginLeft: "10%" }}
 
             className="mb-3 font-signup"
-            controlId="formBasicEmail"
+            controlId="formBasicName"
 
           >
             <Form.Label
 
-              style={{ color: "#f2faf5", width: "80%", fontSize: "2vh" }}
+              style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
 
             >
               FULL NAME:
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2vh" }}
+              style={{ fontSize: "2.5vh" }}
               type="name"
 
               placeholder="ENTER FULL NAME "
@@ -105,7 +104,7 @@ function Signup() {
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{  fontSize: "2.5vh" }}
 
               type="email"
               placeholder="ENTER EMAIL"
@@ -129,7 +128,7 @@ function Signup() {
             </Form.Label>
             <Form.Control
 
-              style={{ color: "#AD7940", fontSize: "2.5vh" }}
+              style={{ fontSize: "2.5vh" }}
 
               type="password"
               placeholder="ENTER PASSWORD"

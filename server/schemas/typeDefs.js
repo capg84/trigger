@@ -14,6 +14,7 @@ const typeDefs = gql`
     likedPets: [Pet]
     messages: [Message]
   }
+
   type Pet {
     _id: ID!
     name: String!
@@ -34,12 +35,14 @@ const typeDefs = gql`
     commentCount: Int
     comments: [Comment]
   }
+
   type Comment {
     _id: ID
     commenter: User
     commentBody: String!
     dateCreated: String
   }
+
   input PetInput {
     _id: ID!
     name: String
@@ -54,6 +57,7 @@ const typeDefs = gql`
     colour: String
     image: String
   }
+
   type Message {
     _id: ID!
     messageText: String!
@@ -62,27 +66,32 @@ const typeDefs = gql`
     from: User!
     to: User!
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Query {
     me: User
     users: [User]
-    pets: [Pet]!
+    allPets: [Pet]!
     pet(petId: ID!): Pet
     getmessages(from: ID!): [Message]
     userPets: [Pet]
     likedPets: [Pet]
     userLikes: [User]
     messages: [Message]
+    speciesPet(species: String): [Pet]!
+
  
   }
+  
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth
     savePet(petId: ID!): User
-    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User
+    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!, breed: String, colour: String, owner: ID!): Pet
     updatePet(petId: ID!, name: String, age: String, gender: String, species: String, description: String, city: String, country: String, breed: String, medicalHistory: String, colour: String, image: String): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User
@@ -94,5 +103,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-/* aboutMe(id: ID!, fullname: String, email: String, description: String, city: String, country: String): User */

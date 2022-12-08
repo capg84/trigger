@@ -27,7 +27,7 @@ export const CREATE_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-mutation AboutMe($fullname: String, $email: String, $description: String, $city: String, $country: String) {
+mutation aboutMe($fullname: String, $email: String, $description: String, $city: String, $country: String) {
   aboutMe(fullname: $fullname, email: $email, description: $description, city: $city, country: $country) {
     city
     country
@@ -62,10 +62,28 @@ export const SAVE_PET = gql`
 `;
 
 export const CREATE_PET = gql`
+mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!, $owner: ID!) {
+  addPet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, owner: $owner) {
+      _id
+      name
+      age
+      gender
+      species
+      description
+      city
+      country
+      breed
+      medicalHistory
+      colour
+      image
+  }
+}
+`;
+
+/* export const CREATE_PET = gql`
 mutation addPet($name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!) {
   addPet(name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image) {
     _id
-    fullname
     userPets {
       _id
       name
@@ -82,11 +100,11 @@ mutation addPet($name: String!, $age: String!, $gender: String!, $species: Strin
     }
   }
 }
-`;
+`; */
 
 export const UPDATE_PET = gql`
-mutation updatePet($petId: ID!) {
-  updatePet(petId: $petId) {
+mutation updatePet($breed: String, $colour: String, $name: String, $age: String, $gender: String, $species: String, $description: String, $city: String, $country: String, $medicalHistory: String, $image: String, $petId: ID!) {
+  updatePet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, petId: $petId) {
     _id
     name
     age

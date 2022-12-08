@@ -1,18 +1,24 @@
 import React from "react";
 import "../Assets/Styles/pet.css"
 import Button from 'react-bootstrap/Button';
-import Image from "../Assets/Images/pets/Dodo.jpg"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Navigate, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams,
+} from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
 
 const Pet = ({ singlePet }) => {
+  const userId = Auth.getProfile().data._id;
+  console.log(userId);
   const { petId } = useParams();
-
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
@@ -28,7 +34,7 @@ const Pet = ({ singlePet }) => {
 
     <div className="pet">
       <div className="header-container-pet">
-        <p className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
+        <p style={{color: "white"}} className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
         <button class="btn-secondary like-review">
           <i class="fa fa-heart" aria-hidden="true"></i> Like
         </button>
@@ -61,8 +67,18 @@ const Pet = ({ singlePet }) => {
 
       <div className="pet-buttons-div">
         <div className="pet-buttons">
+          <Link to="/pets">
           <Button>BACK TO PETS</Button>
+          </Link>
+          {Auth.loggedIn() ? (
+          <Link to={`/dashboard/${userId}}/messages/${pet.owner._id}`}>
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          </Link>
+          ) : (
+          <Link to="/login">
+            <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          </Link>
+          )}
         </div>
       </div>
     </div>
@@ -71,7 +87,7 @@ const Pet = ({ singlePet }) => {
       <div>
         <div>
           <InputGroup>
-            <Button style={{ backgroundColor: "#AD7940" }} className="comment-button">ENTER COMMENT</Button>
+            <Button style={{ backgroundColor: "#AD7940", width: "fit-content"}} className="comment-button">ENTER COMMENT</Button>
             <Form.Control as="textarea" aria-label="With textarea" />
           </InputGroup>
         </div>
@@ -80,6 +96,7 @@ const Pet = ({ singlePet }) => {
           <div className="comment-header">
             <h6>{ }</h6>
             <h6>{ }</h6>
+            <span class="material-symbols-outlined">delete</span>
           </div>
 
           <div className="comment-text">

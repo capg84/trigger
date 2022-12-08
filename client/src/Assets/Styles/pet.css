@@ -10,7 +10,6 @@
     height: auto;
     border-radius: 10px 10px 0 0;
     border: solid black 1px;
-
 }
 
 .date-created {
@@ -139,6 +138,7 @@
     margin-left: 10%;
     padding: 10vh;
     border-radius: 0 0 10px 10px;
+    margin-bottom: 100px;
 }
 
 .comment-header {

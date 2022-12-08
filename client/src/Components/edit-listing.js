@@ -66,12 +66,12 @@ function EditListing({ pet }) {
           className="mb-3"
         >
           <Form.Label
-            style={{ color: "#f2faf5", width: "80%", fontSize: "20px" }}
+            style={{ color: "#f2faf5", width: "80%", fontSize: "2.5vh" }}
           >
             ANIMAL SPECIES:
           </Form.Label>
           <Form.Control
-            style={{ color: "#AD7940", fontSize: "20px" }}
+            style={{ cofontSize: "2.5vh" }}
             type="species"
             placeholder="REQUIRED"
             value={`${pet.species}`}
@@ -167,10 +167,8 @@ function EditListing({ pet }) {
           </Form.Label>
           <Form.Control
             style={{ width: "81%", fontSize: "2.5vh", display: "inline-block" }}
-            type="file"
             placeholder="ENTER IMAGE"
             value={`${pet.image}`}
-            accept="image/png image.jpg"
             name="image"
             onChange={(event) => setImage(event.target.value)}
           />

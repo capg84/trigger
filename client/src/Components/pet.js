@@ -87,7 +87,7 @@ const Pet = ({ singlePet }) => {
       <div>
         <div>
           <InputGroup>
-            <Button style={{ backgroundColor: "#AD7940" }} className="comment-button">ENTER COMMENT</Button>
+            <Button style={{ backgroundColor: "#AD7940", width: "fit-content"}} className="comment-button">ENTER COMMENT</Button>
             <Form.Control as="textarea" aria-label="With textarea" />
           </InputGroup>
         </div>

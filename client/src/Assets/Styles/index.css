@@ -47,7 +47,7 @@ code {
 }
 
 .about-trigger{
-  background-color: #718C7B;
+  background-color: #AD7940;
   opacity: 0.8;
   width: 30%;
   height: fit-content;
@@ -115,10 +115,10 @@ code {
 }
 
 
-footer {
+.footer {
   display: flex;
   flex-wrap: wrap;
-  height: auto;
+  height: fit-content;
 }
 
 @media screen and (max-width: 900px) {
@@ -157,5 +157,6 @@ footer {
   .login-div {
     width: 100%;
   }
+
 }
 

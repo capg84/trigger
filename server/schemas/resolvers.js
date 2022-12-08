@@ -37,12 +37,13 @@ const resolvers = {
       .populate('owner')
       .sort({dateCreated: -1});
     },
+
     // Gets pets by species
-    // speciesPet: async (parent, { species }) => {
-    //   return Pet.find({ species: species })
-    //   .populate('owner')
-    //   .populate('comments')
-    // },
+    speciesPet: async (parent,  {species} ) => {
+      return Pet.find({ species: species })
+      .populate('owner')
+      .populate('comments')
+    },
 
     // get a single pet
     pet: async (parent, { petId }) => {

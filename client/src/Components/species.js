@@ -17,6 +17,7 @@ import { SEARCH_PET_SPECIES } from '../Utils/queries';
 const Species = () => {
 
     const { species } = useParams();
+    console.log(species)
     const { loading, data } = useQuery(SEARCH_PET_SPECIES, {
         variables: { species: species }
     });
@@ -68,7 +69,7 @@ const Species = () => {
                             <img style={{
                                 display: "flex", border: "solid black 1px", width: '10rem', height: "14rem",
                                 margin: "0.5rem", borderRadius: "10px"
-                            }} alt="pet" source={pet.image} />
+                            }} alt="pet" src={pet.image} />
                         </div>
                         <div style={{ padding: "1rem" }}>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>NAME: <span>{pet.name}</span></h6>

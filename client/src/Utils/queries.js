@@ -30,8 +30,8 @@ query Query {
 `;
 
 export const SEARCH_PET_SPECIES = gql`
-query speciesPet ($species: species) {
-  speciesPet (species: $species) {
+query speciesPet($species: String) {
+  speciesPet(species: $species) {
     _id
     name
     age

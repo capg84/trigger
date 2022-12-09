@@ -65,6 +65,7 @@ const petSchema = new Schema(
       commenter: {
         type: Schema.Types.ObjectId,
         ref: "User",
+        required: true
       },
       commentBody: {
         type: String,

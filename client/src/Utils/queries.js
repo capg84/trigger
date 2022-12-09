@@ -250,6 +250,7 @@ export const PET = gql`
       comments {
         commenter {
           _id
+          fullname
         }
         commentBody
         dateCreated

@@ -14,6 +14,7 @@ import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
+import Comment from './comments'
 
 const Pet = ({ singlePet }) => {
   const userId = Auth.getProfile().data._id;
@@ -82,8 +83,9 @@ const Pet = ({ singlePet }) => {
         </div>
       </div>
     </div>
-
+    
     <section className="comment-section">
+    {Auth.loggedIn() ? (
       <div>
         <div>
           <InputGroup>
@@ -91,19 +93,48 @@ const Pet = ({ singlePet }) => {
             <Form.Control as="textarea" aria-label="With textarea" />
           </InputGroup>
         </div>
-
+        <div className="reverse">
+        {pet.comments.length > 0 ?(
+          pet.comments.map(comment => (
         <div className="saved-comments">
           <div className="comment-header">
-            <h6>{ }</h6>
-            <h6>{ }</h6>
+            <h6>{comment.dateCreated}</h6>
+            <h6>{comment.commenter.fullname}</h6>
             <span class="material-symbols-outlined">delete</span>
           </div>
-
           <div className="comment-text">
-            <p>{ }</p>
+            <p>{comment.commentBody}</p>
           </div>
         </div>
+          ))
+        ) : (
+          <div className="saved-comments">
+
+          </div>
+        )}
+        </div>
       </div>
+    ) : (
+      <div className="reverse">
+      {pet.comments.length > 0 ?(
+        pet.comments.map(comment => (   
+      <div className="saved-comments">
+        <div className="comment-header">
+          <h6>{comment.dateCreated}</h6>
+          <h6>{comment.commenter.fullname}</h6>
+        </div>
+        <div className="comment-text">
+          <p>{comment.commentBody}</p>
+        </div>
+      </div>
+        ))
+      ) : (
+        <div className="saved-comments">
+
+        </div>
+      )}
+    </div>
+    )}
     </section>
 
 

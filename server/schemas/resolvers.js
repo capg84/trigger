@@ -50,6 +50,10 @@ const resolvers = {
       return Pet.findOne({ _id: petId })
       .populate('owner')
       .populate('comments')
+      .populate({
+        path: 'comments',
+        populate: 'commenter',
+      });
     },
     // get messages from a particular user when signed in
     getmessages: async (parent, { from }, context) => {
@@ -194,9 +198,13 @@ const resolvers = {
     // add a comment when signed in
     addComment: async (parent, { petId, commentBody }, context) => {
       if (context.user) {
+        const user = await User.findOne({_id: context.user._id})
         return Pet.findOneAndUpdate(
           { _id: petId },
-          { $addToSet: { comments: { commentBody } } },
+          { 
+            $addToSet: { 
+            comments: { commentBody, commenter: context.user._id } } 
+          },
           { new: true, runValidators: true }
         );
       }

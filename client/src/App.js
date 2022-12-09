@@ -67,8 +67,9 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/pets/:petId" element={<Pet />} />
+              <Route path="/pets/:userId/:petId" element={<Pet />} />
               <Route path="dashboard/:userId/message-form/:petId" element={<MessageCard />}/>
+
 {/*               <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />
               {/* <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}

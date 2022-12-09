@@ -11,13 +11,6 @@ const CommentForm = ({ petId }) => {
   
     const [addComment, { error }] = useMutation(COMMENT_PET);
   
-    let userId = 0;
-    if (Auth.loggedIn()) {
-      userId = Auth.getProfile().data._id;
-    } else {
-      userId = 0;
-    }
-
     const handleFormSubmit = async (event) => {
       event.preventDefault();
   
@@ -29,14 +22,15 @@ const CommentForm = ({ petId }) => {
             commenter: Auth.getProfile?.data?._id
           },
         });
-        window.location.href=`/pets/${userId}/${petId}`;
-      } catch (err) {
-        console.error(err);
-      }
-
+        window.location.href=`/pets/${Auth.getProfile?.data?._id}/${petId}`;
+        
         setCommentBody({
             commentBody: ''
         });
+        
+      } catch (err) {
+        console.error(err);
+      }
     };
   
     const handleChange = (event) => {

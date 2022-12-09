@@ -159,16 +159,11 @@ mutation addComment($petId: ID!, $commentBody: String!) {
 `;
 
 export const REMOVE_COMMENT = gql`
-  mutation removeComment($petId: ID!, $commentId: ID!){
-    removeComment(petId: $petId, commentId: $commentId){
-      _id
-      comments{
-        _id
-        commenter
-        commentBody
-      }
-    }
+mutation removeComment($petId: ID!, $commentId: ID!) {
+  removeComment(petId: $petId, commentId: $commentId) {
+    name
   }
+}
 `;
 
 export const SEND_MESSAGE = gql`

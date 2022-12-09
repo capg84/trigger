@@ -28,8 +28,10 @@ const CommentForm = ({ petId }) => {
             commentBody,
             commenter: Auth.getProfile?.data?._id
           },
+        });
         })
         window.location.href=`/pets/${userId}/${petId}`;
+
         setCommentBody({
             commentBody: ''
         });

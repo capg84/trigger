@@ -92,17 +92,7 @@ const Pet = () => {
     <section className="comment-section">
       {userId ? (
       <div>
-
-        <div>
-          <InputGroup>
-            <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
-            <Form.Control as="textarea" aria-label="With textarea" />
-          </InputGroup>
-        </div>
-
         <CommentForm petId={pet._id} />
-
-
         <CommentList comments={pet.comments} />
       </div>
       ) : (

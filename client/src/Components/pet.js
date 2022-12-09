@@ -97,10 +97,7 @@ const Pet = () => {
     
     <section className="comment-section">
       <div>
-
         <CommentForm petId={pet._id} />
-
-
         <CommentList comments={pet.comments} />
       </div>
     </section>

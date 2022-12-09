@@ -6,10 +6,9 @@ import {
   Route,
   Routes,
   Link,
-  useParams,
+  useParams
 } from "react-router-dom";
 import Pet from "../Components/pet";
-import Species from "../Components/species"
 import { SEARCH_PETS } from '../Utils/queries';
 
 import "../Assets/Images/pets/Leo.jpg"
@@ -58,12 +57,11 @@ const AllPets = () => {
             </Link>
           </div>
         </div>
-
-        <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <div>
+        <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+
           {allBreeds && allBreeds.map((pet) => (
             <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
               <div style={{ display: "flex" }}>
@@ -90,9 +88,8 @@ const AllPets = () => {
               </div>
             </Card>
           ))}
-          </div>
-        )}
         </section>
+        )}
 
 
         <div style={{ width: "100%", textAlign: "center" }}>

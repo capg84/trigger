@@ -14,7 +14,7 @@ import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
-import Comment from './comments'
+
 
 const Pet = ({ singlePet }) => {
   const userId = Auth.getProfile().data._id;
@@ -26,6 +26,7 @@ const Pet = ({ singlePet }) => {
 
   // Check if data is returning from the query
   const pet = data?.pet || {};
+  console.log('pet', pet)
 
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -72,7 +73,7 @@ const Pet = ({ singlePet }) => {
           <Button>BACK TO PETS</Button>
           </Link>
           {Auth.loggedIn() ? (
-          <Link to={`/dashboard/${userId}}/messages/${pet.owner._id}`}>
+          <Link to={`/dashboard/${userId}/messages/${pet.owner._id}`}>
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           ) : (
@@ -85,7 +86,7 @@ const Pet = ({ singlePet }) => {
     </div>
     
     <section className="comment-section">
-    {Auth.loggedIn() ? (
+      {Auth.loggedIn() ? (
       <div>
         <div>
           <InputGroup>
@@ -97,7 +98,13 @@ const Pet = ({ singlePet }) => {
         {pet.comments.length > 0 ?(
           pet.comments.map(comment => (
         <div className="saved-comments">
-
+        <div className="comment-header">
+          <h6>{comment.dateCreated}</h6>
+          <h6>{comment.commenter.fullname}</h6>
+        </div>
+        <div className="comment-text">
+          <p>{comment.commentBody}</p>
+        </div>
         </div>
           ))
         ) : (
@@ -107,27 +114,29 @@ const Pet = ({ singlePet }) => {
         )}
         </div>
       </div>
-    ) : (
-      <div className="reverse">
-      {pet.comments.length > 0 ?(
-        pet.comments.map(comment => (   
-      <div className="saved-comments">
-        <div className="comment-header">
-          <h6>{comment.dateCreated}</h6>
-          <h6>{comment.commenter.fullname}</h6>
-        </div>
-        <div className="comment-text">
-          <p>{comment.commentBody}</p>
-        </div>
-      </div>
-        ))
       ) : (
+      <div>
+      <div className="reverse">
+        {pet.comments.length > 0 ?(
+          pet.comments.map(comment => (   
+        <div className="saved-comments">
+          <div className="comment-header">
+            <h6>{comment.dateCreated}</h6>
+            <h6>{comment.commenter.fullname}</h6>
+          </div>
+          <div className="comment-text">
+            <p>{comment.commentBody}</p>
+          </div>
+        </div>
+        ))
+        ) : (
         <div className="saved-comments">
 
         </div>
+        )}
+      </div>
+      </div>
       )}
-    </div>
-    )}
     </section>
 
 

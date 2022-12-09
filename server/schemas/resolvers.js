@@ -217,6 +217,7 @@ const resolvers = {
         );
       }
     },
+    
     // remove a comment when signed in
     removeComment: async (parent, { petId, commentId }, context) => {
       if (context.user) {

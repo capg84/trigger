@@ -28,6 +28,7 @@ import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
 import CreatePet from "./Components/create-pet";
 import Species from "./Components/species";
+import MessageCard from "./Components/message-card"
 
 
 const httpLink = createHttpLink({
@@ -67,6 +68,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:petId" element={<Pet />} />
+              <Route path="dashboard/:userId/message-form/:petId" element={<MessageCard />}/>
 {/*               <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />
               {/* <Route path="/dashboard/:userId/edit/:petId" element={<EditPet />} /> */}

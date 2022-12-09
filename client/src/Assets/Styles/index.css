@@ -112,6 +112,11 @@ code {
 
 .header-search {
   height: 5vh;
+
+}
+
+.header-search Button {
+  width: fit-content;
 }
 
 
@@ -143,12 +148,14 @@ code {
     margin-left: 5%;
     
 
-  }
+
 
   .about-trigger {
+
     width: 90%;
     margin-left: 5%;
   }
+
 
   .find-pet {
     margin: 5vh;
@@ -157,6 +164,7 @@ code {
   .login-div {
     width: 100%;
   }
+
 
 }
 

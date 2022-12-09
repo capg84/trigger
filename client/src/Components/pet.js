@@ -77,12 +77,14 @@ const Pet = () => {
           <Button>BACK TO PETS</Button>
           </Link>
           {Auth.loggedIn() ? (
-          <Link to={`/dashboard/${userId}/messages/${pet.owner._id}`}>
+
+          <Link to={`/dashboard/${userId}}/message-form/${pet.owner._id}`}>
+
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           ) : (
           <Link to="/login">
-            <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+            <Button style={{ width:"fit-content"}}>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           )}
         </div>
@@ -92,7 +94,16 @@ const Pet = () => {
     <section className="comment-section">
       {Auth.loggedIn() ? (
       <div>
+
+        <div>
+          <InputGroup>
+            <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
+            <Form.Control as="textarea" aria-label="With textarea" />
+          </InputGroup>
+        </div>
+
         <CommentForm petId={pet._id} />
+
 
         <CommentList comments={pet.comments} />
       </div>

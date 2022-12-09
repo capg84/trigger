@@ -6,25 +6,25 @@ export const getSavedPetIds = () => {
     return savedPetIds;
   };
   
-  export const saveBookIds = (bookIdArr) => {
-    if (bookIdArr.length) {
-      localStorage.setItem('saved_books', JSON.stringify(bookIdArr));
+  export const savePetIds = (petIdArr) => {
+    if (petIdArr.length) {
+      localStorage.setItem('saved_pets', JSON.stringify(petIdArr));
     } else {
-      localStorage.removeItem('saved_books');
+      localStorage.removeItem('saved_pets');
     }
   };
   
-  export const removeBookId = (bookId) => {
-    const savedPetIds = localStorage.getItem('saved_books')
-      ? JSON.parse(localStorage.getItem('saved_books'))
+  export const removePetId = (petId) => {
+    const savedPetIds = localStorage.getItem('saved_pets')
+      ? JSON.parse(localStorage.getItem('saved_pets'))
       : null;
   
     if (!savedPetIds) {
       return false;
     }
   
-    const updatedSavedPetIds = savedPetIds?.filter((savedPetId) => savedPetId !== bookId);
-    localStorage.setItem('saved_books', JSON.stringify(updatedSavedPetIds));
+    const updatedSavedPetIds = savedPetIds?.filter((savedPetId) => savedPetId !== petId);
+    localStorage.setItem('saved_pets', JSON.stringify(updatedSavedPetIds));
   
     return true;
   };

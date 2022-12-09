@@ -14,10 +14,12 @@ import { useQuery } from "@apollo/client";
 
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
+import CommentList from "./comments/commentList";
+import CommentForm from "./comments/commentForm";
 
-const Pet = ({ singlePet }) => {
+const Pet = () => {
   const userId = Auth.getProfile().data._id;
-  console.log(userId);
+  //console.log(userId);
   const { petId } = useParams();
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
@@ -25,12 +27,16 @@ const Pet = ({ singlePet }) => {
 
   // Check if data is returning from the query
   const pet = data?.pet || {};
+  console.log('pet', pet)
+
+  // For comments
 
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
-  return <main>
+  return (
+  <main>
 
     <div className="pet">
       <div className="header-container-pet">
@@ -71,7 +77,9 @@ const Pet = ({ singlePet }) => {
           <Button>BACK TO PETS</Button>
           </Link>
           {Auth.loggedIn() ? (
+
           <Link to={`/dashboard/${userId}}/message-form/${pet.owner._id}`}>
+
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           ) : (
@@ -82,9 +90,11 @@ const Pet = ({ singlePet }) => {
         </div>
       </div>
     </div>
-
+    
     <section className="comment-section">
+      {Auth.loggedIn() ? (
       <div>
+
         <div>
           <InputGroup>
             <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
@@ -92,23 +102,40 @@ const Pet = ({ singlePet }) => {
           </InputGroup>
         </div>
 
+        <CommentForm petId={pet._id} />
+
+
+        <CommentList comments={pet.comments} />
+      </div>
+      ) : (
+      <div>
+      <div className="reverse">
+        {pet.comments.length > 0 ?(
+          pet.comments.map(comment => (   
         <div className="saved-comments">
           <div className="comment-header">
-            <h6>{ }</h6>
-            <h6>{ }</h6>
-            <span class="material-symbols-outlined">delete</span>
+            <h6>{comment.dateCreated}</h6>
+            <h6>{comment.commenter.fullname}</h6>
           </div>
-
           <div className="comment-text">
-            <p>{ }</p>
+            <p>{comment.commentBody}</p>
           </div>
         </div>
+        ))
+        ) : (
+        <div className="saved-comments">
+
+        </div>
+        )}
       </div>
+      </div>
+      )}
     </section>
 
 
 
-  </main >;
+  </main >
+  )
 };
 
 export default Pet;

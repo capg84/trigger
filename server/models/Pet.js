@@ -52,7 +52,8 @@ const petSchema = new Schema(
     },
     owner: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
+      required: true,
     },
     userLikes: [
       {
@@ -64,6 +65,7 @@ const petSchema = new Schema(
       commenter: {
         type: Schema.Types.ObjectId,
         ref: "User",
+        required: true
       },
       commentBody: {
         type: String,

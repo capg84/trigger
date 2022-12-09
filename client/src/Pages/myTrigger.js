@@ -2,15 +2,11 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Navigate,
   Routes,
   Link,
   useParams,
-  useLocation,
 } from "react-router-dom";
-import Home from "./home";
 import CreateListing from "../Components/create-pet";
 import ManageListing from "../Components/manage-listings";
 import Favourites from "../Components/favourites";
@@ -19,28 +15,27 @@ import Account from "../Components/user-account";
 //import DashboardNav from "../Components/dashboard-nav";
 import "../Assets/Styles/dashboard.css";
 import { MY_PROFILE } from "../Utils/queries";
-import Auth from "../Utils/auth";
+import EditListing from "../Components/edit-listing";
 
 const Dashboard = () => {
-  let { pathname } = useLocation();
   const { userId } = useParams();
   const { loading, data } = useQuery(MY_PROFILE);
+  //const userPets = Auth.getProfile().data?.userPets;
 
   // Check if data is returning from the `MY_PROFILE` query
   const user = data?.me || {};
   console.log('data:', data);
   
   console.log('user:', user)
+  console.log('userPets:', user.userPets)
+/*   const onePet = user.userPets[0] */
+
 
   // Use React Router's `<Redirect />` component to redirect to user dashboard if username is yours
 /*   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
     return <Navigate to={`/dashboard/${userId}`}/>;
   }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
+  
   if (!user?.fullname) {
     return (
       <h4>
@@ -48,6 +43,10 @@ const Dashboard = () => {
       </h4>
     );
   } */
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -92,6 +91,9 @@ const Dashboard = () => {
             <Link to={`/dashboard/${userId}/account`} className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link>
+{/*             <Link to={`/dashboard/${userId}/edit`} className="item-link-nav">
+              EDIT
+            </Link> */}
 {/*             <Link to="/dashboard/:userId/account" className="item-link-nav">
               UPDATE ACCOUNT DETAILS
             </Link> */}
@@ -100,8 +102,9 @@ const Dashboard = () => {
         <div className="dashboard-component">
           <Routes>
             <Route path="/create" element={<CreateListing />} />
-            <Route path="/manage" element={<ManageListing pets={user.userpets}/>} />
-            <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
+            <Route path="/manage" element={<ManageListing pets={user.userPets}/>} />
+            <Route path="/edit/:petId" element={<EditListing />} />
+            <Route path="/favourites" element={<Favourites likedPets={user.likedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />
           </Routes>

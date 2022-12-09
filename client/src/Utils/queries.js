@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH_PETS = gql`
-query Query {
+query allPets {
   allPets {
     _id
     name
@@ -16,15 +16,8 @@ query Query {
     colour
     image
     dateCreated
-    comments {
-      _id
-      commenter {
-        _id
-        fullname
-      }
-      commentBody
-      dateCreated
-    }
+    userlikeCount
+    commentCount
   }
 }
 `;
@@ -97,9 +90,11 @@ export const GET_MESSAGES = gql`
       dateCreated
       from {
         _id
+        fullname
       }
       to {
         _id
+        fullname
       }
     }
   }
@@ -160,7 +155,7 @@ export const USER_PROFILES = gql`
 `;
 
 export const MY_PROFILE = gql`
-query singleUser {
+query me {
   me {
     _id
     fullname
@@ -168,12 +163,15 @@ query singleUser {
     city
     country
     description
+    likedCount
+    petCount
+    messageCount
     userPets {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -182,49 +180,14 @@ query singleUser {
       colour
       image
       dateCreated
+      userlikeCount
+      commentCount
+      comments {
+        commentBody
+        dateCreated
+      }
     }
     likedPets {
-      _id
-      species
-      name
-      age
-      gender
-      description
-      city
-      country
-      breed
-      medicalHistory
-      colour
-      image
-      dateCreated
-    }
-    messages {
-      _id
-      messageText
-      read
-      dateCreated
-      from {
-        fullname
-      }
-      to {
-        fullname
-      }
-    }
-  }
-}
-`;
-
-export const USER_LIKES = gql`
-  query userLikes($userLikes: ID!) {
-    pets(userLikes: $userLikes) {
-      _id
-    }
-  }
-`;
-
-export const PET = gql`
-  query pet($petId: ID!) {
-    pet(petId: $petId) {
       _id
       name
       age
@@ -242,16 +205,63 @@ export const PET = gql`
         _id
         fullname
       }
-      userLikes {
+    }
+    messages {
+      messageText
+      read
+      dateCreated
+      from {
         _id
-      }
-      comments {
-        commenter {
-          _id
-        }
-        commentBody
-        dateCreated
+        fullname
       }
     }
   }
+}
+`;
+
+
+export const PET = gql`
+query pet($petId: ID!) {
+  pet(petId: $petId) {
+    _id
+    name
+    age
+    gender
+    species
+    description
+    city
+    country
+    breed
+    medicalHistory
+    colour
+    image
+    dateCreated
+    owner {
+      fullname
+    }
+    userlikeCount
+    commentCount
+    comments {
+      commenter {
+        _id
+        fullname
+      }
+      commentBody
+      dateCreated
+    }
+  }
+}
+`;
+
+export const MESSAGES = gql`
+query messages {
+  messages {
+    messageText
+    dateCreated
+    from {
+      _id
+      fullname
+    }
+  }
+}
 `;

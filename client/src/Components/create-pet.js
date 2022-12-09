@@ -27,9 +27,10 @@ function CreatePet({ user }) {
   const [image, setImage] = useState('');
 
   const [addPet, { error }] = useMutation(CREATE_PET);
-
+  const owner = Auth.getProfile().data?._id;
   const handleCreatePet = async (event) => {
     event.preventDefault();
+
     console.log(event);
 
     try {
@@ -46,6 +47,7 @@ function CreatePet({ user }) {
           country,
           medicalHistory,
           age,
+          owner,
         },
       });
       console.log(data.addPet);
@@ -94,10 +96,8 @@ function CreatePet({ user }) {
       </Form.Group>
 
       <Form.Group style={{ width: "94%", marginLeft: "3%" ,  }} className="mb-3" >
-        <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh"  }}>UPLOAD IMAGE OF YOUR PET:</Form.Label>
-        <Form.Control style={{ width: "100%", fontSize: "2.5vh", display: "inline-block" }} type="file" placeholder="ENTER IMAGE" onChange={(event) => setImage(event.target.value)} accept="image/png image.jpg" />
-        {/* <Button style={{   backgroundColor: "#9CCBC3", color: "#f2faf5", fontSize: "15px", marginLeft:"1vh", marginBottom:"1vh"}}
-        variant="primary" type="btn">UPLOAD IMAGE</Button> */}
+        <Form.Label style={{color: "#f2faf5", width: "95%", fontSize: "2.5vh"  }}>ENTER URL FOR IMAGE OF PET:</Form.Label>
+        <Form.Control style={{ width: "100%", fontSize: "2.5vh", display: "inline-block" }}  placeholder="ENTER IMAGE" onChange={(event) => setImage(event.target.value)} accept="image/png image.jpg" />
       </Form.Group> 
 
       <Form.Group style={{ width: "94%", marginLeft: "3%"  }} className="mb-3" >

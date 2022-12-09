@@ -23,7 +23,7 @@ export default function Instruction() {
           <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col ">
                   <div className="card h-100">
-                      <img src="..." className="card-img-top" alt="..." />
+                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527160/Fluffy_e0uatp.jpg" className="card-img-top" alt="..." />
                       <div className="card-body">
                           <h5 className="card-title">1. SEARCH OUR ADVERTS</h5>
                           <p className="card-text"></p>
@@ -32,7 +32,7 @@ export default function Instruction() {
               </div>
               <div className="col ">
                   <div className="card h-100">
-                      <img src="..." className="card-img-top" alt="..." />
+                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527177/Marshmallow_n25sh3.jpg" className="card-img-top" alt="..." />
                       <div className="card-body">
                           <h5 className="card-title">2. TALK TO A OWNER</h5>
                           <p className="card-text"></p>
@@ -41,7 +41,7 @@ export default function Instruction() {
               </div>
               <div className="col ">
                   <div className="card h-100">
-                      <img src="..." className="card-img-top" alt="..." />
+                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527229/Stitch_ta2uyc.webp" className="card-img-top" alt="..." />
                       <div className="card-body">
                           <h5 className="card-title">3. TAKE YOUR PET HOME</h5>
                           <p className="card-text"></p>
@@ -67,16 +67,16 @@ export default function Instruction() {
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 <div className="col ">
                     <div className="card h-100">
-                        <img src="..." className="card-img-top" alt="..." />
+                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527214/Oscar_rbfgkg.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">1. SEARCH OUR ADVERTS test test test test toggleInstruction</h5>
+                            <h5 className="card-title">1. SEARCH OUR ADVERTS</h5>
                             <p className="card-text"></p>
                         </div>
                     </div>
                 </div>
                 <div className="col ">
                     <div className="card h-100">
-                        <img src="..." className="card-img-top" alt="..." />
+                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527160/Fluffy_e0uatp.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">2. TALK TO A OWNER</h5>
                             <p className="card-text"></p>
@@ -85,7 +85,7 @@ export default function Instruction() {
                 </div>
                 <div className="col ">
                     <div className="card h-100">
-                        <img src="..." className="card-img-top" alt="..." />
+                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527221/Polly_osp1rc.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">3. TAKE YOUR PET HOME</h5>
                             <p className="card-text"></p>

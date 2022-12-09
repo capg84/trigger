@@ -47,7 +47,7 @@ code {
 }
 
 .about-trigger{
-  background-color: #718C7B;
+  background-color: #AD7940;
   opacity: 0.8;
   width: 30%;
   height: fit-content;
@@ -130,6 +130,11 @@ code {
     height: auto;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin-left: 5%;
   }
 
 

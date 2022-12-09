@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import "../Assets/Styles/index.css"
 
 export default function Contact() {
     return (
@@ -11,7 +12,7 @@ export default function Contact() {
             </div>
 
             <section className="contact" style={{ paddingTop: "75px" }} >
-                <Form style={{
+                <Form className="contact-form"  style={{
                     borderRadius: "15px", backgroundColor: "#AD7940", opacity: "0.8", width: "50%",
                     height: "fit-content", marginLeft: "25%", paddingTop: "1vh", paddingBottom: "1vh"
                 }}>

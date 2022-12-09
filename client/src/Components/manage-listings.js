@@ -43,7 +43,7 @@ const ManageListing = ({ pets }) => {
 <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
   { pets && 
   pets.map((pet) => (
-    <Card key={pet} style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 
+    <Card className="man-listing-card" key={pet} style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", 
           margin: "3.5vh", padding: "2vh 0 3vh 3vh" }}>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <div>
@@ -76,51 +76,7 @@ const ManageListing = ({ pets }) => {
   ))}
 </main>
 
-    // <div className="outer-container">
-    //   <div className="listings-container">
-    //     <article className="listing-item">
-    //       <div className="listing-image">
-    //         <p>pet image here</p>
-    //       </div>
-    //       <div className="listing-info">
-    //         <p>Pet name</p>
-    //         <p>Location</p>
-    //         <p>Age</p>
-    //         <p>Gender</p>
-    //       </div>
-    //     </article>
-    //     <div className="listing-buttons">
-    //       <button className="edit-btn" id="edit">
-    //         EDIT
-    //       </button>
-    //       <button className="del-btn" id="delete">
-    //         DELETE
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   <div className="listings-container">
-    //     <article className="listing-item">
-    //       <div className="listing-image">
-    //         <p>pet image here</p>
-    //       </div>
-    //       <div className="listing-info">
-    //         <p>Pet name</p>
-    //         <p>Location</p>
-    //         <p>Age</p>
-    //         <p>Gender</p>
-    //       </div>
-    //     </article>
-    //     <div className="listing-buttons">
-    //       <button className="edit-btn" id="edit">
-    //          EDIT 
-    //       </button>
-    //       <button className="del-btn" id="delete">
-    //         DELETE
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>
+   
   );
 };
 

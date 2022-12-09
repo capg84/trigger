@@ -1,4 +1,4 @@
-.advice-container {
+/* .advice-container {
   width: 85%;
   height: fit-content;
   margin: 25px auto;
@@ -33,17 +33,17 @@ img {
   margin: 5px 10px;
 }
 
-.btn {
+.advice-btn {
   width: 90px;
   background-color: rgb(173, 121, 64);
 }
 
 /* styles for small tablet */
-@media screen and (min-width: 641px) {
-}
+/* @media screen and (min-width: 641px) {
+} */
 
 /* styles for large tablets, laptop and desktops */
-@media screen and (min-width: 961px) {
+/* @media screen and (min-width: 961px) {
   .advice-container {
     width: 70%;
     height: fit-content;
@@ -83,4 +83,75 @@ img {
     width: 90px;
     background-color: rgb(173, 121, 64);
   }
+}  */
+
+.advice-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 4vh 0 4vh 15%;
+  padding: 1vh;
+  background-color: #AD7940;
+  border-radius: 10px;
+  height: fit-content;
+  opacity: 0.8 ;
+}
+
+.image-div {
+  float: left;
+  width: 30%;
+  height: 25vh;
+
+}
+
+.image{
+  height: 25vh;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.text-div {
+  width: 70%;
+  float: right;
+
+}
+
+.title-div {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  height: 6vh;
+}
+
+.title-div h3 {
+  color:#f2faf5 ;
+  font-size: 4vh;
+}
+
+.description-div {
+  width: 100%;
+  color:#f2faf5 ;
+  padding: 0 2vh 0vh 2vh;
+  text-align: justify;
+}
+
+.advise-button-div {
+  width: 100%;
+  text-align: center;
+
+}
+
+.advise-button {
+  background-color: #9CCBC3;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  padding: 1vh; 
+  bottom: 1vh; 
+}
+
+.advise-button a {
+  color:#f2faf5 ;
+  text-decoration: none;
+  font-size: 2.5vh;
 }

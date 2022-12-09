@@ -2,15 +2,11 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Navigate,
   Routes,
   Link,
   useParams,
-  useLocation,
 } from "react-router-dom";
-import Home from "./home";
 import CreateListing from "../Components/create-pet";
 import ManageListing from "../Components/manage-listings";
 import Favourites from "../Components/favourites";
@@ -19,7 +15,6 @@ import Account from "../Components/user-account";
 //import DashboardNav from "../Components/dashboard-nav";
 import "../Assets/Styles/dashboard.css";
 import { MY_PROFILE } from "../Utils/queries";
-import Auth from "../Utils/auth";
 import EditListing from "../Components/edit-listing";
 
 const Dashboard = () => {

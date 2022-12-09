@@ -17,9 +17,9 @@ import Auth from "../Utils/auth";
 import CommentList from "./comments/commentList";
 import CommentForm from "./comments/commentForm";
 
-const Pet = ({ singlePet }) => {
+const Pet = () => {
   const userId = Auth.getProfile().data._id;
-  console.log(userId);
+  //console.log(userId);
   const { petId } = useParams();
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },

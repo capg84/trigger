@@ -29,15 +29,14 @@ const CommentForm = ({ petId }) => {
             commenter: Auth.getProfile?.data?._id
           },
         });
-        })
         window.location.href=`/pets/${userId}/${petId}`;
+      } catch (err) {
+        console.error(err);
+      }
 
         setCommentBody({
             commentBody: ''
         });
-      } catch (err) {
-        console.error(err);
-      }
     };
   
     const handleChange = (event) => {

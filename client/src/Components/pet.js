@@ -18,9 +18,9 @@ import CommentList from "./comments/commentList";
 import CommentForm from "./comments/commentForm";
 
 const Pet = () => {
-  const userId = Auth.getProfile().data._id;
-  //console.log(userId);
   const { petId } = useParams();
+  const { userId } = useParams();
+  console.log(userId);
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
@@ -76,7 +76,7 @@ const Pet = () => {
           <Link to="/pets">
           <Button>BACK TO PETS</Button>
           </Link>
-          {Auth.loggedIn() ? (
+          {userId ? (
           <Link to={`/dashboard/${userId}/messages/${pet.owner._id}`}>
           <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
@@ -90,7 +90,7 @@ const Pet = () => {
     </div>
     
     <section className="comment-section">
-      {Auth.loggedIn() ? (
+      {userId ? (
       <div>
         <CommentForm petId={pet._id} />
 

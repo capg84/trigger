@@ -165,6 +165,9 @@
     padding: 2vh;
     text-align: justify;
 }
+#deletebtn:hover{
+    cursor: pointer;
+}
 
 @media screen and (max-width: 900px) {
     .pet-div {

@@ -43,7 +43,7 @@ const CommentList = ({ comments = [] }) => {
             <h6>{comment.commenter.fullname}</h6>
             {Auth.loggedIn ? ( 
             <div>
-              <span class="material-symbols-outlined"
+              <span id='deletebtn' class="material-symbols-outlined"
               onClick={() => handleRemoveComment(comment._id)}
               >delete</span>
               </div>

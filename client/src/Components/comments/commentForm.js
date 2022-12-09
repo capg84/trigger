@@ -21,7 +21,7 @@ const CommentForm = ({ petId }) => {
             commentBody,
             commenter: Auth.getProfile?.data?._id
           },
-        })
+        });
 
         setCommentBody({
             commentBody: ''

@@ -242,6 +242,7 @@ query pet($petId: ID!) {
     userlikeCount
     commentCount
     comments {
+      _id
       commenter {
         _id
         fullname

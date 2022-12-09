@@ -1,11 +1,35 @@
 import React from 'react';
 import Auth from '../../Utils/auth';
+import { Button } from 'react-bootstrap';
 import "../../Assets/Styles/pet.css";
+import { useMutation } from '@apollo/client';
+import { REMOVE_COMMENT } from '../../Utils/mutations';
+import { useParams } from 'react-router-dom';
 
 const CommentList = ({ comments = [] }) => {
-    // if (!comments.length) {
-    //   return <h3>No Comments Yet</h3>;
-    // }
+  const [removeComment, { error }] = useMutation(REMOVE_COMMENT)
+  const { petId } = useParams();
+  console.log('pet', petId)
+  const handleRemoveComment = async (commentId) => {
+    console.log('comment', commentId)
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await removeComment({
+        variables: { petId, commentId },
+      });
+      window.location.reload(); 
+
+    } catch (err) {
+
+      console.error(err);
+    }
+  
+  };
     
     return (
       <>
@@ -18,7 +42,11 @@ const CommentList = ({ comments = [] }) => {
           <div className="d-flex">
             <h6>{comment.commenter.fullname}</h6>
             {Auth.loggedIn ? ( 
-            <div><span class="material-symbols-outlined">delete</span></div>
+            <div>
+              <span class="material-symbols-outlined"
+              onClick={() => handleRemoveComment(comment._id)}
+              >delete</span>
+              </div>
             ) : (<div></div>)}
           </div>
           

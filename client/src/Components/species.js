@@ -67,11 +67,11 @@ const Species = () => {
                         <div>
 
                             <img style={{
-                                display: "flex", border: "solid black 1px", width: '10rem', height: "14rem",
+                                display: "flex", border: "solid black 1px", width: '11rem', height: "14rem",
                                 margin: "0.5rem", borderRadius: "10px"
                             }} alt="pet" src={pet.image} />
                         </div>
-                        <div style={{ padding: "1rem" }}>
+                        <div style={{ padding: "1rem", margin: "1vh 0 0 3vh"  }}>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>NAME: <span>{pet.name}</span></h6>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span>{pet.age}</span></h6>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span>{pet.gender}</span></h6>

@@ -76,7 +76,7 @@ const Pet = ({ singlePet }) => {
           </Link>
           ) : (
           <Link to="/login">
-            <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+            <Button style={{ width:"fit-content"}}>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           )}
         </div>
@@ -87,7 +87,7 @@ const Pet = ({ singlePet }) => {
       <div>
         <div>
           <InputGroup>
-            <Button style={{ backgroundColor: "#AD7940" }} className="comment-button">ENTER COMMENT</Button>
+            <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
             <Form.Control as="textarea" aria-label="With textarea" />
           </InputGroup>
         </div>

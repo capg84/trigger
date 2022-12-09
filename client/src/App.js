@@ -28,6 +28,7 @@ import "./Assets/Styles/instruction.css";
 import Navigation from "./Components/navigation";
 import CreatePet from "./Components/create-pet";
 import Species from "./Components/species";
+import MessageCard from "./Components/message-card"
 
 
 const httpLink = createHttpLink({

@@ -112,6 +112,11 @@ code {
 
 .header-search {
   height: 5vh;
+
+}
+
+.header-search Button {
+  width: fit-content;
 }
 
 @media screen and (max-width: 900px) {

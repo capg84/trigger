@@ -20,7 +20,7 @@ const AllPets = () => {
   const { loading, data } = useQuery(SEARCH_PETS);
   const allBreeds = data?.allPets || [];
 
-console.log(allBreeds)
+ console.log('pets', allBreeds)
 
   return (
 
@@ -60,6 +60,10 @@ console.log(allBreeds)
         </div>
 
         <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
           {allBreeds && allBreeds.map((pet) => (
             <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
               <div style={{ display: "flex" }}>
@@ -86,6 +90,8 @@ console.log(allBreeds)
               </div>
             </Card>
           ))}
+          </div>
+        )}
         </section>
 
 

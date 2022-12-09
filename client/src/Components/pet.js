@@ -97,14 +97,7 @@ const Pet = ({ singlePet }) => {
         {pet.comments.length > 0 ?(
           pet.comments.map(comment => (
         <div className="saved-comments">
-          <div className="comment-header">
-            <h6>{comment.dateCreated}</h6>
-            <h6>{comment.commenter.fullname}</h6>
-            <span class="material-symbols-outlined">delete</span>
-          </div>
-          <div className="comment-text">
-            <p>{comment.commentBody}</p>
-          </div>
+
         </div>
           ))
         ) : (

@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH_PETS = gql`
-query Query {
+query allPets {
   allPets {
     _id
     name
@@ -16,15 +16,8 @@ query Query {
     colour
     image
     dateCreated
-    comments {
-      _id
-      commenter {
-        _id
-        fullname
-      }
-      commentBody
-      dateCreated
-    }
+    userlikeCount
+    commentCount
   }
 }
 `;

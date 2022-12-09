@@ -10,7 +10,15 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id })
         .populate('userPets')
+        .populate({
+          path: 'userPets',
+          populate: 'comments'
+        })
         .populate('likedPets')
+        .populate({
+          path: 'likedPets',
+          populate: 'owner'
+        })
         .populate('messages')
         .populate({
           path: 'messages',

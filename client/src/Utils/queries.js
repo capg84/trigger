@@ -155,7 +155,7 @@ export const USER_PROFILES = gql`
 `;
 
 export const MY_PROFILE = gql`
-query singleUser {
+query me {
   me {
     _id
     fullname
@@ -163,12 +163,15 @@ query singleUser {
     city
     country
     description
+    likedCount
+    petCount
+    messageCount
     userPets {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -177,13 +180,19 @@ query singleUser {
       colour
       image
       dateCreated
+      userlikeCount
+      commentCount
+      comments {
+        commentBody
+        dateCreated
+      }
     }
     likedPets {
       _id
-      species
       name
       age
       gender
+      species
       description
       city
       country
@@ -192,16 +201,17 @@ query singleUser {
       colour
       image
       dateCreated
+      owner {
+        _id
+        fullname
+      }
     }
     messages {
-      _id
       messageText
       read
       dateCreated
       from {
-        fullname
-      }
-      to {
+        _id
         fullname
       }
     }

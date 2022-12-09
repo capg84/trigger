@@ -32,7 +32,7 @@ const Dashboard = () => {
   console.log('data:', data);
   
   console.log('user:', user)
-  console.log('user:', user.userPets)
+  console.log('userPets:', user.userPets)
 /*   const onePet = user.userPets[0] */
 
 
@@ -109,7 +109,7 @@ const Dashboard = () => {
             <Route path="/create" element={<CreateListing />} />
             <Route path="/manage" element={<ManageListing pets={user.userPets}/>} />
             <Route path="/edit/:petId" element={<EditListing />} />
-            <Route path="/favourites" element={<Favourites likedPets={user.LikedPets}/>} />
+            <Route path="/favourites" element={<Favourites likedPets={user.likedPets}/>} />
             <Route path="/messages" element={<Messages messages={user.messages}/>} />
             <Route path="/account" element={<Account user={user}/>} />
           </Routes>

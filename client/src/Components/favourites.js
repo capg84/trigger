@@ -1,9 +1,10 @@
 import '../Assets/Styles/dashboard.css';
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const Favourites = () => {
+
+const Favourites = (likedPets) => {
+  console.log(likedPets)
   return (
 
     <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>

@@ -82,7 +82,7 @@ const Pet = () => {
           </Link>
           ) : (
           <Link to="/login">
-            <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+            <Button style={{ width:"fit-content"}}>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           )}
         </div>
@@ -92,7 +92,16 @@ const Pet = () => {
     <section className="comment-section">
       {userId ? (
       <div>
+
+        <div>
+          <InputGroup>
+            <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
+            <Form.Control as="textarea" aria-label="With textarea" />
+          </InputGroup>
+        </div>
+
         <CommentForm petId={pet._id} />
+
 
         <CommentList comments={pet.comments} />
       </div>

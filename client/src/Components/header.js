@@ -45,8 +45,10 @@ export default function Header() {
             FIND A PET
           </Button>
           <Button
-            style={{ backgroundColor: "#AD7940", margin: "0 5vh 0 8vh ", width: "fit-content"}}
-            className="header-search rounded find-pet"
+
+            style={{ backgroundColor: "#AD7940", width:" fit-content", margin: "0 5vh 0 8vh " }}
+            className="header-search rounded"
+
           >
             DONATE NOW
           </Button>

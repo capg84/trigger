@@ -14,6 +14,8 @@ import {
 import Auth from '../Utils/auth';
 
 function CreatePet({ user }) {
+  const [updateMessage, setUpdateMessage] = useState("");
+
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
@@ -50,6 +52,7 @@ function CreatePet({ user }) {
           owner,
         },
       });
+      setUpdateMessage("Pet successfully created!")
       console.log(data.addPet);
     } catch (err) {
       console.error(err);
@@ -128,6 +131,7 @@ function CreatePet({ user }) {
       </Button>
       </div>
     </Form>
+    <div style={{fontSize: "25px", color: "white", textAlign: "center"}}>{updateMessage}</div>
     </div>
     ) : (
       <p>

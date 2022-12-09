@@ -3,16 +3,17 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
-const Favourites = (likedPets) => {
-  console.log(likedPets)
+const Favourites = ({likedPets}) => {
+  console.log('liked', {likedPets})
   return (
-
+    
     <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
-
+      {likedPets ? (
+        likedPets.map(pet => (
       <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", margin: "3.5vh", padding: "0 0 3vh 3vh" }}>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <div style={{ fontSize: "20px", display: "block", width: "100%", textAlign: "start", height: "22px", margin: "1vh" }}>
-            <h6 style={{ color: "#f2faf5", fontSize: "20px" }}>OWNER NAME: <span></span></h6>
+            <h6 style={{ color: "#f2faf5", fontSize: "20px" }}>OWNER NAME: <span>{pet.owner.fullname}</span></h6>
           </div>
 
           <div>
@@ -22,10 +23,10 @@ const Favourites = (likedPets) => {
             }} alt="pet" src="/" />
           </div>
           <div style={{ padding: "1rem", textAlign: "start" }}>
-            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>PET NAME: <span></span></h6>
-            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>AGE: <span></span></h6>
-            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>GENDER: <span></span></h6>
-            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span></span></h6>
+            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>PET NAME: <span>{pet.name}</span></h6>
+            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>AGE: <span>{pet.age}</span></h6>
+            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>GENDER: <span>{pet.gender}</span></h6>
+            <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>LOCATION: <span>{pet.city}, {pet.country}</span></h6>
           </div>
 
           <div style={{ textAlign: "start", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
@@ -39,7 +40,12 @@ const Favourites = (likedPets) => {
 
         </div>
       </Card>
-
+        ))
+      ) : (
+        <div>
+           <h4>You have no Favourites</h4>
+        </div>
+      )}
 
     </main>
   );

@@ -15,6 +15,10 @@ const resolvers = {
           populate: 'comments'
         })
         .populate('likedPets')
+        .populate({
+          path: 'likedPets',
+          populate: 'owner'
+        })
         .populate('messages')
         .populate({
           path: 'messages',

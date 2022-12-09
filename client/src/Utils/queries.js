@@ -201,6 +201,10 @@ query me {
       colour
       image
       dateCreated
+      owner {
+        _id
+        fullname
+      }
     }
     messages {
       messageText

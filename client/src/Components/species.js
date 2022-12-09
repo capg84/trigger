@@ -82,7 +82,7 @@ const Species = () => {
                             </Link>
                         </div>
                         <Routes>
-                            <Route path="/:petId" element={<Pet singlePet={pet} />} />
+                            <Route path="/:petId" element={<Pet />} />
                         </Routes>
                     </div>
                 </Card>

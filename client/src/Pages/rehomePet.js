@@ -62,7 +62,7 @@ const AllPets = () => {
         ) : (
         <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
 
-          {allBreeds && allBreeds.map((pet) => (
+          {allBreeds.map((pet) => (
             <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
               <div style={{ display: "flex" }}>
                 <div>
@@ -83,7 +83,7 @@ const AllPets = () => {
                   </Link>
                 </div>
                 <Routes>
-                  <Route path="/:petId" element={<Pet singlePet={pet} />} />
+                  <Route path="/:petId" element={<Pet />} />
                 </Routes>
               </div>
             </Card>

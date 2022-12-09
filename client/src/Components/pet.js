@@ -18,9 +18,9 @@ import CommentList from "./comments/commentList";
 import CommentForm from "./comments/commentForm";
 
 const Pet = () => {
-  const userId = Auth.getProfile().data._id;
-  //console.log(userId);
   const { petId } = useParams();
+  const { userId } = useParams();
+  console.log(userId);
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
@@ -82,19 +82,13 @@ const Pet = () => {
           <Link to="/pets">
           <Button>BACK TO PETS</Button>
           </Link>
-          {Auth.loggedIn() ? (
-          
+          {userId ? (
           <Button
           onClick={() => handleClick(pet.owner._id)}
           >MESSAGE: <span>{pet.owner.fullname}</span></Button>
-          
           ) : (
           <Link to="/login">
-            <Button
-            >
-              MESSAGE: 
-              <span>{pet.owner.fullname}</span>
-            </Button>
+            <Button style={{ width:"fit-content"}}>MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           )}
         </div>
@@ -102,9 +96,10 @@ const Pet = () => {
     </div>
     
     <section className="comment-section">
-      
       <div>
+
         <CommentForm petId={pet._id} />
+
 
         <CommentList comments={pet.comments} />
       </div>

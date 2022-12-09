@@ -14,6 +14,8 @@ import {
 import Auth from '../Utils/auth';
 
 function CreatePet({ user }) {
+  const [updateMessage, setUpdateMessage] = useState("");
+
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
@@ -50,6 +52,7 @@ function CreatePet({ user }) {
           owner,
         },
       });
+      setUpdateMessage("Pet successfully created!")
       console.log(data.addPet);
     } catch (err) {
       console.error(err);
@@ -62,7 +65,7 @@ function CreatePet({ user }) {
 
     <div className="formContainer">
       
-    <Form style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "50px",
+    <Form className="create-listing-form" style={{backgroundColor: "#AD7940", opacity: "0.8", width: "80%", marginLeft: "10%", marginTop: "50px",
     marginBottom: "150px", padding: "2vh" }} onSubmit={handleCreatePet}>
 
 <Form.Group style={{ width: "94%", marginLeft: "3%" }} className="mb-3" >
@@ -128,6 +131,7 @@ function CreatePet({ user }) {
       </Button>
       </div>
     </Form>
+    <div style={{fontSize: "25px", color: "white", textAlign: "center"}}>{updateMessage}</div>
     </div>
     ) : (
       <p>

@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Pet from "../Components/pet";
 import { SEARCH_PETS } from '../Utils/queries';
-
+import Auth from "../Utils/auth";
 import "../Assets/Images/pets/Leo.jpg"
 
 
@@ -20,6 +20,12 @@ const AllPets = () => {
   const allBreeds = data?.allPets || [];
 
  console.log('pets', allBreeds)
+let userId = 0;
+ if (Auth.loggedIn()) {
+    userId = Auth.getProfile().data._id;
+ } else {
+    userId = 0;
+ }
 
   return (
 
@@ -62,28 +68,28 @@ const AllPets = () => {
         ) : (
         <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
 
-          {allBreeds.map((pet) => (
-            <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '27rem', height: "15rem", margin: "5vh" }}>
+          {allBreeds && allBreeds.map((pet) => (
+            <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "15rem", margin: "5vh" }}>
+
               <div style={{ display: "flex" }}>
                 <div>
-
                   <img style={{
-                    display: "flex", border: "solid black 1px", width: '10rem', height: "14rem",
+                    display: "flex", border: "solid black 1px", width: '11rem', height: "14rem",
                     margin: "0.5rem", borderRadius: "10px"
                   }} alt="pet" src={pet.image} />
                 </div>
-                <div style={{ padding: "1rem" }}>
+                <div style={{ padding: "1vh", margin: "1vh 0 0 3vh"  }}>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>NAME: <span>{pet.name}</span></h6>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span>{pet.age}</span></h6>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span>{pet.gender}</span></h6>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span>{pet.city}</span></h6>
-                  <Link to={`/pets/${pet._id}`}>
+                  <Link to={`/pets/${userId}/${pet._id}`}>
                     <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary"
                       value={pet._id}>MORE INFO</Button>
                   </Link>
                 </div>
                 <Routes>
-                  <Route path="/:petId" element={<Pet />} />
+                  <Route path="/:userId/:petId" element={<Pet />} />
                 </Routes>
               </div>
             </Card>

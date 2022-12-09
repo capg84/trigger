@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH_PETS = gql`
-query Query {
+query allPets {
   allPets {
     _id
     name
@@ -16,15 +16,8 @@ query Query {
     colour
     image
     dateCreated
-    comments {
-      _id
-      commenter {
-        _id
-        fullname
-      }
-      commentBody
-      dateCreated
-    }
+    userlikeCount
+    commentCount
   }
 }
 `;
@@ -216,46 +209,38 @@ query singleUser {
 }
 `;
 
-export const USER_LIKES = gql`
-  query userLikes($userLikes: ID!) {
-    pets(userLikes: $userLikes) {
-      _id
-    }
-  }
-`;
 
 export const PET = gql`
-  query pet($petId: ID!) {
-    pet(petId: $petId) {
-      _id
-      name
-      age
-      gender
-      species
-      description
-      city
-      country
-      breed
-      medicalHistory
-      colour
-      image
-      dateCreated
-      owner {
+query pet($petId: ID!) {
+  pet(petId: $petId) {
+    _id
+    name
+    age
+    gender
+    species
+    description
+    city
+    country
+    breed
+    medicalHistory
+    colour
+    image
+    dateCreated
+    owner {
+      fullname
+    }
+    userlikeCount
+    commentCount
+    comments {
+      commenter {
         _id
         fullname
       }
-      userLikes {
-        _id
-      }
-      comments {
-        commenter {
-          _id
-        }
-        commentBody
-        dateCreated
-      }
+      commentBody
+      dateCreated
     }
   }
+}
 `;
 
 export const MESSAGES = gql`

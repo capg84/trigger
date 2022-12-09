@@ -209,47 +209,38 @@ query singleUser {
 }
 `;
 
-export const USER_LIKES = gql`
-  query userLikes($userLikes: ID!) {
-    pets(userLikes: $userLikes) {
-      _id
-    }
-  }
-`;
 
 export const PET = gql`
-  query pet($petId: ID!) {
-    pet(petId: $petId) {
-      _id
-      name
-      age
-      gender
-      species
-      description
-      city
-      country
-      breed
-      medicalHistory
-      colour
-      image
-      dateCreated
-      owner {
+query pet($petId: ID!) {
+  pet(petId: $petId) {
+    _id
+    name
+    age
+    gender
+    species
+    description
+    city
+    country
+    breed
+    medicalHistory
+    colour
+    image
+    dateCreated
+    owner {
+      fullname
+    }
+    userlikeCount
+    commentCount
+    comments {
+      commenter {
         _id
         fullname
       }
-      userLikes {
-        _id
-      }
-      comments {
-        commenter {
-          _id
-          fullname
-        }
-        commentBody
-        dateCreated
-      }
+      commentBody
+      dateCreated
     }
   }
+}
 `;
 
 export const MESSAGES = gql`

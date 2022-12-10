@@ -128,7 +128,7 @@ Should you have any questions, please feel free to contact any of the contributo
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Live Application Screenshot
-![image](https://user-images.githubusercontent.com/103275458/206856444-28d8e164-1377-4b4c-a963-98ac02288620.png)
+![image](https://user-images.githubusercontent.com/29457902/206865480-d2166e6e-85fd-443b-aac3-7ac569ece1c2.png)
 
 ## Links
 

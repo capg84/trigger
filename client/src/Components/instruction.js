@@ -2,9 +2,6 @@ import React from 'react';
 // Import our custom hook.
 import { useInstruction } from '../Utils/instruction';
 
-// import companyLogo from './path/to/logo.jpg';
-// import adopt from './Assets/Images/adopt.jpeg'
-
 
 // Make our ThemeComponent the default export from this file
 export default function Instruction() {
@@ -28,7 +25,7 @@ export default function Instruction() {
               <div className="col ">
                   <div className="card h-100">
 
-                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527160/Fluffy_e0uatp.jpg" className="card-img-top" alt="..." />
+                      <img style={{width: "28vh", height: "15vh"}} src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670674004/create-advert_nrqzz0.png" className="card-img-top" alt="..." />
 
                       <div className="card-body">
                           <h5 className="card-title">1. CREATE AN ADVERT</h5>
@@ -39,7 +36,7 @@ export default function Instruction() {
               <div className="col ">
                   <div className="card h-100">
 
-                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527177/Marshmallow_n25sh3.jpg" className="card-img-top" alt="..." />
+                      <img style={{width: "28vh", height: "15vh"}}  src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670673001/talk_ocb2mn.webp" className="card-img-top" alt="..." />
 
                       <div className="card-body">
                           <h5 className="card-title">2. TALK TO PEOPLE WHO ARE INTERESTED IN ADOPTING</h5>
@@ -50,7 +47,7 @@ export default function Instruction() {
               <div className="col ">
                   <div className="card h-100">
 
-                      <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527229/Stitch_ta2uyc.webp" className="card-img-top" alt="..." />
+                      <img style={{width: "28vh", height: "15vh"}}  src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670672977/rehome_pah5gn.png" className="card-img-top" alt="..." />
 
                       <div className="card-body">
                           <h5 className="card-title">3. SEND YOUR PET TO A GOOD HOME</h5>
@@ -78,7 +75,7 @@ export default function Instruction() {
                 <div className="col ">
                     <div className="card h-100">
 
-                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527214/Oscar_rbfgkg.jpg" className="card-img-top" alt="..." />
+                        <img style={{width: "28vh", height: "15vh"}}  src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670674012/search-advert_ddnvpy.png" className="card-img-top" alt="..." />
 
                         <div className="card-body">
                             <h5 className="card-title">1. SEARCH OUR ADVERTS</h5>
@@ -89,7 +86,7 @@ export default function Instruction() {
                 <div className="col ">
                     <div className="card h-100">
 
-                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527160/Fluffy_e0uatp.jpg" className="card-img-top" alt="..." />
+                        <img style={{width: "28vh", height: "15vh"}}  src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670673001/talk_ocb2mn.webp" className="card-img-top" alt="..." />
 
                         <div className="card-body">
                             <h5 className="card-title">2. TALK TO AN OWNER</h5>
@@ -100,7 +97,7 @@ export default function Instruction() {
                 <div className="col ">
                     <div className="card h-100">
 
-                        <img src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670527221/Polly_osp1rc.jpg" className="card-img-top" alt="..." />
+                        <img style={{width: "28vh", height: "15vh"}}  src="https://res.cloudinary.com/dwvs0upgi/image/upload/v1670672969/new-pet_nm5wuy.jpg" className="card-img-top" alt="..." />
 
                         <div className="card-body">
                             <h5 className="card-title">3. TAKE YOUR PET HOME</h5>

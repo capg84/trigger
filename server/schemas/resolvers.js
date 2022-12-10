@@ -164,6 +164,8 @@ const resolvers = {
         return user;
       }
     },
+
+
     // remove a liked pet or a user pet when signed in
     removeLikedPet: async (parent, { petId }, context) => {
       const updatedUser = await User.findOneAndUpdate(

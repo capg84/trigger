@@ -19,7 +19,6 @@ const AllPets = () => {
   const { loading, data } = useQuery(SEARCH_PETS);
   const allBreeds = data?.allPets || [];
 
- console.log('pets', allBreeds)
 let userId = 0;
  if (Auth.loggedIn()) {
     userId = Auth.getProfile().data._id;

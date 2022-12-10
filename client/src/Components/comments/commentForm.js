@@ -40,7 +40,7 @@ const CommentForm = ({ petId }) => {
         setCommentBody(value);
       }
     };
-    console.log('commentBody', commentBody)
+
     return (
       <div>
   

@@ -90,7 +90,7 @@
     background-color: #9CCBC3;
 }
 .username-chat, .date-created {
-    color: rgb(173, 121, 64);
+    color: 9rgb(173, 121, 64);
 }
 
 .messageReceived {
@@ -125,12 +125,27 @@
 }
 
 #message {
-    width: 85%;
+    width: 100%;
+}
+
+.send-message {
+ width: 80%;
+
+}
+
+.meesage-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 #send-btn  {
-    margin-left: 15px;
+    margin-left: 1vh;
     padding: 2px 15px;
+    border-radius: 10px;
+    background-color: #9CCBC3;
+    color:white;
+    
 }
 
 /* UPDATE ACCOUNT DETAILS FORM STYLING */

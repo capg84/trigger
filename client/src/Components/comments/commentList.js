@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 const CommentList = ({ comments = [] }) => {
   const [removeComment, { error }] = useMutation(REMOVE_COMMENT)
   const { petId } = useParams();
-  console.log('pet', petId)
+
   const handleRemoveComment = async (commentId) => {
     console.log('comment', commentId)
     const token = Auth.loggedIn() ? Auth.getToken() : null;

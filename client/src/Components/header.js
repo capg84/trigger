@@ -33,6 +33,9 @@ export default function Header() {
     else if(searchValue.match(/[gG]uinea? ?[pP]ig?s?/)){
       actualInput = "Guinea pig"
     }
+    else if(searchValue.match(/[bB]?a?[ia]rd?s?/)){
+      actualInput = "Bird"
+    }
     else {
       actualInput = "Other"
     }

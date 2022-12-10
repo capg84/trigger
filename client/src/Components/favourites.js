@@ -4,6 +4,14 @@ import Button from 'react-bootstrap/Button';
 import { useMutation } from '@apollo/client';
 import { REMOVE_LIKE } from '../Utils/mutations';
 import Auth from "../Utils/auth";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams
+} from "react-router-dom";
+import Pet from "./pet";
 
 const Favourites = ({likedPets}) => {
   const userId = Auth.getProfile().data?._id;
@@ -56,12 +64,16 @@ const Favourites = ({likedPets}) => {
           <div style={{ textAlign: "start", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
             <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "30vh", marginBottom: "1vh" }}
               variant="primary" onClick={() => handleRemoveLike(pet._id)}>REMOVE FROM FAVOURITES</Button>
+            <Link to={`/pets/${userId}/${pet._id}`}>
             <Button style={{
               marginLeft: "2vh", width: "18vh", backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", margin: "0 0 1vh 2vh",
               fontSize: "15px"
             }} variant="primary">MORE INFO</Button>
+            </Link>
           </div>
-
+          <Routes>
+                  <Route path="/:userId/:petId" element={<Pet />} />
+                </Routes>
         </div>
       </Card>
         ))

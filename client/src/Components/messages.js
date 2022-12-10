@@ -113,8 +113,9 @@ const Messages = () => {
           ))
         ) : <p>You are now connected</p>}
         </div>
-        <Form onSubmit={handleFormSubmit}>
+        <Form className="meesage-form" onSubmit={handleFormSubmit}>
           <Form.Group className="send-message" >
+            
             <Form.Control 
             type="text" 
             id="message" 

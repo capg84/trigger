@@ -31,7 +31,7 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-      console.log(data.login.token, "++++++++++++++++++++++++")
+
       window.location.href=`/dashboard/${data.login.user._id}`;
     } catch (e) {
       console.error(e);

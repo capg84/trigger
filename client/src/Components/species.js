@@ -17,7 +17,7 @@ import { SEARCH_PET_SPECIES } from '../Utils/queries';
 const Species = () => {
 
     const { species } = useParams();
-    console.log(species)
+
     const { loading, data } = useQuery(SEARCH_PET_SPECIES, {
         variables: { species: species }
     });

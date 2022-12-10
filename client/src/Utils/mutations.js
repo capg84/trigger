@@ -51,15 +51,19 @@ mutation aboutMe($aboutMeId: ID!) {
 `; */
 
 export const SAVE_PET = gql`
-  mutation savePet($petId: ID!){
-    savePet (petId: $petId){
+mutation savePet($petId: ID!) {
+  savePet(petId: $petId) {
+    _id
+    fullname
+    likedPets {
       _id
-      likedPets{
-        _id
-      }
     }
   }
+}
 `;
+
+
+
 
 export const CREATE_PET = gql`
 mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!, $owner: ID!) {
@@ -128,6 +132,18 @@ mutation removePet($petId: ID!){
   }
 }
 `;
+
+export const LIKED_PET = gql`
+  mutation likedPets($petId: ID!){
+    likedPets(petId: $petId){
+      _id
+      likedPets{
+        _id
+      }
+    }
+  }
+  `;
+
 
 export const REMOVE_LIKE = gql`
   mutation removeLikedPet($petId: ID!){

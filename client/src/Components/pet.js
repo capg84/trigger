@@ -1,8 +1,6 @@
 import React from "react";
 import "../Assets/Styles/pet.css"
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import {
   BrowserRouter as Router,
   Route,
@@ -10,24 +8,47 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
+import { useQuery, useMutation } from "@apollo/client";
 import { PET } from '../Utils/queries';
+import { SAVE_PET } from "../Utils/mutations"
 import Auth from "../Utils/auth";
 import CommentList from "./comments/commentList";
 import CommentForm from "./comments/commentForm";
 
+
+
 const Pet = () => {
+
+
+  const [savePet, { error }] = useMutation( SAVE_PET );
   const { petId } = useParams();
   const { userId } = useParams();
-  console.log(userId);
+
+  const HandleLike = async (e) => {
+
+    const petId = e.target.value
+
+    try {
+      const { data } = await savePet({
+        variables: { petId },
+      });
+      window.location.reload(); 
+
+    } catch (err) {
+
+      console.error(err);
+    }
+  
+  };
+
+
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
 
   // Check if data is returning from the query
   const pet = data?.pet || {};
-  console.log('pet', pet)
+
 
 
   if (loading) {
@@ -40,9 +61,8 @@ const Pet = () => {
     <div className="pet">
       <div className="header-container-pet">
         <p style={{color: "white"}} className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
-        <button class="btn-secondary like-review">
-          <i class="fa fa-heart" aria-hidden="true"></i> Like
-        </button>
+        <button class="btn-secondary like-review" value={pet._id} onClick={(e) => HandleLike(e)}>
+          <i class="fa fa-heart" aria-hidden="true"></i>Like</button>
         <h3 className="header-text-pet">{pet.name}</h3>
       </div>
 

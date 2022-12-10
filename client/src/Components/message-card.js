@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 export default function MessageCard() {
     const { userId } = useParams();
-
+    const [updateMessage, setUpdateMessage] = useState("");
     const [messageText, setMessageText] = useState('');
     // eslint-disable-next-line
     const [sendMessage, { error }] = useMutation(SEND_MESSAGE);
@@ -37,7 +37,7 @@ export default function MessageCard() {
             setMessageText({
               messageText: ''
             });
-          
+            setUpdateMessage("Message sent successfully!")
         } catch (err) {
           console.error(err);
         }
@@ -64,6 +64,7 @@ export default function MessageCard() {
                         SEND MESSAGE
                     </Button>
                 </div>
+                <div style={{fontSize: "25px", color: "white", textAlign: "center"}}>{updateMessage}</div>
             </Form>
         </main>
     );

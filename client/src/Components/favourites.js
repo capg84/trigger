@@ -1,10 +1,32 @@
 import '../Assets/Styles/dashboard.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import { useMutation } from '@apollo/client';
+import { REMOVE_LIKE } from '../Utils/mutations';
+import Auth from "../Utils/auth";
 
 const Favourites = ({likedPets}) => {
-  console.log('liked', {likedPets})
+  const userId = Auth.getProfile().data?._id;
+  const [removeLikedPet, { error }] = useMutation(REMOVE_LIKE);
+
+  const handleRemoveLike = async (petId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+    console.log('token', token);
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await removeLikedPet({
+        variables: { petId },
+      });
+      console.log(data);
+      window.location.href=`/dashboard/${userId}/favourites`;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     
     <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
@@ -33,7 +55,7 @@ const Favourites = ({likedPets}) => {
 
           <div style={{ textAlign: "start", display: "block", width: "100%", height: "22px", margin: "1vh" }}>
             <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px", width: "30vh", marginBottom: "1vh" }}
-              variant="primary">REMOVE FROM FAVOURITES</Button>
+              variant="primary" onClick={() => handleRemoveLike(pet._id)}>REMOVE FROM FAVOURITES</Button>
             <Button style={{
               marginLeft: "2vh", width: "18vh", backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", margin: "0 0 1vh 2vh",
               fontSize: "15px"

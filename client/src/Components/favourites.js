@@ -9,9 +9,6 @@ const Favourites = ({likedPets}) => {
     
     <main style={{ display: "flex", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
 
-
-      <Card className='favourites-card' style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", margin: "3.5vh", padding: "0 0 3vh 3vh" }}>
-
       {likedPets ? (
         likedPets.map(pet => (
       <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", margin: "3.5vh", padding: "0 0 3vh 3vh" }}>
@@ -51,7 +48,6 @@ const Favourites = ({likedPets}) => {
            <h4>You have no Favourites</h4>
         </div>
       )}
-      </Card>
 
     </main>
   );

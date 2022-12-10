@@ -11,26 +11,31 @@ import {
   useParams,
 } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import { useNavigate } from "react-router-dom";
 import { PET } from '../Utils/queries';
 import Auth from "../Utils/auth";
+import CommentList from "./comments/commentList";
+import CommentForm from "./comments/commentForm";
 
-const Pet = ({ singlePet }) => {
-  const userId = Auth.getProfile().data._id;
-  console.log(userId);
+const Pet = () => {
   const { petId } = useParams();
+  const { userId } = useParams();
+  console.log(userId);
   const { loading, data } = useQuery(PET, {
     variables: { petId: petId },
   });
 
   // Check if data is returning from the query
   const pet = data?.pet || {};
+  console.log('pet', pet)
+
 
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
-  return <main>
+  return (
+  <main>
 
     <div className="pet">
       <div className="header-container-pet">
@@ -70,9 +75,10 @@ const Pet = ({ singlePet }) => {
           <Link to="/pets">
           <Button>BACK TO PETS</Button>
           </Link>
-          {Auth.loggedIn() ? (
-          <Link to={`/dashboard/${userId}}/message-form/${pet.owner._id}`}>
-          <Button>MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          {userId ? (
+          <Link to={`/dashboard/message-form/${pet.owner._id}`}>
+          <Button
+          >MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>
           ) : (
           <Link to="/login">
@@ -82,33 +88,18 @@ const Pet = ({ singlePet }) => {
         </div>
       </div>
     </div>
-
+    
     <section className="comment-section">
       <div>
-        <div>
-          <InputGroup>
-            <Button style={{ backgroundColor: "#AD7940" ,width:"fit-content"}} className="comment-button">ENTER COMMENT</Button>
-            <Form.Control as="textarea" aria-label="With textarea" />
-          </InputGroup>
-        </div>
-
-        <div className="saved-comments">
-          <div className="comment-header">
-            <h6>{ }</h6>
-            <h6>{ }</h6>
-            <span class="material-symbols-outlined">delete</span>
-          </div>
-
-          <div className="comment-text">
-            <p>{ }</p>
-          </div>
-        </div>
+        <CommentForm petId={pet._id} />
+        <CommentList comments={pet.comments} />
       </div>
     </section>
 
 
 
-  </main >;
+  </main >
+  )
 };
 
 export default Pet;

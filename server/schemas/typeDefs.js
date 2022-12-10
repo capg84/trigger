@@ -82,7 +82,6 @@ const typeDefs = gql`
     likedPets: [Pet]
     userLikes: [User]
     messages: [Message]
-    messagesfrom: [Message]
     speciesPet(species: String): [Pet]!
 
  
@@ -92,7 +91,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(fullname: String!, email: String!, password: String!): Auth
     savePet(petId: ID!): User
-    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!, breed: String, colour: String): Pet
+    addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!, breed: String, colour: String, owner: ID!): Pet
     updatePet(petId: ID!, name: String, age: String, gender: String, species: String, description: String, city: String, country: String, breed: String, medicalHistory: String, colour: String, image: String): Pet
     removePet(petId: ID!): Pet
     removeLikedPet(petId: ID!): User
@@ -104,6 +103,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-/* aboutMe(id: ID!, fullname: String, email: String, description: String, city: String, country: String): User */
-/* addPet(name: String!, age: String!, gender: String!, species: String!, description: String!, city: String!, country: String!, medicalHistory: String!, image: String!): User */

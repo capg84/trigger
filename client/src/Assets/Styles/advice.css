@@ -1,4 +1,6 @@
+
 /* .advice-container {
+
   width: 85%;
   height: fit-content;
   margin: 25px auto;
@@ -39,11 +41,13 @@ img {
 }
 
 /* styles for small tablet */
+
 /* @media screen and (min-width: 641px) {
 } */
 
 /* styles for large tablets, laptop and desktops */
 /* @media screen and (min-width: 961px) {
+
   .advice-container {
     width: 70%;
     height: fit-content;
@@ -83,6 +87,7 @@ img {
     width: 90px;
     background-color: rgb(173, 121, 64);
   }
+
 }  */
 
 .advice-card {
@@ -156,6 +161,7 @@ img {
   font-size: 2.5vh;
 }
 
+
 @media screen and (max-width: 900px) {
 .advice-card,
 .text-div {
@@ -173,3 +179,4 @@ img {
 
 }
 }
+

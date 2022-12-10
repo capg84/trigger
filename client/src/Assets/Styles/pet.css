@@ -156,9 +156,17 @@
     margin-top: 5vh;
 }
 
+.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .comment-text {
     padding: 2vh;
     text-align: justify;
+}
+#deletebtn:hover{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {

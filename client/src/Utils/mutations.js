@@ -62,8 +62,8 @@ export const SAVE_PET = gql`
 `;
 
 export const CREATE_PET = gql`
-mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!) {
-  addPet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image) {
+mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!, $owner: ID!) {
+  addPet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, owner: $owner) {
       _id
       name
       age
@@ -103,8 +103,8 @@ mutation addPet($name: String!, $age: String!, $gender: String!, $species: Strin
 `; */
 
 export const UPDATE_PET = gql`
-mutation updatePet($petId: ID!) {
-  updatePet(petId: $petId) {
+mutation updatePet($breed: String, $colour: String, $name: String, $age: String, $gender: String, $species: String, $description: String, $city: String, $country: String, $medicalHistory: String, $image: String, $petId: ID!) {
+  updatePet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, petId: $petId) {
     _id
     name
     age
@@ -159,29 +159,27 @@ mutation addComment($petId: ID!, $commentBody: String!) {
 `;
 
 export const REMOVE_COMMENT = gql`
-  mutation removeComment($petId: ID!, $commentId: ID!){
-    removeComment(petId: $petId, commentId: $commentId){
-      _id
-      comments{
-        _id
-        commenter
-        commentBody
-      }
-    }
+mutation removeComment($petId: ID!, $commentId: ID!) {
+  removeComment(petId: $petId, commentId: $commentId) {
+    name
   }
+}
 `;
 
 export const SEND_MESSAGE = gql`
- mutation sendMessage($to: ID!, $messageText: String!) {
-  sendMessage(to: $to, messageText: messageText){
-    _id
+mutation sendMessage($to: ID!, $messageText: String!) {
+  sendMessage(to: $to, messageText: $messageText) {
     messageText
-    read
     dateCreated
-    from
-    to
+    from {
+      _id
+    }
+    to {
+      _id
+    }
+    read
   }
- }
+}
 `;
 
 

@@ -6,12 +6,11 @@ import {
   Route,
   Routes,
   Link,
-  useParams,
+  useParams
 } from "react-router-dom";
 import Pet from "../Components/pet";
-import Species from "../Components/species"
 import { SEARCH_PETS } from '../Utils/queries';
-
+import Auth from "../Utils/auth";
 import "../Assets/Images/pets/Leo.jpg"
 
 
@@ -20,7 +19,13 @@ const AllPets = () => {
   const { loading, data } = useQuery(SEARCH_PETS);
   const allBreeds = data?.allPets || [];
 
-console.log(allBreeds)
+ console.log('pets', allBreeds)
+let userId = 0;
+ if (Auth.loggedIn()) {
+    userId = Auth.getProfile().data._id;
+ } else {
+    userId = 0;
+ }
 
   return (
 
@@ -58,10 +63,14 @@ console.log(allBreeds)
             </Link>
           </div>
         </div>
-
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
         <section style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+
           {allBreeds && allBreeds.map((pet) => (
             <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "15rem", margin: "5vh" }}>
+
               <div style={{ display: "flex" }}>
                 <div>
                   <img style={{
@@ -74,18 +83,19 @@ console.log(allBreeds)
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span>{pet.age}</span></h6>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span>{pet.gender}</span></h6>
                   <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span>{pet.city}</span></h6>
-                  <Link to={`/pets/${pet._id}`}>
+                  <Link to={`/pets/${userId}/${pet._id}`}>
                     <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary"
                       value={pet._id}>MORE INFO</Button>
                   </Link>
                 </div>
                 <Routes>
-                  <Route path="/:petId" element={<Pet singlePet={pet} />} />
+                  <Route path="/:userId/:petId" element={<Pet />} />
                 </Routes>
               </div>
             </Card>
           ))}
         </section>
+        )}
 
 
         <div style={{ width: "100%", textAlign: "center" }}>

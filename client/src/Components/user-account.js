@@ -13,6 +13,7 @@ import Auth from "../Utils/auth";
 
 const Account = ({ user }) => {
   const { userId } = useParams();
+  const [updateMessage, setUpdateMessage] = useState("");
   // Create state variables for the fields in the form
   const [fullname, setFullname] = useState();
   const [email, setEmail] = useState();
@@ -32,6 +33,7 @@ const Account = ({ user }) => {
       const { data } = await aboutMe({
         variables: { fullname, email, description, city, country },
       });
+      setUpdateMessage("Details successfully updated!")
     } catch (err) {
       console.error(err);
     }
@@ -194,6 +196,7 @@ const Account = ({ user }) => {
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
+      <div style={{fontSize: "20px", color: "white", textAlign: "center"}}>{updateMessage}</div>
     </div>
   );
 };

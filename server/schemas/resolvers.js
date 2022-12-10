@@ -10,7 +10,15 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id })
         .populate('userPets')
+        .populate({
+          path: 'userPets',
+          populate: 'comments'
+        })
         .populate('likedPets')
+        .populate({
+          path: 'likedPets',
+          populate: 'owner'
+        })
         .populate('messages')
         .populate({
           path: 'messages',
@@ -38,6 +46,7 @@ const resolvers = {
       .sort({dateCreated: -1});
     },
 
+
     // Gets pets by species
     speciesPet: async (parent,  {species} ) => {
       return Pet.find({ species: species })
@@ -50,6 +59,10 @@ const resolvers = {
       return Pet.findOne({ _id: petId })
       .populate('owner')
       .populate('comments')
+      .populate({
+        path: 'comments',
+        populate: 'commenter',
+      });
     },
     // get messages from a particular user when signed in
     getmessages: async (parent, { from }, context) => {
@@ -89,18 +102,17 @@ const resolvers = {
     // get all messages
     messages: async(parent, args, context) => {
       const myId = context.user._id;
-      let users = await User.find({});
-      const allMessages = await Message.find({to: myId
+      return await Message.find({to: myId
         // $or: [{from: myId}, {to: myId}]
       })
       .populate('from')
       .sort({dateCreated: -1});
-      const collection = collect(allMessages);
-      groupmessage = collection.groupBy('from');  
-      const grouped = groupmessage.all();
-      console.log('group:', grouped);
+      // const collection = collect(allMessages);
+      // groupmessage = collection.groupBy('from');  
+      // const grouped = groupmessage.all();
+      // console.log('group:', grouped);
 
-      return {allMessages};
+      // return {allMessages};
     }, 
   },
   Mutation: {
@@ -195,9 +207,13 @@ const resolvers = {
     // add a comment when signed in
     addComment: async (parent, { petId, commentBody }, context) => {
       if (context.user) {
+        const user = await User.findOne({_id: context.user._id})
         return Pet.findOneAndUpdate(
           { _id: petId },
-          { $addToSet: { comments: { commentBody } } },
+          { 
+            $addToSet: { 
+            comments: { commentBody, commenter: context.user._id } } 
+          },
           { new: true, runValidators: true }
         );
       }

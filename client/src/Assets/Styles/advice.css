@@ -161,3 +161,22 @@ img {
   font-size: 2.5vh;
 }
 
+
+@media screen and (max-width: 900px) {
+.advice-card,
+.text-div {
+  display: flex;
+  flex-direction: column;
+
+}
+.image-div,
+.image {
+  height: 25vh;
+  width: 30vh;
+}
+.description-div {
+  width: 30vh;
+
+}
+}
+

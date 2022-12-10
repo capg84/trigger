@@ -46,6 +46,10 @@ code {
 
 }
 
+.trigger-header {
+  text-align: center;
+}
+
 .about-trigger{
   background-color: #AD7940;
   opacity: 0.8;
@@ -152,10 +156,31 @@ code {
 
   .about-trigger {
 
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .contact-form,
+  .contact {
     width: 90%;
     margin-left: 5%;
   }
+  
+.about-trigger{
+  width: 80%;
+}
 
+.find-pet {
+  width:fit-content;
+}
+
+.donate {
+  margin-bottom: 2vh;
+}
 
   .find-pet {
     margin: 5vh;

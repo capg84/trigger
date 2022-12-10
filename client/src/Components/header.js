@@ -58,7 +58,9 @@ export default function Header() {
           />
           <Button
             style={{ backgroundColor: "#718C7B", marginLeft: "3px" }}
-            className="header-search find-pet rounded"
+
+            className="find-pet header-search rounded"
+
             onClick={() => searchHandler(searchValue)}
           >
             FIND A PET
@@ -66,7 +68,8 @@ export default function Header() {
           <Button
 
             style={{ backgroundColor: "#AD7940", width:" fit-content", margin: "0 5vh 0 8vh " }}
-            className="header-search rounded"
+
+            className="donate header-search rounded"
 
           >
             DONATE NOW

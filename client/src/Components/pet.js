@@ -28,13 +28,6 @@ const Pet = () => {
   // Check if data is returning from the query
   const pet = data?.pet || {};
   console.log('pet', pet)
-  let navigate = useNavigate();
-
-  const handleClick = async (to) => {
-  navigate(`/dashboard/${userId}/messages`);
-   
-   };
-  // For cLICK
 
 
   if (loading) {
@@ -83,9 +76,10 @@ const Pet = () => {
           <Button>BACK TO PETS</Button>
           </Link>
           {userId ? (
+          <Link to={`/dashboard/message-form/${pet.owner._id}`}>
           <Button
-          onClick={() => handleClick(pet.owner._id)}
           >MESSAGE: <span>{pet.owner.fullname}</span></Button>
+          </Link>
           ) : (
           <Link to="/login">
             <Button style={{ width:"fit-content"}}>MESSAGE: <span>{pet.owner.fullname}</span></Button>

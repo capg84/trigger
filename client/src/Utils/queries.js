@@ -101,57 +101,40 @@ export const GET_MESSAGES = gql`
 `;
 
 export const USER_PROFILES = gql`
-  query users {
-    users {
-      fullname
-      email
+query Users {
+  users {
+    _id
+    fullname
+    email
+    city
+    country
+    description
+    likedCount
+    petCount
+    messageCount
+    userPets {
+      _id
+      name
+      age
+      gender
+      species
+      description
       city
       country
-      description
-      userpets {
+      breed
+      medicalHistory
+      colour
+      image
+      dateCreated
+      commentCount
+      comments {
         _id
-        species
-        name
-        age
-        gender
-        description
-        city
-        country
-        breed
-        medicalHistory
-        colour
-        image
+        commentBody
         dateCreated
-      }
-      LikedPets {
-        _id
-        species
-        name
-        age
-        gender
-        description
-        city
-        country
-        breed
-        medicalHistory
-        colour
-        image
-        dateCreated
-      }
-      messages {
-        _id
-        messageText
-        read
-        dateCreated
-        from {
-          fullname
-        }
-        to {
-          fullname
-        }
       }
     }
   }
+}
 `;
 
 export const MY_PROFILE = gql`
@@ -237,6 +220,7 @@ query pet($petId: ID!) {
     image
     dateCreated
     owner {
+      _id
       fullname
     }
     userlikeCount

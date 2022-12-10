@@ -68,7 +68,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/pets/:userId/:petId" element={<Pet />} />
-              <Route path="dashboard/:userId/message-form/:petId" element={<MessageCard />}/>
+              <Route path="dashboard/message-form/:userId" element={<MessageCard />}/>
 
 {/*               <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/dashboard/:userId/*" element={<Dashboard />} />

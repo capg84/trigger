@@ -6,12 +6,13 @@ import { useParams } from 'react-router-dom';
 import { useMutation} from '@apollo/client';
 import { SEND_MESSAGE } from "../Utils/mutations";
 import { useState } from 'react';
-import Auth from '../Utils/auth'
+
 
 export default function MessageCard() {
     const { userId } = useParams();
 
     const [messageText, setMessageText] = useState('');
+    // eslint-disable-next-line
     const [sendMessage, { error }] = useMutation(SEND_MESSAGE);
 
     const handleChange = (event) => {
@@ -25,6 +26,7 @@ export default function MessageCard() {
         event.preventDefault();
     
         try {
+            // eslint-disable-next-line
           const { data } = await sendMessage({
             variables: {
               to: userId,

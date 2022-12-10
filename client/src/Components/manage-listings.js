@@ -53,7 +53,7 @@ const ManageListing = ({ pets }) => {
           <img style={{
             display: "flex", border: "solid black 1px", width: '10rem', height: "12rem",
             margin: "0.5rem", borderRadius: "10px"
-          }} alt="pet" src="/" />
+          }} alt="pet" src={pet.image} />
         </div>
         <div style={{ padding: "1rem", textAlign: "start" }}>
         <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "17px" }}>PET NAME: <span>{pet.name}</span></h6>

@@ -66,8 +66,8 @@ mutation savePet($petId: ID!) {
 
 
 export const CREATE_PET = gql`
-mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!, $owner: ID!) {
-  addPet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image, owner: $owner) {
+mutation addPet($breed: String, $colour: String, $name: String!, $age: String!, $gender: String!, $species: String!, $description: String!, $city: String!, $country: String!, $medicalHistory: String!, $image: String!) {
+  addPet(breed: $breed, colour: $colour, name: $name, age: $age, gender: $gender, species: $species, description: $description, city: $city, country: $country, medicalHistory: $medicalHistory, image: $image) {
       _id
       name
       age

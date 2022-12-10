@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import "../Assets/Styles/index.css";
 import { useQuery } from "@apollo/client";
 import Auth from "../Utils/auth";
+import Logo from "../Assets/Images/Logo.jpg"
 
 // HTML for footer which is imported in App.js
 export default function Header() {
@@ -54,6 +55,7 @@ export default function Header() {
     <header className="container-fluid">
       <div className="header-1">
         <div className="header">
+        <a href="/"><img style={{ width: "8vh", height:"8vh" }} className="header-image" alt="logo" src={Logo}></img></a>
           <h1 className="header-text">TRIGGER</h1>
         </div>
         <div className="search">

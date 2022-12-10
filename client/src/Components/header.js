@@ -21,18 +21,22 @@ export default function Header() {
     if(searchValue.match(/[Dd]og[sg]?s?/)){
       actualInput = "Dog"
     }
-    if(searchValue.match(/[cC]at[st]?s?/)){
+    else if(searchValue.match(/[cC]at[st]?s?/)){
       actualInput = "Cat"
     }
-    if(searchValue.match(/[rR]abbit[ts]?s?/)){
+    else if(searchValue.match(/[rR]abbit[ts]?s?/)){
       actualInput = "Rabbit"
     }
-    if(searchValue.match(/[hH]ors[es]?s?/)){
+    else if(searchValue.match(/[hH]ors[es]?s?/)){
       actualInput = "Horse"
     }
-    if(searchValue.match(/[gG]uinea? ?[pP]ig?s?/)){
+    else if(searchValue.match(/[gG]uinea? ?[pP]ig?s?/)){
       actualInput = "Guinea pig"
     }
+    else {
+      actualInput = "Other"
+    }
+
 
     let inputArr = [];
     inputArr = searchValue.split(" ");

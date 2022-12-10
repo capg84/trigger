@@ -82,9 +82,16 @@ code {
 
 }
 
+.header-image {
+  width: 10vh;
+  height: 10vh;
+  margin: 2.5vh 4vh 0 10vh;
+}
+
 .header {
   width: 50%;
   text-align: center;
+  display: flex;
 
 }
 

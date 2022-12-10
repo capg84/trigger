@@ -38,9 +38,9 @@ const CommentList = ({ comments = [] }) => {
           comments.map(comment => (
         <div className="saved-comments">
         <div className="comment-header">
-          <h6>{comment.dateCreated}</h6>
+        <h6 style={{fontSize:"2.5vh"}}>MADE BY: <span>{comment.commenter.fullname}</span></h6>
           <div className="d-flex">
-            <h6>{comment.commenter.fullname}</h6>
+            <h6 style={{fontSize:"2.5vh", marginRight: "20vh"}}>DATE CREATED: <span>{comment.dateCreated}</span></h6>
             {Auth.loggedIn ? ( 
             <div>
               <span id='deletebtn' class="material-symbols-outlined"
@@ -52,7 +52,7 @@ const CommentList = ({ comments = [] }) => {
           
         </div>
         <div className="comment-text">
-          <p>{comment.commentBody}</p>
+          <p style={{fontSize:"2.5vh"}}>{comment.commentBody}</p>
         </div>
         </div>
           ))

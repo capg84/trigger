@@ -22,7 +22,7 @@ const EachMessage = ({message}) => {
                 </div>
             </div>
         </div>
-        <div className="date-created" >
+        <div className="date-created" style={{color: 'black'}} >
             <p>{message.dateCreated}</p>
         </div>
     </div>

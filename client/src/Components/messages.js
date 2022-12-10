@@ -115,7 +115,6 @@ const Messages = () => {
         </div>
         <Form className="meesage-form" onSubmit={handleFormSubmit}>
           <Form.Group className="send-message" >
-            
             <Form.Control 
             type="text" 
             id="message" 

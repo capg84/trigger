@@ -20,10 +20,6 @@ db.once('open', async () => {
     tempUser.likedPets.push(newPet._id);
     await tempUser.save();
 
-    // reference user liked pets on pet model
-    newPet.userLikes.push(tempUser._id);
-    await newPet.save();
-
     // randomly add a user to each pet
     const tempuser = users[Math.floor(Math.random() * users.length)];
     newPet.owner = tempuser._id;

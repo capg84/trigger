@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Pet from "../Components/pet";
 import AllPets from '../Pages/rehomePet';
+import Auth from "../Utils/auth";
 import { SEARCH_PET_SPECIES } from '../Utils/queries';
 
 
@@ -22,6 +23,13 @@ const Species = () => {
         variables: { species: species }
     });
     const allBreeds = data?.speciesPet || [];
+
+    let userId = 0;
+    if (Auth.loggedIn()) {
+        userId = Auth.getProfile().data._id;
+    } else {
+        userId = 0;
+    }
 
     return (
 
@@ -76,13 +84,13 @@ const Species = () => {
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>AGE: <span>{pet.age}</span></h6>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>GENDER: <span>{pet.gender}</span></h6>
                             <h6 style={{ color: "#f2faf5", padding: "1vh", fontSize: "15px" }}>LOCATION: <span>{pet.city}</span></h6>
-                            <Link to={`/pets/${pet._id}`}>
+                            <Link to={`/pets/${userId}/${pet._id}`}>
                                 <Button style={{ backgroundColor: "#72552D", color: "#f2faf5", padding: "1vh", fontSize: "15px" }} variant="primary"
                                     value={pet._id}>MORE INFO</Button>
                             </Link>
                         </div>
                         <Routes>
-                            <Route path="/:petId" element={<Pet />} />
+                            <Route path="/:userId/:petId" element={<Pet />} />
                         </Routes>
                     </div>
                 </Card>

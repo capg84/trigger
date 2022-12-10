@@ -51,7 +51,7 @@ const Species = () => {
                 <Link to={`/pets/species/Bird`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>BIRDS</Button>
                 </Link>
-                <Link to={`/pets/species/Guinea pig`}>
+                <Link to={`/pets/species/Guinea Pig`}>
                     <Button style={{ backgroundColor: "#AD7940", color: "#f2faf5", width: "9rem", margin: "5vh" }}>GUINEA PIGS</Button>
                 </Link>
                 <Link to={`/pets/species/Other`}>

@@ -12,7 +12,7 @@ const About = () => {
       <main className="about-main">
 
         <div className="about-trigger">
-          <div>
+          <div className="trigger-header">
             <h1 >TRIGGER</h1>
           </div>
 

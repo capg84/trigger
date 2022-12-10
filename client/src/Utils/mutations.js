@@ -133,28 +133,26 @@ mutation removePet($petId: ID!){
 }
 `;
 
-export const LIKED_PET = gql`
-  mutation likedPets($petId: ID!){
-    likedPets(petId: $petId){
-      _id
-      likedPets{
-        _id
-      }
-    }
-  }
-  `;
-
-
 export const REMOVE_LIKE = gql`
   mutation removeLikedPet($petId: ID!){
-    savePet (petId: $petId){
-      _id
+    removeLikedPet (petId: $petId){
       likedPets{
         _id
       }
     }
   }
 `;
+
+/* export const REMOVE_LIKE = gql`
+  mutation removeLikedPet($petId: ID!){
+    removeLikedPet (petId: $petId){
+      _id
+      likedPets{
+        _id
+      }
+    }
+  }
+`; */
 
 export const COMMENT_PET = gql`
 mutation addComment($petId: ID!, $commentBody: String!) {

@@ -168,13 +168,29 @@ const resolvers = {
 
     // remove a liked pet or a user pet when signed in
     removeLikedPet: async (parent, { petId }, context) => {
+      const pet = await Pet.findOne({_id: petId})
       const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
-        { $pull: { likedPets: { petId: petId } } },
+        { $pull: { likedPets: petId } },
         { new: true }
       );
+      pet.userLikes.pop(updatedUser._id);
+      pet.save();
       return updatedUser;
     },
+
+/*     removeLikedPet: async (parent, { petId }, context) => {
+      const pet = await Pet.findOne({_id: petId})
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { likedPets: { _id: petId } } },
+        { new: true }
+      );
+      pet.userLikes.pop(updatedUser._id);
+      pet.save();
+      return updatedUser;
+    }, */
+
     // add a pet when signed in
     addPet: async (parent, { ...petInput }, context) => {
         if (context.user) {

@@ -12,7 +12,7 @@ const CommentForm = ({ petId }) => {
     const [addComment, { error }] = useMutation(COMMENT_PET);
   
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
+      // event.preventDefault();
   
       try {
         const { data } = await addComment({

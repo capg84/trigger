@@ -76,7 +76,7 @@ const Pet = () => {
           <Button>BACK TO PETS</Button>
           </Link>
           {userId ? (
-          <Link to={`/dashboard/${userId}/message-form/${pet.owner._id}`}>
+          <Link to={`/dashboard/message-form/${pet.owner._id}`}>
           <Button
           >MESSAGE: <span>{pet.owner.fullname}</span></Button>
           </Link>

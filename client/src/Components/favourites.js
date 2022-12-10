@@ -51,6 +51,7 @@ const Favourites = ({likedPets}) => {
            <h4>You have no Favourites</h4>
         </div>
       )}
+      </Card>
 
     </main>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "../Assets/Styles/index.css";
-import { useQuery } from "@apollo/client";
 import Auth from "../Utils/auth";
 import Logo from "../Assets/Images/Logo.jpg"
 
@@ -55,7 +54,9 @@ export default function Header() {
     <header className="container-fluid">
       <div className="header-1">
         <div className="header">
-        <a href="/"><img style={{ width: "8vh", height:"8vh" }} className="header-image" alt="logo" src={Logo}></img></a>
+            <div className="logo-div">
+                <a href="/"><img style={{ width: "8vh", height:"8vh" }} className="header-image" alt="logo" src={Logo}></img></a>
+            </div>
           <h1 className="header-text">TRIGGER</h1>
         </div>
         <div className="search">
@@ -66,7 +67,7 @@ export default function Header() {
             onChange={(event) => setSearchValue(event.target.value)}
           />
           <Button
-            style={{ backgroundColor: "#718C7B", marginLeft: "3px" }}
+            style={{fontSize: "2.5vh", backgroundColor: "#718C7B", marginLeft: "3px" }}
 
             className="find-pet header-search rounded"
 
@@ -76,7 +77,7 @@ export default function Header() {
           </Button>
           <Button
 
-            style={{ backgroundColor: "#AD7940", width:" fit-content", margin: "0 5vh 0 8vh " }}
+            style={{fontSize: "2.5vh", backgroundColor: "#AD7940", width:" fit-content", margin: "0 5vh 0 8vh " }}
 
             className="donate header-search rounded"
 

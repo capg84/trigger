@@ -8,6 +8,7 @@ import {
   BrowserRouter as Router,
   useParams,
 } from "react-router-dom";
+import "../Assets/Styles/index.css"
 
 function EditListing() {
   // Create state variables for the fields in the form
@@ -71,10 +72,11 @@ function EditListing() {
           opacity: "0.8",
           width: "80%",
           marginLeft: "10%",
-          marginTop: "100px",
+          marginTop: "50px",
           marginBottom: "150px",
           padding: "2vh",
         }}
+        className="edit-pet-form"
       >
         <Form.Group
           style={{ width: "45%", marginLeft: "3%", display: "inline-block" }}
@@ -198,7 +200,6 @@ function EditListing() {
           </Form.Label>
           <textarea
             style={{
-              color: "#AD7940",
               fontSize: "20px",
               height: "100px",
               width: "99%",

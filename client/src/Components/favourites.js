@@ -41,7 +41,7 @@ const Favourites = ({likedPets}) => {
 
       {likedPets ? (
         likedPets.map(pet => (
-      <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', height: "fit-content", margin: "3.5vh", padding: "0 0 3vh 3vh" }}>
+      <Card style={{ display: "flex", backgroundColor: "#C3965F", width: '26rem', minHeight: "auto", margin: "3.5vh", padding: "0 0 3vh 3vh" }}>
 
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <div style={{ fontSize: "20px", display: "block", width: "100%", textAlign: "start", height: "22px", margin: "1vh" }}>

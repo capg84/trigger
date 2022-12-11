@@ -6,6 +6,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import "./Assets/Styles/App.css"
 import { setContext } from "@apollo/client/link/context";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
@@ -54,7 +55,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div className="app-div">
           <Header />
           <Navigation />
           <div>

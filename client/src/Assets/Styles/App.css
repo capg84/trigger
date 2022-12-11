@@ -1,4 +1,4 @@
-.App {
+/* .App {
     text-align: center;
   }
   
@@ -35,9 +35,9 @@
     to {
       transform: rotate(360deg);
     }
-  }
+  } */
 
-  
+/*   
   footer {
     background-color: rgba(113, 140, 123, 0);
   } 
@@ -47,4 +47,17 @@
     flex-wrap: wrap;
     height: 100px;
     background-color:rgba(113, 140, 123, 0);
+  } */
+
+
+  body,
+  .app-div {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    body,
+  .app-div {
+    width: 100%;
+  }
   }

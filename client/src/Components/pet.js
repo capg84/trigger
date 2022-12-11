@@ -61,7 +61,7 @@ const Pet = () => {
     <div className="pet">
       <div className="header-container-pet">
         <p style={{color: "white"}} className="date-created">POST CREATED: <span>{pet.dateCreated}</span></p>
-        <button class="btn-secondary like-review" value={pet._id} onClick={(e) => HandleLike(e)}>
+        <button class="btn-secondary like-review rounded" value={pet._id} onClick={(e) => HandleLike(e)}>
           <i className="fa fa-heart" aria-hidden="true"></i>Like</button>
         <h3 className="header-text-pet">{pet.name}</h3>
       </div>

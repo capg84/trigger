@@ -82,10 +82,18 @@ code {
 
 }
 
+.logo-div {
+  width: 9.5vh;
+  height: 9.5vh;
+  background-color: #f2faf5;
+  border-radius: 20px;
+  margin: 2vh 3vh 0 15vh;
+}
+
 .header-image {
-  width: 10vh;
-  height: 10vh;
-  margin: 2.5vh 4vh 0 10vh;
+  width: 9vh;
+  height: 90vh;
+ margin-top: 0.8vh;
 }
 
 .header {
@@ -111,15 +119,6 @@ code {
   align-items: center;
 }
 
-
-
-.header-1 {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .header-search {
   height: 5vh;
@@ -177,6 +176,11 @@ code {
     margin-left: 5%;
   }
   
+  .edit-pet-form{
+
+    width: 100vh;
+  }
+  
 .about-trigger{
   width: 80%;
 }
@@ -196,6 +200,7 @@ code {
   .login-div {
     width: 100%;
   }
+
 
 
 }

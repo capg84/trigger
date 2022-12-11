@@ -1,11 +1,13 @@
 /* DASHBOARD NAV STYLING */
 
 .dashboard-container {
-    margin: 30px 50px;
+    margin: 0 0 10vh 5%;
+    width: 90%;
 }
 
 .dashboard-component {
     background-color: #dbc0a9;
+
 }
 
 .dashboard-nav {
@@ -157,18 +159,17 @@
 }
 
 @media screen and (max-width: 900px) {
+
+    .dashboard-container{
+       display: flex;
+       flex-direction: column;
+    }
    
   .create-listing-form,
     .man-listing-card {
       width: 100%;
       margin-left: 5%;
       
-    }
-
-    .dashboard-component {
-        width: 20vh;
-        display: flex;
-        flex-wrap: wrap;
     }
 
     .favourites-card {

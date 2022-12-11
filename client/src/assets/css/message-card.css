@@ -1,0 +1,48 @@
+.message-card-main {
+    width: 100%;
+    background-image: url("../images/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: fit-content;
+    padding: 20vh 0 10vh 25%;
+    height: 100vh;
+ 
+}
+
+.from-label {
+    color: #f2faf5;
+}
+
+.message-card-form {
+    width: 70%;
+    border-radius: 10px;
+
+    background-color: #718C7B;
+    opacity: 0.8;
+    padding: 2vh 5vh 2vh 5vh;
+}
+
+textarea {
+    text-align: justify;
+}
+
+.button-div {
+    margin-top: 2vh;
+    width: 100%;
+    text-align: center;
+}
+
+.button-div Button{
+    background-color: #AD7940;
+    color: #f2faf5;
+    width: fit-content;
+}
+
+@media screen and (max-width: 900px) {
+    .message-card-form {
+        width: 90%;
+        margin-left: 5%;
+    }
+  
+  }

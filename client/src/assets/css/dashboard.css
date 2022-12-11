@@ -1,0 +1,183 @@
+/* DASHBOARD NAV STYLING */
+
+.dashboard-container {
+    margin: 0 0 10vh 5%;
+    width: 90%;
+}
+
+.dashboard-component {
+    background-color: #dbc0a9;
+
+}
+
+.dashboard-nav {
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-link-nav {
+    text-decoration: none;
+    color: #73461f;
+    border: 1px solid #73461f;
+    padding: 10px 30px;
+    background-color: #f7f5ed;
+    width: 20%;
+}
+
+.item-link-nav:hover {
+    background-color: #AD7940;
+    color: white;
+}
+
+/* MANAGE LISTINGS STYLING */
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.listings-container {
+    background-color: rgb(173, 121, 64);
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 15px;
+    padding-top: 15px;
+}
+
+.owner-name {
+    color: white;
+}
+
+.listing-item {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.edit-btn, .del-btn, .remove-fav-btn, .more-info-btn {
+    padding: 2px 20px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+/* MY MESSAGES STYLING */
+
+.message-outer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.single-user {
+    padding: 20px;
+    width: 200px;
+}
+
+.user-container:hover {
+    background-color: #9CCBC3;
+}
+
+.activeuser {
+    background-color: #9CCBC3;
+}
+.username-chat, .date-created {
+    color: 9rgb(173, 121, 64);
+}
+
+.messageReceived {
+    background-color: rgb(173, 121, 64);
+    color: #f7f5ed;
+    padding: 7px;
+}
+.messageText {
+    background-color:#9CCBC3;
+    color: white;
+    padding: 7px;
+}
+
+.message-container {
+    padding: 20px;
+    background-color: #f7f5ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.messages-content {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+}
+.right {
+    justify-content: flex-end;
+}
+.left {
+    justify-content: flex-start;
+}
+
+#message {
+    width: 100%;
+}
+
+.send-message {
+ width: 80%;
+
+}
+
+.meesage-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#send-btn  {
+    margin-left: 1vh;
+    padding: 2px 15px;
+    border-radius: 10px;
+    background-color: #9CCBC3;
+    color:white;
+    
+}
+
+/* UPDATE ACCOUNT DETAILS FORM STYLING */
+
+.formContainer {
+    margin: 0 40px;
+    padding: 40px 0;
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .dashboard-container{
+       display: flex;
+       flex-direction: column;
+    }
+   
+  .create-listing-form,
+    .man-listing-card {
+      width: 100%;
+      margin-left: 5%;
+      
+    }
+
+    .favourites-card {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+  
+  }
+  

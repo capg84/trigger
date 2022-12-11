@@ -1,0 +1,71 @@
+/* h1 {
+    background: white;
+    color: rgb(173, 121,64);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;;
+    text-align: center;
+    padding: 5px;
+} */
+
+.button{
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20px
+}
+
+.button{
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20px
+}
+
+#button-rehome {
+    border-radius: 10px;
+    border: 0px;
+    font-family: 'Patrick Hand', cursive;
+    background: rgb(173, 121, 64);
+    color: white;
+}
+
+#button-adopt {
+    border-radius: 10px;
+    border: 0px;
+    font-family: 'Patrick Hand', cursive;
+    background: white;
+    color: rgb(173, 121,64);
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(195, 150, 95);
+    padding: 20px;
+}
+
+div .card {
+    background: rgb(173, 121, 64);
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    border-radius: 10px;
+    border: 0px;
+    width: 200px;
+}
+
+.instructionHeader {
+    background: white;
+    color: rgb(173, 121,64);
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    padding: 5px;
+  }
+
+/* .instructionButtonCont {
+    display: flex;
+    background: rgb(195, 150, 95);
+    justify-content: center;
+    padding: 20px;
+  } */

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import "../assets/styles/index.css";
+import "./assets/css/index.css";
 import Auth from "../Utils/auth";
 import Logo from "../assets/images/Logo.jpg"
 

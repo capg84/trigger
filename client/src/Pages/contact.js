@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import "../assets/styles/index.css"
+import "../assets/css/index.css"
 
 export default function Contact() {
     return (

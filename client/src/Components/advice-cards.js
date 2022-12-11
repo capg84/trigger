@@ -1,5 +1,5 @@
 import { Button } from "bootstrap";
-import "../assets/styles/advice.css";
+import "../assets/css/advice.css";
 
 const adviceCard = ({ advices }) => {
   return (

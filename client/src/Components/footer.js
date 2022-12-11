@@ -1,6 +1,7 @@
 import React from 'react';
 import "../assets/css/index.css";
 
+// adding comment
 // HTML for footer which is imported in App.js
 export default function Footer() {
 

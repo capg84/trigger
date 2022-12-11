@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   useParams,
 } from "react-router-dom";
-import "../Assets/Styles/index.css"
+import "../assets/styles/index.css"
 
 function EditListing() {
   // Create state variables for the fields in the form

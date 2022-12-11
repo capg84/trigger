@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../../Utils/auth';
 import { Button } from 'react-bootstrap';
-import "../../Assets/Styles/pet.css";
+import "../../assets/styles/pet.css";
 import { useMutation } from '@apollo/client';
 import { REMOVE_COMMENT } from '../../Utils/mutations';
 import { useParams } from 'react-router-dom';

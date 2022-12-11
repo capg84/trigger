@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/pet.css"
+import "../assets/css/pet.css"
 import Button from 'react-bootstrap/Button';
 import {
   BrowserRouter as Router,

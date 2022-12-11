@@ -1,5 +1,5 @@
 import React from 'react'
-import "../assets/styles/dashboard.css";
+import "../assets/css/dashboard.css";
 import classNames from 'classnames'
 import Auth from '../Utils/auth';
 

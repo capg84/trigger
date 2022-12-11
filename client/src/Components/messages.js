@@ -1,4 +1,4 @@
-import "../assets/styles/dashboard.css";
+import "../assets/css/dashboard.css";
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import { Image, Form } from 'react-bootstrap'
 import { MESSAGES, GET_MESSAGES} from '../Utils/queries'

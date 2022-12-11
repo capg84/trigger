@@ -13,7 +13,7 @@ import Favourites from "../Components/favourites";
 import Messages from "../Components/messages";
 import Account from "../Components/user-account";
 //import DashboardNav from "../Components/dashboard-nav";
-import "../assets/styles/dashboard.css";
+import "../assets/css/dashboard.css";
 import { MY_PROFILE } from "../Utils/queries";
 import EditListing from "../Components/edit-listing";
 

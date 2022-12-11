@@ -1,4 +1,4 @@
-import '../assets/styles/dashboard.css';
+import '../assets/css/dashboard.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useMutation } from '@apollo/client';

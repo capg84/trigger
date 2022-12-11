@@ -1,4 +1,4 @@
-import "../assets/styles/dashboard.css";
+import "../assets/css/dashboard.css";
 import {
   BrowserRouter as Router,
   Switch,

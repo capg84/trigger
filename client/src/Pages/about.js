@@ -1,4 +1,4 @@
-import "../assets/styles/index.css"
+import "../assets/css/index.css"
 
 
 const About = () => {

@@ -8,28 +8,28 @@ import {
 } from "@apollo/client";
 import "./assets/css/App.css"
 import { setContext } from "@apollo/client/link/context";
-import Header from "./Components/header";
-import Footer from "./Components/footer";
-import Home from "./Pages/home";
-import About from "./Pages/about";
-import Advice from "./Pages/Advice";
-import AllPets from "./Pages/rehomePet";
-import Contact from "./Pages/contact";
-import Dashboard from "./Pages/myTrigger";
-import Login from "./Components/login";
-import Signup from "./Components/signup";
-import Pet from "./Components/pet";
-//import EditPet from "./Components/edit-listing";
-import CreateListing from "./Components/create-pet";
-import ManageListing from "./Components/manage-listings";
-import Favourites from "./Components/favourites";
-import Messages from "./Components/messages";
-import Account from "./Components/user-account";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Advice from "./pages/Advice";
+import AllPets from "./pages/rehomePet";
+import Contact from "./pages/contact";
+import Dashboard from "./pages/myTrigger";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import Pet from "./components/pet";
+//import EditPet from "./components/edit-listing";
+import CreateListing from "./components/create-pet";
+import ManageListing from "./components/manage-listings";
+import Favourites from "./components/favourites";
+import Messages from "./components/messages";
+import Account from "./components/user-account";
 import "./assets/css/instruction.css";
-import Navigation from "./Components/navigation";
-import CreatePet from "./Components/create-pet";
-import Species from "./Components/species";
-import MessageCard from "./Components/message-card"
+import Navigation from "./components/navigation";
+import CreatePet from "./components/create-pet";
+import Species from "./components/species";
+import MessageCard from "./components/message-card"
 
 
 const httpLink = createHttpLink({

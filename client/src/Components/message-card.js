@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import "../Assets/Styles/message-card.css"
+import "../assets/styles/message-card.css"
 import { useParams } from 'react-router-dom';
 import { useMutation} from '@apollo/client';
 import { SEND_MESSAGE } from "../Utils/mutations";

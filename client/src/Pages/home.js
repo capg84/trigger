@@ -1,5 +1,5 @@
 import React from 'react';
-import "../Assets/Styles/index.css"
+import "../assets/styles/index.css"
 // import { useQuery } from '@apollo/client';
 
 import InstructionProvider from '../Utils/instruction';

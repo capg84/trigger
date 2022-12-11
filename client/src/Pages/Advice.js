@@ -22,7 +22,7 @@
 // export default Advice;
 
 import Card from "../Components/advice-cards";
-import "../Assets/Styles/advice.css";
+import "../assets/styles/advice.css";
 
 const Advices = () => {
   const advices = [

@@ -6,7 +6,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import "./Assets/Styles/App.css"
+import "./assets/styles/App.css"
 import { setContext } from "@apollo/client/link/context";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
@@ -25,7 +25,7 @@ import ManageListing from "./Components/manage-listings";
 import Favourites from "./Components/favourites";
 import Messages from "./Components/messages";
 import Account from "./Components/user-account";
-import "./Assets/Styles/instruction.css";
+import "./assets/styles/instruction.css";
 import Navigation from "./Components/navigation";
 import CreatePet from "./Components/create-pet";
 import Species from "./Components/species";

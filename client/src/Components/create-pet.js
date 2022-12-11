@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import "../Assets/Styles/dashboard.css"
+import "../assets/styles/dashboard.css"
 import { useMutation } from "@apollo/client";
 import { CREATE_PET } from "../Utils/mutations";
 import {

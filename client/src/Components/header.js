@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import "../Assets/Styles/index.css";
+import "../assets/styles/index.css";
 import Auth from "../Utils/auth";
-import Logo from "../Assets/Images/Logo.jpg"
+import Logo from "../assets/images/Logo.jpg"
 
 // HTML for footer which is imported in App.js
 export default function Header() {

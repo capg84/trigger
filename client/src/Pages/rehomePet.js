@@ -11,7 +11,7 @@ import {
 import Pet from "../Components/pet";
 import { SEARCH_PETS } from '../Utils/queries';
 import Auth from "../Utils/auth";
-import "../Assets/Images/pets/Leo.jpg"
+import "../assets/images/pets/Leo.jpg"
 
 
 const AllPets = () => {

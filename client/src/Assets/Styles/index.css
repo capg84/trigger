@@ -23,7 +23,7 @@ code {
 .hero-image,
 .petcare-advice
  {
-  background-image: url("../Images/hero.jpg");
+  background-image: url("../images/hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@ code {
 }
 
 .about-main{
-  background-image: url("../Images/trigger.png");
+  background-image: url("../images/trigger.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

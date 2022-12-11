@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Form, InputGroup, Button } from 'react-bootstrap';
 import { COMMENT_PET } from '../../Utils/mutations'
 import Auth from '../../Utils/auth';
-import "../../Assets/Styles/pet.css";
+import "../../assets/styles/pet.css";
 
 const CommentForm = ({ petId }) => {
     const [commentBody, setCommentBody] = useState('');

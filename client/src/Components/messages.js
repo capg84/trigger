@@ -1,10 +1,10 @@
-import "../Assets/Styles/dashboard.css";
+import "../assets/styles/dashboard.css";
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import { Image, Form } from 'react-bootstrap'
 import { MESSAGES, GET_MESSAGES} from '../Utils/queries'
 import { SEND_MESSAGE } from "../Utils/mutations";
 import Auth from '../Utils/auth'
-import avatar from "../Assets/Images/message.jpg.webp";
+import avatar from "../assets/images/message.jpg.webp";
 import { useState, useEffect } from "react";
 import EachMessage from './eachmessage';
 

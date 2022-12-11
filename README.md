@@ -134,7 +134,7 @@ Should you have any questions, please feel free to contact any of the contributo
 
 [Github Repository](https://github.com/capg84/trigger)
 
-[Github Live URL]()
+[Github Live URL](https://boiling-dusk-63403.herokuapp.com/)
 
 ## Group Presentation URL
-[Click here to view the PowerPoint Presentation](https://docs.google.com/presentation/d/1pY4_T8iH4wj2MoVnhpgqATKA_R8sb0Oa/edit?usp=sharing&ouid=108844044555454204550&rtpof=true&sd=true)
+[Click here to view the PowerPoint Presentation](https://docs.google.com/presentation/d/14_oNnJ3Mp2-EQodYAPNX0Ac9wHBUzN4J/edit#slide=id.p1)
